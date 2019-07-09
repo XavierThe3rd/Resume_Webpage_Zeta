@@ -1,0 +1,63 @@
+#titleWrap, #aboutPhaze, #resumePhaze {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.25s linear 0s;
+}
+
+#slideHolder1 {
+    transform: translateX(0px);
+    transition: all 1s ease-out 0s;
+}
+
+#slideHolder2, #slideHolder3, #slideHolder4, #slideHolder5 {
+    transform: translateX(100%);
+    transition: all 1s ease-out 0s;
+}
+
+#insideH1, #insideH2, #insideH3 {
+    transition: all 0.5s ease-out 0s;
+}
+
+#filePageA {
+    transition: all 1s ease-out 1s;
+}
+
+#fileHolderA {
+    transition: all 1s ease-out 0.5s;
+}
+
+#btn1id, #btn2id, #btn3id {
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: fadein;
+    transform: translateY(-100px);
+}
+
+
+@keyframes fadein{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+        transform: translateY(0px); 
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+#titleWrap.visible, #aboutPhaze.visible, #p-aboutPhaze-trig.visible, #resumePhaze.visible {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    transition: all 0.25s linear; 
+}

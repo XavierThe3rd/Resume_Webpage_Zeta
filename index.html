@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onscroll Animation</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"/>
+    </head>
+    <body onload="Load()"><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.5'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+        <div class= "top abs" id="bodyTrig"></div>
+        <header class = "navbar flex fix top z6 grid10" id="primeNav">    
+            <button class="button-holder abs flex column center z4" id ="Button" onclick="openNav()">
+                <div class="barz"></div>
+                <div class="barz"></div>
+                <div class="barz"></div>
+            </button>
+            </div>
+            <div class= "title-holder fix top flex center grid10">
+                <h1 class= "prime-f">XAVIER PAGES</h1>
+            </div>
+        </header>
+            <div class="intro-holder flex center column hgrid14 grid10" id="introHolder">  
+                <div class="mylogo-holder flex center grid7 auto rel" id="logoHolder">
+                    <object class = " gear-whole abs" id = "gearWhole" data="./images/GearWholeWire.svg" type="image/svg+xml"></object> 
+                    <object class = " gear-quarter abs" id = "gearQuarter" data="./images/GearQuarterWire.svg" type="image/svg+xml"></object> 
+                    <object class = " gear-half-right abs" id = "gearHalfRight" data="./images/GearHalfWire.svg" type="image/svg+xml"></object> 
+                    <object class = " gear-half-left abs" id = "gearHalfLeft" data="./images/GearHalfWire.svg" type="image/svg+xml"></object> 
+                    <object class = "logo-prime grid10 abs" id ="logoObject"data="./images/DragonLogoBeta.svg" type="image/svg+xml"></object>   
+                </div>
+                <div id="bottomlogoTrig"></div>
+                <div class ="title-wrap flex grid7 column" id="titleWrap">
+                    <p class= " intro-p1 prime-f t-center" id= "p-onetoptrig">
+                        <span>A portfolio and resume page of</span>
+                        <span>Thomas Xavier Grasso III.</span>
+                    </p>
+                    <p class="intro-p2 prime-f t-center">
+                        <span>Lets see how he can benifit your company below.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="about-holder flex center hgrid12 grid10 z3">
+                <div class ="about-wrap flex column grid10">
+                    <h3 class= "prime-f t-center opacity-none"id= "aboutPhaze">About</h3>
+                    <div class= "personal-wrap flex rel center grid10" id="personWrap">
+                        <div class="personal-holder abs btw flex z3" id= "p-aboutPhaze-trig" >
+                            <button class=" leftbutton hgrid10 grid3 abs center flex left z2" id="buttonLeft" onclick="slideLeft()">&#x25C4;</button>
+                            <button class=" righttbutton hgrid10 grid3 abs center flex right z2" id="buttonRight" onclick="slideRight()">&#x25BA;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-holder flex center hgrid11 grid10"> 
+                <h3 class= "prime-f t-center opacity-none abs"id= "resumePhaze">resume</h3>
+                <div class ="resume-wrap grid10 flex rel column" id ="resumeWrap">
+                    <div class= "file-wrap  rel flex center" id= "fileWrap">
+                        <object class = "file file-backplate abs" id = "filebackPlate" data="./images/file-backplate.svg" type="image/svg+xml"></object>
+                        <div class= "inside-hold-1 flex center" id="insideH1">
+                                <button class= "abs z2 prime-f t-center point" onclick="docRes()">Official Resume</button>
+                            <object class = "file file-page abs" id = "filePageA" data="./images/file-page.svg" type="image/svg+xml"></object> 
+                            <object class = "file file-holder abs" id = "fileHolderA" data="./images/file-holder.svg" type="image/svg+xml"></object> 
+                        </div>
+                        <div class= "inside-hold-2 flex center" id="insideH2">
+                                <button class= "abs z2 prime-f t-center point" onclick="docEdu()">Education Degrees</button>
+                            <object class = "file file-page abs" id = "filePageB" data="./images/file-page.svg" type="image/svg+xml"></object> 
+                            <object class = "file file-holder abs" id = "fileHolderB" data="./images/file-holder.svg" type="image/svg+xml"></object> 
+                        </div>
+                        <div class= "inside-hold-3 flex center" id="insideH3">
+                                <button class= "abs z2 prime-f t-center point" onclick="docOpen()">Other Documentation</button>
+                            <object class = "file file-page abs" id = "filePageC" data="./images/file-page.svg" type="image/svg+xml"></object> 
+                            <object class = "file file-holder abs" id = "fileHolderC" data="./images/file-holder.svg" type="image/svg+xml"></object>
+                        </div>
+                        <object class = " file-front abs z3" id = "fileFleft" data="./images/file-frontplate-left.svg" type="image/svg+xml"></object>
+                        <object class = " file-front abs z3" id = "fileFright" data="./images/file-frontplate-right.svg" type="image/svg+xml"></object>
+                        <button class = " file-lock abs z4" id = "fileLock" onclick="fileOpen()"></button>       
+                    </div>
+                </div>
+            </div>
+            <footer class="flex grid10 hgrid2"></footer>
+        
+        <script src="./js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+        <script src="./js/scrollmagic/minified/ScrollMagic.min.js"></script>
+        <script src="./js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+        <script src="./js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+        <script src="./js/tweens/tweenMax.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script src="./js/appender.js"></script>
+        <script src="./js/scrollmag.js"></script>
+        <script src="./js/debugios.js"></script>
+        <script src= "./js/navigation.js"></script>
+        <script src= "./js/slideshow.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/fileanimation.js"></script>
+    </body>
+</html>
