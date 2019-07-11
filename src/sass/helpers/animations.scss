@@ -1,3 +1,14 @@
+@for $i from 1 through 3 {
+    $marginT: 30% * $i;
+    $animD: 0.1s * $i;
+
+    #btn#{$i}id {
+        margin-top: $marginT;
+        animation-delay: $animD;
+    }
+}
+
+
 #titleWrap, #aboutPhaze, #resumePhaze {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
@@ -15,15 +26,15 @@
 }
 
 #insideH1, #insideH2, #insideH3 {
-    transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out;
 }
 
-#filePageA {
+#filePageA, #filePageB, #filePageC {
     transition: all 1s ease-out 1s;
 }
 
-#fileHolderA {
-    transition: all 1s ease-out 0.5s;
+#fileHolderA, #fileHolderB, #fileHolderC {
+    transition: all 0.5s ease-out;
 }
 
 #btn1id, #btn2id, #btn3id {

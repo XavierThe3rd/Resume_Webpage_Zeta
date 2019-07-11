@@ -1,3 +1,15 @@
+#btn1id {
+  margin-top: 30%;
+  animation-delay: 0.1s; }
+
+#btn2id {
+  margin-top: 60%;
+  animation-delay: 0.2s; }
+
+#btn3id {
+  margin-top: 90%;
+  animation-delay: 0.3s; }
+
 #titleWrap, #aboutPhaze, #resumePhaze {
   opacity: 0;
   transform: translateY(20px) scale(0.95);
@@ -12,31 +24,20 @@
   transition: all 1s ease-out 0s; }
 
 #insideH1, #insideH2, #insideH3 {
-  transition: all 0.5s ease-out 0s; }
+  transition: all 0.5s ease-out; }
 
-#filePageA {
+#filePageA, #filePageB, #filePageC {
   transition: all 1s ease-out 1s; }
 
-#fileHolderA {
-  transition: all 1s ease-out 0.5s; }
+#fileHolderA, #fileHolderB, #fileHolderC {
+  transition: all 0.5s ease-out; }
 
 #btn1id, #btn2id, #btn3id {
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
   transform: translateY(-100px); }
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1;
-    transform: translateY(0px); } }
 
 @keyframes fadein {
   0% {
@@ -44,15 +45,6 @@
   100% {
     opacity: 1;
     transform: translateY(0px); } }
-
-@-webkit-keyframes fadeout {
-  0% {
-    opacity: 1;
-    transform: translateY(0px); }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px); } }
-
 @keyframes fadeout {
   0% {
     opacity: 1;
@@ -60,32 +52,46 @@
   100% {
     opacity: 0;
     transform: translateY(-100px); } }
-
 #titleWrap.visible, #aboutPhaze.visible, #p-aboutPhaze-trig.visible, #resumePhaze.visible {
   opacity: 1;
   transform: translateY(0px) scale(1);
   transition: all 0.25s linear; }
 
-.top {
-  top: 0px; }
+.grid3 {
+  width: 30%; }
 
-.abs {
-  position: absolute; }
-
-.z6 {
-  z-index: 6; }
-
-.fix {
-  position: fixed; }
-
-.flex {
-  display: flex; }
+.grid7 {
+  width: 70%; }
 
 .grid10 {
   width: 100%; }
 
+.hgrid2 {
+  height: 25%; }
+
+.hgrid10 {
+  height: 100%; }
+
+.hgrid11 {
+  height: 110%; }
+
+.hgrid12 {
+  height: 120%; }
+
+.hgrid14 {
+  height: 140%; }
+
+.abs {
+  position: absolute; }
+
+.fix {
+  position: fixed; }
+
 .rel {
   position: relative; }
+
+.flex {
+  display: flex; }
 
 .center {
   justify-content: center; }
@@ -96,39 +102,27 @@
 .z1m {
   z-index: -1; }
 
+.z2 {
+  z-index: 2; }
+
+.z3 {
+  z-index: 3; }
+
 .z4 {
   z-index: 4; }
+
+.z6 {
+  z-index: 6; }
 
 .prime-f {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100; }
 
-.hgrid14 {
-  height: 140%; }
-
-.auto {
-  margin: 0px auto; }
-
-.grid7 {
-  width: 70%; }
-
 .t-center {
   text-align: center; }
 
-.z3 {
-  z-index: 3; }
-
-.hgrid12 {
-  height: 120%; }
-
-.opacity-none {
-  opacity: 0; }
-
-.hgrid10 {
-  height: 100%; }
-
-.grid3 {
-  width: 30%; }
+.top {
+  top: 0px; }
 
 .left {
   left: 0px; }
@@ -136,17 +130,23 @@
 .right {
   right: 0px; }
 
-.z2 {
-  z-index: 2; }
+.auto {
+  margin: 0px auto; }
 
-.hgrid11 {
-  height: 110%; }
+.opacity-none {
+  opacity: 0; }
+
+.no-background {
+  background: none; }
+
+.no-border {
+  border-style: none; }
 
 .point {
   cursor: pointer; }
 
-.hgrid2 {
-  height: 25%; }
+.over-x {
+  overflow: hidden; }
 
 h1 {
   color: white;
@@ -165,135 +165,94 @@ header {
   border-width: 0px 0px 1px;
   border-style: solid;
   background: black; }
-
-.button-holder {
-  background: none;
-  border-style: none;
-  margin: 10px 5px; }
-  .button-holder div {
-    width: 30px;
-    height: 5px;
-    border-radius: 2.5px;
-    background: white;
-    margin: 2px; }
-
-header nav button {
-  font-size: 50px;
-  color: white;
-  background: none;
-  border-style: none; }
-
-header nav {
-  margin: 5% 0px;
-  padding: 0px; }
-
-#btn1id {
-  margin-top: 30%;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
-
-#btn2id {
-  margin-top: 60%;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
-
-#btn3id {
-  margin-top: 90%;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+  header button {
+    margin: 10px 5px; }
+    header button div {
+      background: white;
+      width: 30px;
+      height: 5px;
+      border-radius: 2.5px;
+      margin: 2px; }
+  header nav {
+    margin: 5% 0px;
+    padding: 0px; }
+    header nav button {
+      color: white;
+      font-size: 50px;
+      font-weight: 100; }
 
 .intro-holder {
-  overflow-x: hidden;
   color: #35323b;
   box-sizing: border-box;
-  background: black;
   border-width: 1px;
-  border-style: solid; }
-
-.intro-holder .logo-prime {
-  top: 50px;
-  transition: all 0.5s linear 0.25s; }
-
-.intro-holder #bottomlogoTrig {
-  position: absolute;
-  top: 50%; }
-
-.intro-holder .title-wrap {
-  transition: all 1s linear 0.5s;
-  margin: 275px auto 0px; }
-
-.intro-holder .intro-p1 {
-  color: white;
-  font-size: 30px;
-  margin: 10% 0px 1%; }
-
-.intro-holder .intro-p2 {
-  color: #6e28e1;
-  font-size: 30px;
-  margin: 1% 0px; }
+  border-style: solid;
+  background: black; }
+  .intro-holder .logo-prime {
+    top: 50px;
+    transition: all 0.5s linear 0.25s; }
+  .intro-holder .botrig {
+    top: 50%; }
+  .intro-holder .title-wrap {
+    transition: all 1s linear 0.5s;
+    margin: 275px auto 0px; }
+  .intro-holder .intro-p1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    margin: 10% 0px 1%; }
+  .intro-holder .intro-p2 {
+    color: #6e28e1;
+    font-size: 30px;
+    font-weight: 100;
+    margin: 1% 0px; }
 
 .about-holder {
   background: #6e28e1; }
-
-.about-holder .about-wrap {
-  overflow-x: hidden; }
-
-.about-holder .about-wrap h3 {
-  color: white;
-  font-size: 60px;
-  overflow-x: hidden;
-  margin: 50px 0px 10px; }
-
-.about-holder .personal-holder {
-  width: 450px;
-  height: 450px;
-  color: #35323b;
-  box-sizing: border-box;
-  border-radius: 225px;
-  border-width: 1.5px;
-  border-style: solid;
-  background: black;
-  overflow: hidden;
-  margin: 20px 0px 0px; }
-
-.about-holder .personal-holder button {
-  background: none;
-  border-style: none; }
-
-.about-holder .texthold {
-  width: 450px;
-  height: 450px;
-  border-radius: 225px;
-  background: #521ca8;
-  overflow: hidden; }
-
-.about-holder .texthold h4 {
-  color: #ffffff;
-  font-size: 40px;
-  margin: 30px 0px 6px; }
-
-.about-holder .texthold p {
-  color: #ffffff;
-  font-size: 18px;
-  margin: 30px 70px 100px;
-  word-wrap: break-word;
-  overflow: hidden; }
+  .about-holder h3 {
+    color: white;
+    font-size: 60px;
+    font-weight: 100;
+    margin: 50px 0px 10px; }
+  .about-holder h4 {
+    color: white;
+    font-size: 40px;
+    font-weight: 100;
+    margin: 30px 0px 6px; }
+  .about-holder p {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 30px 70px 100px;
+    word-wrap: break-word; }
+  .about-holder .personal-holder {
+    background: black;
+    width: 450px;
+    height: 450px;
+    border-radius: 225px;
+    color: #35323b;
+    box-sizing: border-box;
+    border-width: 1.5px;
+    border-style: solid;
+    margin: 20px 0px 0px; }
+  .about-holder .texthold {
+    background: #521ca8;
+    width: 450px;
+    height: 450px;
+    border-radius: 225px; }
 
 .resume-holder {
   color: #35323b;
   box-sizing: border-box;
-  background: black;
   border-width: 1px;
   border-style: solid;
-  overflow: hidden; }
-
-.resume-holder h3 {
-  color: white;
-  font-size: 60px;
-  margin: 28px 0px 10px; }
+  background: black; }
+  .resume-holder h3 {
+    color: white;
+    font-size: 60px;
+    font-weight: 100;
+    margin: 28px 0px 10px; }
 
 .resume-holder .resume-wrap {
-  overflow: hidden;
   transition: all 0.25s linear 0s; }
 
 .resume-holder .file-wrap {
@@ -325,8 +284,7 @@ header nav {
   border-width: initial;
   border-style: none;
   border-color: initial;
-  -o-border-image: initial;
-     border-image: initial;
+  border-image: initial;
   margin: 120px 0px 0px; }
 
 #fileLock {
@@ -369,10 +327,8 @@ header nav {
   height: 50px;
   color: white;
   font-size: 12px;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   margin: 20px;
   background: #6e28e1;
   border-radius: 25px;
@@ -415,4 +371,4 @@ html, body {
   background: black;
   margin: 25px 0px 0px; }
 
-/*# sourceMappingURL=maps/styles.css.map */
+/*# sourceMappingURL=styles.css.map */

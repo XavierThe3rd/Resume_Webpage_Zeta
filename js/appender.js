@@ -47,9 +47,9 @@ function slideClass(){
     var ptagArray = [ptag1, ptag2, ptag3, ptag4, ptag5];
 
     for(var clazz = 0; clazz < slideArray.length; clazz++){
-        slideArray[clazz].classList.add("texthold", "flex", "column", "abs", "grid10", "hgrid10");
+        slideArray[clazz].classList.add("texthold", "flex", "column", "abs", "grid10", "hgrid10", "over-x", );
         htagArray[clazz].classList.add("prime-f", "t-center");
-        ptagArray[clazz].classList.add("prime-f", "t-center");
+        ptagArray[clazz].classList.add("prime-f", "t-center", "over-x");
     }
 }
 slideClass();

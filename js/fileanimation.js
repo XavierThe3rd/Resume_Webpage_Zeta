@@ -6,11 +6,17 @@ var backPlate= document.createElement("object");
 var insideHold= document.createElement("div");
 */
 
+var symbolX = document.createTextNode("\u274c");
+var closebtn = document.createElement("button");
+closebtn.classList.add("close-button", "abs", "top");
+closebtn.setAttribute('id', 'closeid');
+closebtn.appendChild(symbolX);
 
 
-var resPage = document.getElementById("filePageA");
+var resPageA = document.getElementById("filePageA");
+var resPageB = document.getElementById("filePageB");
+var resPageC = document.getElementById("filePageC");
 var resWrap = document.getElementById("resumeWrap");
-
 
 var leftP = document.getElementById("fileFleft");
 var rightP = document.getElementById("fileFright");
@@ -26,98 +32,148 @@ var fileHC = document.getElementById("fileHolderC");
 var partsArray= [leftP, rightP, backP, insH1, insH2, insH3, fileHA, fileHB, fileHC];
 
 function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){   
-leftP.style.opacity= opacA;
-rightP.style.opacity= opacA;
-backP.style.opacity= opacA;
-insH1.style.opacity= opacIA;
-insH2.style.opacity= opacIB;
-insH3.style.opacity= opacIC;
-lockP.style.opacity= opacL;
-fileHA.style.opacity= opacHA;
-fileHB.style.opacity= opacHB;
-fileHC.style.opacity= opacHC;   
+    leftP.style.opacity= opacA;
+    rightP.style.opacity= opacA;
+    backP.style.opacity= opacA;
+    insH1.style.opacity= opacIA;
+    insH2.style.opacity= opacIB;
+    insH3.style.opacity= opacIC;
+    lockP.style.opacity= opacL;
+    fileHA.style.opacity= opacHA;
+    fileHB.style.opacity= opacHB;
+    fileHC.style.opacity= opacHC;   
+}
+
+function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){
+    fileHA.style.transitionDelay= HAtran;
+    fileHB.style.transitionDelay= HBtran;
+    fileHC.style.transitionDelay= HCtran;
+    insH1.style.transitionDelay= H1tran;
+    insH2.style.transitionDelay= H2tran;
+    insH3.style.transitionDelay= H3tran;
+}
+
+function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){
+    fileHA.style.transform= "translateY(" +transHA+ ")";
+    fileHB.style.transform= "translateY(" +transHB+ ")";
+    fileHC.style.transform= "translateY(" +transHC+ ")";
+    insH1.style.transform= "translate(" +translateH1+ ")";
+    insH2.style.transform= "translate(" +translateH2+ ")";
+    insH3.style.transform= "translate(" +translateH3+ ")";
+    lockP.style.transform = "scale(" +scale+ ")";
+    leftP.style.transform= "translateX(" +translatexL+ ")";
+    rightP.style.transform= "translateX(" +translatexR+ ")";
+}
+
+function miscChange(position, height, top, index){
+    resWrap.style.position= position;
+    resWrap.style.height= height;
+    resWrap.style.top= top;
+    resWrap.style.zIndex= index;
+}
+
+function eventListen(vary, rmv, add){
+    vary.removeEventListener("transitionend", rmv);
+    vary.addEventListener("transitionend", add);
+}
+
+//--------------------------------------------------------------------//
+
+function xbuttonOn(){
+    transChange("0s", "0.5s", "0.5s", "0.5s");
+    resWrap.appendChild(closebtn);
+    closeid.style.animationName= "fadein";
 }
 
 
-function rePosition(){
+//--------------------------------------------------------------------//
 
-fileHA.style.transform= "translateY(0)";
-fileHA.style.transition= "all 0.25s linear 0s";
-
-insH1.style.transform= "translate(-90px, -50px)";
-insH1.style.transition= "all 0.5s linear 0.5s";
-
-insH1.style.position= "relative";
-resWrap.style.position= "relative";
-insH2.style.transition= "all 0.5s linear 0.5s";
-insH3.style.transition= "all 0.5s linear 0.5s";
-
-opacityChange("0", "1", null, "1", "1", "1", null, null);
-
-//insH1.style.transform= "translate(0px, 0px)";
+function rePositionA(){
+    opacityChange("0", "1", null, "1", "1", "1", null, null);
+    transChange("0s", null, null, "0.5s", "0.5s", "0.5s");
+    lateChange("0", null, null, "-90px, -50px", null, null, null, null, null);
+    miscChange("relative", null, null, null, null);
 }
 
-function fileChange(scale, translatexL, translatexR, opacity, translate){
-
-lockP.style.transform = "scale(" +scale+ ")";
-leftP.style.transform= "translateX(" +translatexL+ ")";
-rightP.style.transform= "translateX(" +translatexR+ ")";
-insH1.style.transform= "translate(" +translate+ ")";
-insH2.style.transform= "translate(" +translate+ ")";
-insH3.style.transform= "translate(" +translate+ ")";
+function rePositionB(){
+    opacityChange("0", "1", null, "1", "1", "1", null, null);
+    transChange(null, "0s", null, "0.5s", "0.5s", "0.5s");
+    lateChange(null, "0", null, null, "90px, -68px", null, null, null, null);
+    miscChange("relative", null, null, null, null);
 }
+
+function rePositionC(){
+    opacityChange("0", "1", null, "1", "1", "1", null, null);
+    transChange(null, null, "0s", "0.5s", "0.5s", "0.5s");
+    lateChange(null, null, "0", null, null, "0px, 125px", null, null, null);
+    miscChange("relative", null, null, null, null);
+}
+
+//--------------------------------------------------------------------//
 
 function fileOpen(){
-if(lockP.style.transform === "scale(1)"){
-    opacityChange("0", null, null, null, null, null, null, null);
-
-
-    fileChange("0.5", "-100px", "100px", "0", null);
-    insH1.style.transform= "translate(-90px, -50px)";
-    insH2.style.transform= "translate(90px, -68px)";
-    insH3.style.transform= "translate(0, 125px)";
-} else{
-    opacityChange("1", null, null, null, null, null, null, null);
-    fileChange("1", "0px", "0px", "1", "0px, 0px");
-            
+    if(lockP.style.transform === "scale(1)"){
+        opacityChange("0", null, null, null, null, null, null, null);
+        transChange(null, null, null, "0s", "0s", "0s");
+        lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
+    }else{
+        opacityChange("1", null, null, null, null, null, null, null);
+        lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px");           
+    }
 }
-}
+//--------------------------------------------------------------------//  
 
-function docRes(){
-resPage.removeEventListener("transitionend", rePosition);
 
-var symbolX = document.createTextNode("\u274c");
-var closebtn = document.createElement("button");
-closebtn.classList.add("close-button", "abs", "top");
-closebtn.setAttribute('onclick', 'xOut()');
-closebtn.appendChild(symbolX);
-
-opacityChange("0", "0", null, "0", "0", "0", null, null);
-
-insH1.style.transform= "translate(0px, 0px)";
-fileHA.style.transform= "translateY(100%)";
-resPage.style.transform= "scale(5)";
-resWrap.style.zIndex= "6";
-
-resWrap.style.position= "fixed";
-resWrap.style.height= "100%";
-insH1.style.position= "fixed";
-
-resWrap.style.top= "0";
-
-function onInfo(){
-    resWrap.appendChild(closebtn);
-    fileHA.style.transition= "all 0.25s linear 0s";
-    insH2.style.transition= "all 0.5s linear 0.5s";
-    insH3.style.transition= "all 0.5s linear 0.5s";
-    insH1.style.transition= "all 0.5s linear 0.5s";
-}
-resPage.addEventListener("transitionend", onInfo);
+function openDocumentA(){
+    transChange("0.5s", null , null, "0s", "0s", "0s");
+    miscChange("fixed", "100%", "0", "6");
+    eventListen(resPageA, rePositionA, xbuttonOn),
+    opacityChange("0", "0", null, "0", "0", "0", null, null);
+    lateChange("100%", null, null, "0px, 0px", null, null, null, null,)
+    closebtn.setAttribute('onclick', 'xOutA()');
+    resPageA.style.transform= "scale(5)";
 }
 
-function xOut(){
+function openDocumentB(){
+    transChange(null, "0.5s", null, "0s", "0s", "0s");
+    miscChange("fixed", "100%", "0", "6");
+    eventListen(resPageB, rePositionB, xbuttonOn),
+    opacityChange("0", "0", "0", null, "0", null, "0", null);
+    lateChange(null, "100%", null, null, "0px, 0px", null, null, null,);
+    closebtn.setAttribute('onclick', 'xOutB()');
+    resPageB.style.transform= "scale(5)";
+}
 
+function openDocumentC(){
+    transChange(null, null, "0.5s", "0s", "0s", "0s");
+    miscChange("fixed", "100%", "0", "6");
+    eventListen(resPageC, rePositionC, xbuttonOn),
+    opacityChange("0", "0", "0", "0", null, null, null, "0");
+    lateChange(null, null, "100%", null, null, "0px, 0px", null, null,);
+    closebtn.setAttribute('onclick', 'xOutC()');
+    resPageC.style.transform= "scale(5)";
+}
 
-resPage.style.transform= "scale(1)";
-resPage.addEventListener("transitionend", rePosition);
+function xOutA(){
+    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
+    closeid.style.animationName= "fadeout";
+    resPageA.style.transform= "scale(1)";
+    resWrap.removeChild(closebtn);
+    eventListen(resPageA, xbuttonOn, rePositionA);
+}
+
+function xOutB(){
+    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
+    closeid.style.animationName= "fadeout";
+    resPageB.style.transform= "scale(1)";
+    resWrap.removeChild(closebtn);
+    eventListen(resPageB, xbuttonOn, rePositionB);
+}
+
+function xOutC(){
+    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
+    closeid.style.animationName= "fadeout";
+    resPageC.style.transform= "scale(1)";
+    resWrap.removeChild(closebtn);
+    eventListen(resPageC, xbuttonOn, rePositionC);
 }
