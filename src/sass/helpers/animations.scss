@@ -72,3 +72,7 @@
     transform: translateY(0px) scale(1);
     transition: all 0.25s linear; 
 }
+#fileFleft, #fileFright {
+    transition: all 0.5s ease-out 0s;
+}
+

@@ -68,17 +68,13 @@
 }
 
 
-.resume-holder .resume-wrap {
-    transition: all 0.25s linear 0s;
-}
 
 .resume-holder .file-wrap {
     margin: 175px 0px 0px;
 }
 
 .resume-holder .file {
-    width: 200px;
-    height: 200px;
+    @include dimensions(none, 200px, 200px, 0px);
 }
 
 .resume-holder .file-backplate {
@@ -91,12 +87,10 @@
 
 #fileFleft {
     margin: 70px 0px 0px -42px;
-    transition: all 0.5s ease-out 0s;
 }
 
 #fileFright {
     margin: 70px 0px 0px 42px;
-    transition: all 0.5s ease-out 0s;
 }
 
 .resume-holder .file-lock {
@@ -104,29 +98,21 @@
     height: 110px;
     border-radius: 55px;
     background: rgb(204, 0, 102);
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
     margin: 120px 0px 0px;
 }
 
 #fileLock {
     transform: scale(1);
     transition: all 0.5s ease-out 0s;
-    margin: 120px 0px 0px;
 }
 
-.resume-holder .inside-hold-1 {
-    margin-top: 20px;
-}
 
-.resume-holder .inside-hold-2 {
-    margin-top: 40px;
-}
+@for $i from 1 through 3 {
+    $marginT: 20px * $i;
 
-.resume-holder .inside-hold-3 {
-    margin-top: 60px;
+    .inside-hold-#{$i}{
+        margin-top: $marginT;
+    }
 }
 
 .resume-holder .inside-hold-1 button {

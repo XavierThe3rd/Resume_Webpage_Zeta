@@ -57,6 +57,9 @@
   transform: translateY(0px) scale(1);
   transition: all 0.25s linear; }
 
+#fileFleft, #fileFright {
+  transition: all 0.5s ease-out 0s; }
+
 .grid3 {
   width: 30%; }
 
@@ -252,15 +255,14 @@ header {
     font-weight: 100;
     margin: 28px 0px 10px; }
 
-.resume-holder .resume-wrap {
-  transition: all 0.25s linear 0s; }
-
 .resume-holder .file-wrap {
   margin: 175px 0px 0px; }
 
 .resume-holder .file {
+  background: none;
   width: 200px;
-  height: 200px; }
+  height: 200px;
+  border-radius: 0px; }
 
 .resume-holder .file-backplate {
   margin: 57px 0px 0px; }
@@ -269,36 +271,29 @@ header {
   width: 98px; }
 
 #fileFleft {
-  margin: 70px 0px 0px -42px;
-  transition: all 0.5s ease-out 0s; }
+  margin: 70px 0px 0px -42px; }
 
 #fileFright {
-  margin: 70px 0px 0px 42px;
-  transition: all 0.5s ease-out 0s; }
+  margin: 70px 0px 0px 42px; }
 
 .resume-holder .file-lock {
   width: 110px;
   height: 110px;
   border-radius: 55px;
   background: #cc0066;
-  border-width: initial;
-  border-style: none;
-  border-color: initial;
-  border-image: initial;
   margin: 120px 0px 0px; }
 
 #fileLock {
   transform: scale(1);
-  transition: all 0.5s ease-out 0s;
-  margin: 120px 0px 0px; }
+  transition: all 0.5s ease-out 0s; }
 
-.resume-holder .inside-hold-1 {
+.inside-hold-1 {
   margin-top: 20px; }
 
-.resume-holder .inside-hold-2 {
+.inside-hold-2 {
   margin-top: 40px; }
 
-.resume-holder .inside-hold-3 {
+.inside-hold-3 {
   margin-top: 60px; }
 
 .resume-holder .inside-hold-1 button {
