@@ -341,7 +341,7 @@ footer {
   height: 300px;
   margin: 0px auto; }
 
-.gear-quarter {
+.gear-quarter1 {
   width: 75px;
   height: 75px;
   transform: rotate(35deg);
@@ -357,9 +357,6 @@ footer {
   height: 150px;
   transform: rotate(10deg);
   margin: 217px 0px 0px -165px; }
-
-body {
-  top: 50px; }
 
 html, body {
   height: 100%;
