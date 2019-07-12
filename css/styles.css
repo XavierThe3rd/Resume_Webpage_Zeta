@@ -192,7 +192,8 @@ header {
   background: black; }
   .intro-holder .logo-prime {
     top: 50px;
-    transition: all 0.5s linear 0.25s; }
+    transition: all 0.5s linear 0.25s;
+    width: 100%; }
   .intro-holder .botrig {
     top: 50%; }
   .intro-holder .title-wrap {
@@ -339,6 +340,7 @@ footer {
 .gear-whole {
   width: 300px;
   height: 300px;
+  transform: rotate(0deg);
   margin: 0px auto; }
 
 .gear-quarter1 {
@@ -351,30 +353,31 @@ footer {
   width: 75px;
   height: 75px;
   transform: rotate(35deg);
-  margin: 286px 0px 0px 59px; }
+  margin: 286px 0 0 59px; }
 
 .gear-quarter3 {
   width: 75px;
   height: 75px;
   transform: rotate(35deg);
-  margin: 494px 0px 0px -165px; }
+  margin: 494px 0 0 -165px; }
 
 .gear-half-right {
   width: 150px;
   height: 150px;
-  margin: 235px 0px 0px 165px; }
+  transform: rotate(0deg);
+  margin: 235px 0 0 165px; }
 
 .gear-half-left {
   width: 150px;
   height: 150px;
   transform: rotate(10deg);
-  margin: 217px 0px 0px -165px; }
+  margin: 217px 0 0 -165px; }
 
 .gear-half-bottom {
   width: 150px;
   height: 150px;
-  transform: rotate(0);
-  margin: 555px 0px 0px -125px; }
+  transform: rotate(0deg);
+  margin: 555px 0 0 -125px; }
 
 html, body {
   height: 100%;

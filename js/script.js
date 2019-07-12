@@ -1,9 +1,9 @@
 //onload function
-function Load(title){
+/*function Load(title){
     var titleWrap = document.getElementById(title);
     titleWrap.style.opacity = "1";
     }
-    
+*/    
     //switchers append remove
     var logoObj = document.getElementById("logoObject");
     var gearW = document.getElementById("gearWhole");
@@ -35,7 +35,7 @@ function Load(title){
     
     //file Animation
     
-    Load("logoObject");
+   // Load("logoObject");
     openNav();
     fileOpen();
     

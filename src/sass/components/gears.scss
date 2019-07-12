@@ -1,47 +1,27 @@
 .gear-whole {
-    width: 300px;
-    height: 300px;
-    margin: 0px auto;
+    @include gearSettings(300px, 0deg, 0px auto);
 }
 
-
 .gear-quarter1 {
-    width: 75px;
-    height: 75px;
-    transform: rotate(35deg);
-    margin: -88px 0 0 165px;
+    @include gearSettings(75px, 35deg, -88px 0 0 165px);
 }
 
 .gear-quarter2 {
-    width: 75px;
-    height: 75px;
-    transform: rotate(35deg);
-    margin: 286px 0px 0px 59px;
+    @include gearSettings(75px, 35deg, 286px 0 0 59px);
 }
 
 .gear-quarter3 {
-    width: 75px;
-    height: 75px;
-    transform: rotate(35deg);
-    margin: 494px 0px 0px -165px;
+    @include gearSettings(75px, 35deg, 494px 0 0 -165px);
 }
 
 .gear-half-right {
-    width: 150px;
-    height: 150px;
-    margin: 235px 0px 0px 165px;
+    @include gearSettings(150px, 0deg, 235px 0 0 165px);
 }
 
 .gear-half-left {
-    width: 150px;
-    height: 150px;
-    transform: rotate(10deg);
-    margin: 217px 0px 0px -165px;
+    @include gearSettings(150px, 10deg, 217px 0 0 -165px);
 }
 
 .gear-half-bottom {
-    width: 150px;
-    height: 150px;
-    transform: rotate(0);
-    margin: 555px 0px 0px -125px;
+    @include gearSettings(150px, 0deg, 555px 0 0 -125px);
 }

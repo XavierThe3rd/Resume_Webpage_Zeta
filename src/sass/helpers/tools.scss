@@ -17,3 +17,10 @@
     font-size: $size;
     font-weight: 100;
 }
+
+@mixin gearSettings($widheight, $rot, $margin){
+    width: $widheight;
+    height: $widheight;
+    transform: rotate($rot);
+    margin: $margin;
+}
