@@ -4,17 +4,26 @@
     margin: 0px auto;
 }
 
+
 .gear-quarter1 {
+    width: 75px;
+    height: 75px;
+    transform: rotate(35deg);
+    margin: -88px 0 0 165px;
+}
+
+.gear-quarter2 {
     width: 75px;
     height: 75px;
     transform: rotate(35deg);
     margin: 286px 0px 0px 59px;
 }
 
-.gear-quarter1 {
+.gear-quarter3 {
     width: 75px;
     height: 75px;
     transform: rotate(35deg);
+    margin: 494px 0px 0px -165px;
 }
 
 .gear-half-right {
@@ -30,4 +39,9 @@
     margin: 217px 0px 0px -165px;
 }
 
-
+.gear-half-bottom {
+    width: 150px;
+    height: 150px;
+    transform: rotate(0);
+    margin: 555px 0px 0px -125px;
+}
