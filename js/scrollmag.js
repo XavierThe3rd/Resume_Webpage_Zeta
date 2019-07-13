@@ -7,7 +7,8 @@ function introPhaze(phazer, trig, dur){
         duration: dur
     })
     .setClassToggle(phazer, "visible") // add class to reveal
-    .addTo(controller);
+    .addTo(controller)
+    .addIndicators();
 }
 
 function gearRotation(gear, rot, trig, dur){
@@ -26,7 +27,7 @@ function gearRotation(gear, rot, trig, dur){
     
 
 introPhaze("#titleWrap", "body","100%");
-introPhaze("#aboutPhaze", "#bottomlogoTrig","100%");
+introPhaze("#aboutPhaze", "#p1-toptrig","100%");
 introPhaze("#resumePhaze", "#p-aboutPhaze-trig","100%");
 
 gearRotation("#gearWhole", "90", "body", "120%");

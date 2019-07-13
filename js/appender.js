@@ -1,27 +1,48 @@
 //--introDivAppends--//
+
 var introId= document.getElementById("introHolder");
 
 function createTopDivs(id, clazz1, clazz2, clazz3, clazz4, clazz5, clazz6){
     var a = document.createElement("div");
     a.setAttribute("id", id);
     a.classList.add(clazz1, clazz2, clazz3, clazz4, clazz5, clazz6);
-    
+
     return a;
 }
 
 var logohld = createTopDivs("logoHolder", "mylogo-holder", "flex", "center", "grid7", "auto", "rel");
 var botrig = createTopDivs("bottomLogoTrig", "botrig", "abs", null, null, null, null);
-var ttlwrap = createTopDivs("p-onetoptrig", "title-wrap", "flex", "grid7", "column", null, null);
+var ttlwrap = createTopDivs("titleWrap", "title-wrap", "flex", "grid7", "column", null, null);
 
-/*
-<p class= " intro-p1 prime-f t-center" id= "p-onetoptrig">
-                        <span>A portfolio and resume page of</span>
-                        <span>Thomas Xavier Grasso III.</span>
-                    </p>
-                    <p class="intro-p2 prime-f t-center">
-                        <span>Lets see how he can benifit your company below.</span>
-                    </p>
-*/
+//--creatTopPs--//
+
+function createP(){
+    var p1 = document.createElement("p");
+    var p2 = document.createElement("p");
+    p1.classList.add("intro-p1", "prime-f", "t-center");
+    p2.classList.add("intro-p2", "prime-f", "t-center");
+    p1.setAttribute("id", "p1-toptrig");
+    p2.setAttribute("id", "p2-toptrig");
+    ttlwrap.appendChild(p1);
+    ttlwrap.appendChild(p2);
+
+    function createSpan(){
+        var span1 = document.createElement("span");
+        var span2 = document.createElement("span");
+        var span3 = document.createElement("span");
+        span1.textContent= "A portfolio and resume page of";
+        span2.textContent= "Thomas Xavier Grasso III.";
+        span3.textContent= "see how he can benifit your company below.";
+        p1.appendChild(span1);
+        p1.appendChild(span2);
+        p2.appendChild(span3);
+        return p1 && p2
+    }
+    createSpan();
+    return ttlwrap;
+}
+createP();
+
 //--gearTopAppends--//
 
 function createElementGears(className, id, data){
@@ -30,7 +51,6 @@ function createElementGears(className, id, data){
     a.setAttribute("id", id);
     a.setAttribute("data", data);
     a.setAttribute("type", "image/svg+xml");
-
     return a;
 }
 
@@ -43,9 +63,65 @@ var gearHB = createElementGears("gear-half-bottom", "gearHalfBottom", "./images/
 var gearQ3 = createElementGears("gear-quarter3", "gearQ3", "./images/GearQuarterWire.svg");
 var Logo = createElementGears("logo-prime", "logoObject", "./images/DragonLogoBeta.svg");
 
+//--AboutAppend--//
+/*
+function creatAbout(){
+    a = document.createElement("div");
+    a.classList.add("about-wrap", "over-x", "flex", "column", "grid10");
+
+    function creatHnPw(){
+        h = document.createElement("h3");
+        div = document.createElement("div");
+        h.classList.add("prime-f", "t-center", "opacity-none");
+        d.classList.add("personal-wrap flex rel center grid10");
+        h.setAttribute("id", "p1-toptrig");
+        div.setAttribute("id", "p2-toptrig");
+        a.appendChild(h);
+        a.appendChild(div);
+        return a
+        }
+        function createPersonal(){
+            person = document.createElement("div");
+            person.classList.add("personal-holder", "over-x", "abs", "btw", "flex", "z3");
+            person.setAttribute("id", "p-aboutPhaze-trig");
+            div.appendChild(person);
+            return div
+        }
+
+        function createpButton(){
+            buttonL = document.createElement("button");
+            buttonR = document.createElement("button");
+            buttonL.setAttribute("id", "buttonLeft");
+            buttonL.setAttribute("onclick", "slideLeft()");
+            buttonL.classList("leftbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "left", "z2");
+            buttonR.setAttribute("id", "buttonRight");
+            buttonR.setAttribute("onclick", "slideRight()");
+            buttonR.classList("rightbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "left", "z2");
+            person.appendChild(buttonL);
+            person.appendChild(buttonR);
+            return person
+        }  
+    createpButton();
+    creatHnPw();
+    createPersonal();
+    return a;
+}
+ var ctr = createAbout();
 
 
+
+<div class ="about-wrap over-x flex column grid10">
+    <h3 class= "prime-f t-center opacity-none"id= "aboutPhaze">About</h3>
+    <div class= "personal-wrap flex rel center grid10" id="personWrap">
+        <div class="personal-holder over-x abs btw flex z3" id= "p-aboutPhaze-trig" >
+            <button class=" leftbutton no-background no-border hgrid10 grid3 abs center flex left z2" id="buttonLeft" onclick="slideLeft()">&#x25C4;</button>
+            <button class=" righttbutton no-background no-border hgrid10 grid3 abs center flex right z2" id="buttonRight" onclick="slideRight()">&#x25BA;</button>
+        </div>
+    </div>
+</div>
+*/
 //--SlideShowAppends--//
+
 var slidehold = document.getElementById("p-aboutPhaze-trig" );
 var slidebtnL = document.getElementById("buttonLeft");
 var slidebtnR = document.getElementById("buttonRight");
