@@ -1,6 +1,20 @@
 .intro-holder {
-    @include border(rgb(53, 50, 59), 1px);
+    @include border(rgb(53, 50, 59), 1px 0 0);
     background: black;
+
+
+
+    /*&::after{
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0 solid transparent;
+        border-bottom-width: 0px;
+        border-top-width: 200px;
+        border-left: 1000px solid #6e28e1;
+        top: 131%;
+        margin: 0 0 -110px 0;
+    }*/
 
     .logo-prime {
         top: 50px;
@@ -28,12 +42,20 @@
     }
 }
 
+
+
 .about-holder {
     background: $primePurple;
 
     h3 {
         @include fontSettings($pureWhite, 60px);
+        //margin: -85px 0px 10px;
         margin: 50px 0px 10px;
+        /*position: absolute;
+        margin-right: auto;
+        margin-left: auto;
+        left: 0;
+        right: 0;*/
     }
 
     h4 {
@@ -56,6 +78,10 @@
     .texthold {
         @include dimensions($darkPurple, 450px, 450px, 225px);
     }
+
+    .leftbutton, .rightbutton{
+        color: $pureWhite;
+    }
 }
 
 .resume-holder {
@@ -64,7 +90,7 @@
 
     h3 {
         @include fontSettings($pureWhite, 60px);
-        margin: 28px 0px 10px;
+        margin: 60px 0px 10px;
     }
 }
 
@@ -150,5 +176,6 @@
     margin: 20px;
     background: rgb(110, 40, 225);
     border-radius: 25px;
+    z-index: 4;
     border-style: none;
 }

@@ -1,9 +1,9 @@
+
 var slideId1 = document.getElementById("slideHolder1");
 var slideId2 = document.getElementById("slideHolder2");
 var slideId3 = document.getElementById("slideHolder3");
 var slideId4 = document.getElementById("slideHolder4");
 var slideId5 = document.getElementById("slideHolder5");
-
 var slidehold = document.getElementById("p-aboutPhaze-trig" );
 var slidebtnL = document.getElementById("buttonLeft");
 var slidebtnR = document.getElementById("buttonRight");

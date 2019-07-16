@@ -25,3 +25,31 @@
 .gear-half-bottom {
     @include gearSettings(150px, 0deg, 555px 0 0 -125px);
 }
+
+.gearmid-whole {
+    @include gearSettings(300px, 0deg, -9px 0 0 0px);
+}
+
+.gear-half1{
+    @include gearSettings(150px, -1deg, 231px 0 0 179px);
+}
+
+.gear-half2{
+    @include gearSettings(150px, 0deg, 276px 0 0 -164px);
+}
+
+.gear-half3{
+    @include gearSettings(150px, 0deg, -220px 0 0 -84px);
+}
+
+.gear-quarter1res{
+    @include gearSettings(75px, 14deg, 270px 0 0 71px);
+}
+
+.gear-quarter2res{
+    @include gearSettings(75px, 0deg, 162px 0 0 171px);
+}
+
+.gear-quarter3res{
+    @include gearSettings(75px, 35deg, 380px 0 0 -81px);
+}

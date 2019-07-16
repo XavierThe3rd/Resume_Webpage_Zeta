@@ -1,17 +1,14 @@
 #btn1id {
   margin-top: 30%;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
+  animation-delay: 0.1s; }
 
 #btn2id {
   margin-top: 60%;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
+  animation-delay: 0.2s; }
 
 #btn3id {
   margin-top: 90%;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+  animation-delay: 0.3s; }
 
 #titleWrap, #aboutPhaze, #resumePhaze {
   opacity: 0;
@@ -36,22 +33,11 @@
   transition: all 0.5s ease-out; }
 
 #btn1id, #btn2id, #btn3id {
-  -webkit-animation-duration: 0.25s;
-          animation-duration: 0.25s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
   transform: translateY(-100px); }
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1;
-    transform: translateY(0px); } }
 
 @keyframes fadein {
   0% {
@@ -59,15 +45,6 @@
   100% {
     opacity: 1;
     transform: translateY(0px); } }
-
-@-webkit-keyframes fadeout {
-  0% {
-    opacity: 1;
-    transform: translateY(0px); }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px); } }
-
 @keyframes fadeout {
   0% {
     opacity: 1;
@@ -75,7 +52,6 @@
   100% {
     opacity: 0;
     transform: translateY(-100px); } }
-
 #titleWrap.visible, #aboutPhaze.visible, #p-aboutPhaze-trig.visible, #resumePhaze.visible {
   opacity: 1;
   transform: translateY(0px) scale(1);
@@ -107,6 +83,9 @@
 
 .hgrid14 {
   height: 140%; }
+
+.hgrid15 {
+  height: 150%; }
 
 .abs {
   position: absolute; }
@@ -211,9 +190,20 @@ header {
 .intro-holder {
   color: #35323b;
   box-sizing: border-box;
-  border-width: 1px;
+  border-width: 1px 0 0;
   border-style: solid;
-  background: black; }
+  background: black;
+  /*&::after{
+      content: "";
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-bottom-width: 0px;
+      border-top-width: 200px;
+      border-left: 1000px solid #6e28e1;
+      top: 131%;
+      margin: 0 0 -110px 0;
+  }*/ }
   .intro-holder .logo-prime {
     top: 50px;
     transition: all 0.5s linear 0.25s;
@@ -240,7 +230,12 @@ header {
     color: white;
     font-size: 60px;
     font-weight: 100;
-    margin: 50px 0px 10px; }
+    margin: 50px 0px 10px;
+    /*position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;*/ }
   .about-holder h4 {
     color: white;
     font-size: 40px;
@@ -267,6 +262,8 @@ header {
     width: 450px;
     height: 450px;
     border-radius: 225px; }
+  .about-holder .leftbutton, .about-holder .rightbutton {
+    color: white; }
 
 .resume-holder {
   color: #35323b;
@@ -278,7 +275,7 @@ header {
     color: white;
     font-size: 60px;
     font-weight: 100;
-    margin: 28px 0px 10px; }
+    margin: 60px 0px 10px; }
 
 .resume-holder .file-wrap {
   margin: 175px 0px 0px; }
@@ -347,13 +344,12 @@ header {
   height: 50px;
   color: white;
   font-size: 12px;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   margin: 20px;
   background: #6e28e1;
   border-radius: 25px;
+  z-index: 4;
   border-style: none; }
 
 footer {
@@ -405,9 +401,51 @@ footer {
   transform: rotate(0deg);
   margin: 555px 0 0 -125px; }
 
+.gearmid-whole {
+  width: 300px;
+  height: 300px;
+  transform: rotate(0deg);
+  margin: -9px 0 0 0px; }
+
+.gear-half1 {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-1deg);
+  margin: 231px 0 0 179px; }
+
+.gear-half2 {
+  width: 150px;
+  height: 150px;
+  transform: rotate(0deg);
+  margin: 276px 0 0 -164px; }
+
+.gear-half3 {
+  width: 150px;
+  height: 150px;
+  transform: rotate(0deg);
+  margin: -220px 0 0 -84px; }
+
+.gear-quarter1res {
+  width: 75px;
+  height: 75px;
+  transform: rotate(14deg);
+  margin: 270px 0 0 71px; }
+
+.gear-quarter2res {
+  width: 75px;
+  height: 75px;
+  transform: rotate(0deg);
+  margin: 162px 0 0 171px; }
+
+.gear-quarter3res {
+  width: 75px;
+  height: 75px;
+  transform: rotate(35deg);
+  margin: 380px 0 0 -81px; }
+
 html, body {
   height: 100%;
   background: black;
   margin: 25px 0px 0px; }
 
-/*# sourceMappingURL=maps/styles.css.map */
+/*# sourceMappingURL=styles.css.map */

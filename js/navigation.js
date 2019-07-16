@@ -35,17 +35,18 @@ function openNav(){
 		header.removeChild(removeNav);
 	}
 
-	 function element(varname, idname, textz, class1, class2, class3, class4, class5, class6){
+	 function element(varname, idname, textz, class1, class2, class3, class4, class5, class6, click){
 		varname.setAttribute("id", idname);
 		varname.textContent = textz;
 		varname.classList.add(class1, class2, class3, class4, class5, class6);
+		varname.setAttribute("onclick", click);
 	}
 
-    element(nav, "navid", null, "flex", "grid10", "column", null, null, null);
-    element(div, "divid", null, "flex", "center", "row", null, null, null);
-    element(button1, "btn1id", "about", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background");
-    element(button2, "btn2id", "code", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background");
-	element(button3, "btn3id", "portfolio", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background");
+    element(nav, "navid", null, "flex", "grid10", "column", null, null, null, null);
+    element(div, "divid", null, "flex", "center", "row", null, null, null, null);
+    element(button1, "btn1id", "about", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background", "aboutPage()");
+    element(button2, "btn2id", "code", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background", "codePage()");
+	element(button3, "btn3id", "portfolio", "prime-f", "opacity-none", "point", "abs", "no-border", "no-background", "portfolioPage()");
 	
 	if (header.style.height === "50px"){
         headerFunction("101%", "0.25s", "all 0.3s ease-in, background 0.5s ease-in");
@@ -64,6 +65,7 @@ function openNav(){
         header.addEventListener("transitionend", rmvTime, false);
 	}
 }
+
 
 
 
