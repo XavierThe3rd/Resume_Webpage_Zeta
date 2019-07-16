@@ -1,20 +1,6 @@
 .intro-holder {
     @include border(rgb(53, 50, 59), 1px 0 0);
-    background: black;
-
-
-
-    /*&::after{
-        content: "";
-        width: 0;
-        height: 0;
-        border: 0 solid transparent;
-        border-bottom-width: 0px;
-        border-top-width: 200px;
-        border-left: 1000px solid #6e28e1;
-        top: 131%;
-        margin: 0 0 -110px 0;
-    }*/
+    background: $pureBlack;
 
     .logo-prime {
         top: 50px;
@@ -43,7 +29,6 @@
 }
 
 
-
 .about-holder {
     background: $primePurple;
 
@@ -51,11 +36,6 @@
         @include fontSettings($pureWhite, 60px);
         //margin: -85px 0px 10px;
         margin: 50px 0px 10px;
-        /*position: absolute;
-        margin-right: auto;
-        margin-left: auto;
-        left: 0;
-        right: 0;*/
     }
 
     h4 {
@@ -92,90 +72,46 @@
         @include fontSettings($pureWhite, 60px);
         margin: 60px 0px 10px;
     }
-}
 
-
-
-.resume-holder .file-wrap {
-    margin: 175px 0px 0px;
-}
-
-.resume-holder .file {
-    @include dimensions(none, 200px, 200px, 0px);
-}
-
-.resume-holder .file-backplate {
-    margin: 57px 0px 0px;
-}
-
-.resume-holder .file-front {
-    width: 98px;
-}
-
-#fileFleft {
-    margin: 70px 0px 0px -42px;
-}
-
-#fileFright {
-    margin: 70px 0px 0px 42px;
-}
-
-.resume-holder .file-lock {
-    width: 110px;
-    height: 110px;
-    border-radius: 55px;
-    background: rgb(204, 0, 102);
-    margin: 120px 0px 0px;
-}
-
-#fileLock {
-    transform: scale(1);
-    transition: all 0.5s ease-out 0s;
-}
-
-
-@for $i from 1 through 3 {
-    $marginT: 20px * $i;
-
-    .inside-hold-#{$i}{
-        margin-top: $marginT;
+    .file-wrap {
+        margin: 175px 0px 0px;
     }
-}
 
-.resume-holder .inside-hold-1 button {
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    margin: 75px 0px;
-    background: none;
-    border-style: none;
-}
+    .file {
+        @include dimensions(none, 200px, 200px, 0px);
+    }
 
-.resume-holder .inside-hold-2 button {
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    margin: 75px 0px;
-    background: none;
-    border-style: none;
-}
+    .file-backplate {
+        margin: 57px 0px 0px;
+    }
 
-.resume-holder .inside-hold-3 button {
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    margin: 75px 0px;
-    background: none;
-    border-style: none;
-}
+    .file-front {
+        width: 98px;
+    }
 
-.close-button {
-    width: 50px;
-    height: 50px;
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    margin: 20px;
-    background: rgb(110, 40, 225);
-    border-radius: 25px;
-    z-index: 4;
-    border-style: none;
+    .file-lock {
+        @include dimensions($hotPink, 110px, 110px, 55px);
+        margin: 120px 0px 0px;
+    }
+
+    button{
+        @include fontSettings($pureWhite, 18px);
+        margin: 75px 0px;
+    }
+
+    @for $i from 1 through 3 {
+        $marginT: 20px * $i;
+    
+        .inside-hold-#{$i}{
+            margin-top: $marginT;
+        }
+    }
+
+    .close-button {
+        @include dimensions($primePurple, 50px, 50px, 25px);
+        @include fontSettings($pureWhite, 12px);
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        margin: 20px;
+    }
 }

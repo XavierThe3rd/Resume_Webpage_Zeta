@@ -1,14 +1,8 @@
-/*
-var fileWrap= document.getElementById("fileWrap");
 
-var backPlate= document.createElement("object");
-
-var insideHold= document.createElement("div");
-*/
 
 var symbolX = document.createTextNode("\u274c");
 var closebtn = document.createElement("button");
-closebtn.classList.add("close-button", "abs", "top");
+closebtn.classList.add("close-button", "abs", "top", "no-border", "z4");
 closebtn.setAttribute('id', 'closeid');
 closebtn.appendChild(symbolX);
 

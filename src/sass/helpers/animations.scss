@@ -8,7 +8,6 @@
     }
 }
 
-
 #titleWrap, #aboutPhaze, #resumePhaze {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
@@ -45,6 +44,20 @@
     transform: translateY(-100px);
 }
 
+#fileFleft, #fileFright, #fileLock {
+    transform: scale(1);
+    transition: all 0.5s ease-out 0s;
+}
+
+#fileFleft {
+    margin: 70px 0px 0px -42px;
+}
+
+#fileFright {
+    margin: 70px 0px 0px 42px;
+}
+
+
 
 @keyframes fadein{
     0% {
@@ -72,7 +85,3 @@
     transform: translateY(0px) scale(1);
     transition: all 0.25s linear; 
 }
-#fileFleft, #fileFright {
-    transition: all 0.5s ease-out 0s;
-}
-

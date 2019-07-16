@@ -1,7 +1,15 @@
 footer {
     color: rgb(53, 50, 59);
     box-sizing: border-box;
-    background: rgb(110, 40, 225);
+    background: #320084;
     border-width: 1px;
     border-style: solid;
+
+    div{
+        margin: 25px;
+
+        h4{
+            color: #ff3558;
+        }
+    }
 }
