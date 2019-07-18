@@ -51,16 +51,20 @@
 
     .personal-holder {
         @include dimensions($pureBlack, 450px, 450px, 225px);
-        @include border($borderPurple, 1.5px);
         margin: 20px 0px 0px;
     }
 
     .texthold {
-        @include dimensions($darkPurple, 450px, 450px, 225px);
+        @include dimensions($primePurple, 450px, 450px, 225px);
     }
 
     .leftbutton, .rightbutton{
         color: $pureWhite;
+    }
+
+    .book{
+        width: 300px;
+        margin: 60px auto 30px;
     }
 }
 

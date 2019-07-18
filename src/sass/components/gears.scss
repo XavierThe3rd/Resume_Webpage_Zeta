@@ -53,3 +53,8 @@
 .gear-quarter3res{
     @include gearSettings(75px, 35deg, 380px 0 0 -81px);
 }
+
+.footgearw {
+    @include gearSettings(150px, 0deg, -80px auto 0);
+}
+

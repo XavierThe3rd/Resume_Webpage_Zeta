@@ -94,6 +94,9 @@
 .hgrid15 {
   height: 150%; }
 
+.hgrid20 {
+  height: 200%; }
+
 .abs {
   position: absolute; }
 
@@ -109,8 +112,8 @@
 .center {
   justify-content: center; }
 
-.even {
-  justify-content: space-evenly; }
+.btw {
+  justify-content: space-between; }
 
 .column {
   flex-direction: column; }
@@ -184,7 +187,7 @@ header {
   header button {
     margin: 10px 5px; }
     header button div {
-      background: white;
+      background: #ffffff;
       width: 30px;
       height: 5px;
       border-radius: 2.5px;
@@ -193,7 +196,7 @@ header {
     margin: 5% 0px;
     padding: 0px; }
     header nav button {
-      color: white;
+      color: #ffffff;
       font-size: 50px;
       font-weight: 100; }
 
@@ -213,30 +216,30 @@ header {
     transition: all 1s linear 0.5s;
     margin: 275px auto 0px; }
   .intro-holder .intro-p1 {
-    color: white;
+    color: #ffffff;
     font-size: 30px;
     font-weight: 100;
     margin: 10% 0px 1%; }
   .intro-holder .intro-p2 {
-    color: #6e28e1;
+    color: #6100ff;
     font-size: 30px;
     font-weight: 100;
     margin: 1% 0px; }
 
 .about-holder {
-  background: #6e28e1; }
+  background: #6100ff; }
   .about-holder h3 {
-    color: white;
+    color: #ffffff;
     font-size: 60px;
     font-weight: 100;
     margin: 50px 0px 10px; }
   .about-holder h4 {
-    color: white;
+    color: #ffffff;
     font-size: 40px;
     font-weight: 100;
     margin: 30px 0px 6px; }
   .about-holder p {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 100;
     margin: 30px 70px 100px;
@@ -246,18 +249,17 @@ header {
     width: 450px;
     height: 450px;
     border-radius: 225px;
-    color: #35323b;
-    box-sizing: border-box;
-    border-width: 1.5px;
-    border-style: solid;
     margin: 20px 0px 0px; }
   .about-holder .texthold {
-    background: #521ca8;
+    background: #6100ff;
     width: 450px;
     height: 450px;
     border-radius: 225px; }
   .about-holder .leftbutton, .about-holder .rightbutton {
-    color: white; }
+    color: #ffffff; }
+  .about-holder .book {
+    width: 300px;
+    margin: 60px auto 30px; }
 
 .resume-holder {
   color: #35323b;
@@ -266,7 +268,7 @@ header {
   border-style: solid;
   background: black; }
   .resume-holder h3 {
-    color: white;
+    color: #ffffff;
     font-size: 60px;
     font-weight: 100;
     margin: 60px 0px 10px; }
@@ -288,7 +290,7 @@ header {
     border-radius: 55px;
     margin: 120px 0px 0px; }
   .resume-holder button {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 100;
     margin: 75px 0px; }
@@ -299,11 +301,11 @@ header {
   .resume-holder .inside-hold-3 {
     margin-top: 60px; }
   .resume-holder .close-button {
-    background: #6e28e1;
+    background: #6100ff;
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    color: white;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 100;
     animation-duration: 0.5s;
@@ -311,15 +313,25 @@ header {
     margin: 20px; }
 
 footer {
-  color: #35323b;
   box-sizing: border-box;
-  background: #320084;
+  background: #6100ff;
   border-width: 1px;
   border-style: solid; }
+  footer object {
+    margin: 30px auto 0;
+    width: 175px; }
+  footer p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 100;
+    margin: 30px 30px 40px; }
+    footer p a {
+      text-decoration: underline; }
   footer div {
-    margin: 25px; }
-    footer div h4 {
-      color: #ff3558; }
+    background: black;
+    width: 100%;
+    height: 150px;
+    display: flex; }
 
 .gear-whole {
   width: 300px;
@@ -404,6 +416,12 @@ footer {
   height: 75px;
   transform: rotate(35deg);
   margin: 380px 0 0 -81px; }
+
+.footgearw {
+  width: 150px;
+  height: 150px;
+  transform: rotate(0deg);
+  margin: -80px auto 0; }
 
 html, body {
   height: 100%;

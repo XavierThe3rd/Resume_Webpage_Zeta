@@ -11,6 +11,11 @@ function createAbout(){
         div.classList.add("personal-wrap", "flex", "rel", "center", "grid10");
         h.setAttribute("id", "aboutPhaze");
         div.setAttribute("id", "p2-toptrig");
+        obj = document.createElement("object");
+        obj.classList.add("book");
+        obj.setAttribute("data", "./images/book.svg");
+        obj.setAttribute("type", "image/svg+xml");
+        abt.appendChild(obj);
         abt.appendChild(h);
         abt.appendChild(div);
         

@@ -37,6 +37,10 @@
     height: 150%;
 }
 
+.hgrid20{
+    height:200%;
+}
+
 //------gird system------//
 
 //------positions------//
@@ -65,8 +69,8 @@
     justify-content: center;
 }
 
-.even { 
-    justify-content: space-evenly;
+.btw { 
+    justify-content: space-between;
 }
 
 .column {
