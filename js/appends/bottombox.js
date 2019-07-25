@@ -1,3 +1,100 @@
+function infoHolder(){
+    var specHold = document.createElement("div");
+    specHold.classList.add("spec-holder", "flex", "grid9", "auto", "column");
+
+    var primeH = document.createElement("h3");
+    primeH.textContent= "Specializations"; //--!--//
+
+    var secH = document.createElement("h4");
+    secH.textContent= "What can I provide for your company?"; //--!--//
+
+    var jobH = document.createElement("h3");
+    jobH.textContent= "Work History"; //--!--//
+
+    specHold.appendChild(primeH);
+    specHold.appendChild(secH);
+
+
+    function infoBox(idz, svgName, head, text){
+        var box = document.createElement("div");
+        box.classList.add("spec", "flex", "grid9", "auto", "column");
+        box.setAttribute("id", idz);
+
+        var boxObj= document.createElement("object");
+        boxObj.classList.add("specobj", "abs");
+        boxObj.setAttribute("data", svgName);
+        boxObj.setAttribute("type", "image/svg+xml");
+
+        var boxH = document.createElement("h4");
+        boxH.textContent= head; 
+
+        var boxP = document.createElement("p");
+        boxP.textContent= text;
+
+        specHold.appendChild(box);
+        box.appendChild(boxObj);
+        box.appendChild(boxH);
+        box.appendChild(boxP);
+
+        return box;
+    }
+
+    function jobBox(logo, title, open, idA, idB, idC){
+        var job = document.createElement("div");
+        job.classList.add("job-prime", "flex", "grid9", "auto", "column");
+        job.setAttribute("id", idA);
+
+        var img = document.createElement("img");
+        img.classList.add("work-logo", "rel");
+        img.setAttribute("src", logo);
+        img.setAttribute("id", idB);
+
+        var jobInH = document.createElement("h4");
+        jobInH.textContent= title;
+        jobInH.setAttribute("id", idC);
+
+        var jobBtn = document.createElement("button");
+        jobBtn.classList.add("button-job", "no-border", "no-background", "flex", "column", "auto", "left", "right", "center", "abs", "z4", "nopad");
+        jobBtn.setAttribute("onclick", open);
+
+        var btnBars1 = document.createElement("div");
+        btnBars1.classList.add("barz2");
+        var btnBars2 = document.createElement("div");
+        btnBars2.classList.add("barz2");
+        var btnBars3 = document.createElement("div");
+        btnBars3.classList.add("barz2");
+
+        specHold.appendChild(job);
+        job.appendChild(img);
+        job.appendChild(jobInH);
+        job.appendChild(jobBtn);
+        jobBtn.appendChild(btnBars1);
+        jobBtn.appendChild(btnBars2);
+        jobBtn.appendChild(btnBars3);
+
+        return job;
+    }
+
+    infoBox("spec1", "./images/lightbulb.svg", "CreativeThinking", "With acurate creative thinking skills, I can carry an idea for your company and make it into an acurate, eliquent reality with several realities to choose from.");
+    infoBox("spec2", "./images/code.svg", "Coding Knowledge", "Coding capabilities that are both adiquet and versitile with a knowledgable undestanding of html, scss, javascript, php, and databases.");
+    infoBox("spec3", "./images/digpen.svg", "Digital Art Proficiency", "With experience in digital art programs from adobe programs to sketch to figma, my expertiece provides an excellent understanding and execution in use to create stunning digital artwork.");
+    infoBox("spec4", "./images/pencil.svg", "Fine Art Proficiency", "Providing excelence in fine art skills from illustration to shading and even sculpting, my skillset can carry an idea on paper without the use of technology.");
+    specHold.appendChild(jobH);
+    jobBox("./images/QintelLogo.png", "Internship", "openJob()", "jobPrime1", "imageHolder", "jobTag");
+    
+    return specHold;
+
+}
+
+var infoHld = infoHolder();
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------//
+
+
 
 
 

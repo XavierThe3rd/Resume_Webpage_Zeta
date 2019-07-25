@@ -1,116 +1,86 @@
-.intro-holder {
-    @include border(rgb(53, 50, 59), 1px 0 0);
-    background: $pureBlack;
+.spec-holder{
+    @include dimensions($pureBlack, 315px, 80%, 0, 0);
 
-    .intdiv{
-        margin: 70px 0 0;
+    h4{
+        @include fontSettings($pureWhite, 25px, 500, 1, 0 0 55px);
     }
 
-    .logo-prime {
-        top: 50px;
-        transition: all 0.5s linear 0.25s;
-        width: 250px;
-    }
-
-    .botrig {
-        top: 50%;
-    }
-
-    .title-wrap {
-        transition: all 1s linear 0.5s;
-        margin: 275px auto 0px;
-    }
-
-    .intro-p1 {
-        @include fontSettings($pureWhite, 30px, 400);
-        margin: 10% 0px 1%;
-    }
-
-    .intro-p2 {
-        @include fontSettings($primePurple, 30px, 400);
-        margin: 1% 0px 50px;
-    }
-}
-
-
-.about-holder {
-    background: $primePurple;
-
-    .about-twrap{
-        width: 315px;
-    }
-
-    h3 {
-        @include fontSettings($pureWhite, 60px, 600);
-        //margin: -85px 0px 10px;
-        margin: 40px 0px 10px;
-    }
-
-    p {
-        @include fontSettings($pureWhite, 22px, 400);
-        word-wrap: break-word;
-        margin: 0px 0px 10px;
-    }
-
-    .personal-wrap{
-        height:500px;
-    }
-
-    .personal-holder {
-        @include dimensions($pureBlack, 450px, 450px, 225px);
-        margin: 20px 0px 0px;
-
-        h4 {
-            @include fontSettings($pureWhite, 40px, 500);
-            margin: 30px 0px 6px; 
+    .spec{
+        @include border($borderPurple, 1px);
+        @include dimensions($pureBlack, 315px, 200px, 0, 15px 0 0);
+    
+        .specobj{
+            width: 50px;
+            margin: 10px 15px 15px;
         }
-
-        p {
-            @include fontSettings($pureWhite, 18px, 400);
-            margin: 30px 70px 100px;
-            word-wrap: break-word;
+    
+        h4{
+            @include fontSettings($primePurple, 22px, 500, 1, 20px 0 0 80px); 
+        }
+    
+        p{
+            @include fontSettings($pureWhite, 16px, 300, 1.5, 20px 0 15px 20px);
         }
     }
 
-    .texthold {
-        @include dimensions($darkPurple, 450px, 450px, 225px);
-    }
-
-    .leftbutton, .rightbutton{
-        color: $pureWhite;
-        top: 225px;
-    }
-
-    .book{
-        width: 300px;
-        margin: 60px auto 30px;
-    }
-
-    .resbutton{
-        @include border($pureWhite, 1px);
-        @include dimensions($primePurple, 300px, 75px, 10px);
-        @include fontSettings($pureWhite, 22px, 500); 
-        margin: 0 auto 50px;
-        white-space: normal;
+    .job-prime{
+        @include border(rgb(53, 50, 59), 1px);
+        @include dimensions($pureBlack, 315px, 250px, 0, 0);
+    
+        img{
+            width: 200px;
+            margin: 15px auto;
+            
+        }
+    
+        h4{
+            @include fontSettings($primePurple, 25px, 600, 1, 25px auto);
+        }
+    
+        p{
+            @include fontSettings($pureWhite, 12px, 500, 1.5, 0 15px 15px);
+        }
+    
+        span{
+            margin: 10px 0 0;
+        }
+    
+        button{
+            width:30px;
+            transform: translateY(200px);
+    
+        
+            div {
+                @include dimensions($pureWhite, 30px, 5px, 2.5px, 2px auto);
+            }
+        }
     }
 }
+
 
 .resume-holder {
     @include border($borderPurple, 1px 0);
     background: $pureBlack;
 
     h3 {
-        @include fontSettings($pureWhite, 40px, 500);
-        margin: 60px 0px 15px;
+        @include fontSettings($pureWhite, 40px, 500, 1, 60px 0 15px);
     }
 
     .file-wrap {
         margin: 175px 0px 0px;
         height: 430px;
+
+        button{
+            @include fontSettings($pureWhite, 18px, 400, 1, 75px 0);
+        }
+
+        .file-lock {
+            @include dimensions($hotPink, 110px, 110px, 55px, 120px 0 0);
+        }
     }
 
     .file {
-        @include dimensions(none, 200px, 200px, 0px); 
+        @include dimensions(none, 200px, 200px, 0px, 0); 
     }
 
     .file-backplate {
@@ -121,15 +91,6 @@
         width: 98px;
     }
 
-    .file-lock {
-        @include dimensions($hotPink, 110px, 110px, 55px);
-        margin: 120px 0px 0px;
-    }
-
-    button{
-        @include fontSettings($pureWhite, 18px, 400);
-        margin: 75px 0px;
-    }
 
     @for $i from 1 through 3 {
         $marginT: 20px * $i;
@@ -140,83 +101,20 @@
     }
 
     .close-button {
-        @include dimensions($primePurple, 50px, 50px, 25px);
-        @include fontSettings($pureWhite, 12px, 100);
+        @include dimensions($primePurple, 50px, 50px, 25px, 20px);
+        @include fontSettings($pureWhite, 12px, 100, 1, 0);
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
-        margin: 20px;
     }
 }
 
-.spec-holder{
-    @include dimensions($pureBlack, 315px, 80%, 0);
-}
 
-.spec{
-    @include border(rgb(53, 50, 59), 1px);
-    @include dimensions($pureBlack, 315px, 200px, 0);
-    margin:15px 0 0;
 
-    .specobj{
-        width: 50px;
-        margin: 10px 15px 15px;
-    }
 
-    h4{
-        @include fontSettings($primePurple, 22px, 500); 
-        margin: 20px 0 0 80px;
-    }
 
-    p{
-        @include fontSettings($pureWhite, 16px, 300);
-        margin: 20px 0 15px 20px;  
-    }
-}
 
-h4{
-    @include fontSettings($pureWhite, 25px, 500);
-    margin: 0 0 55px;
-}
 
-.job-prime{
-    @include border(rgb(53, 50, 59), 1px);
-    @include dimensions($pureBlack, 315px, 250px, 0);
 
-    img{
-        width: 200px;
-        margin: 15px auto;
-        
-    }
-
-    h4{
-        @include fontSettings($primePurple, 25px, 600);
-        margin: 25px auto;
-    }
-
-    p{
-        @include fontSettings($pureWhite, 12px, 500);
-        margin: 0 15px 15px;
-    }
-
-    span{
-        margin: 10px 0 0;
-    }
-
-    button{
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        padding:0;
-        width:30px;
-        transform: translateY(200px);
-
-    
-        div {
-            @include dimensions($pureWhite, 30px, 5px, 2.5px);
-            margin: 2px auto;
-        }
-    }
-}
 
 
 

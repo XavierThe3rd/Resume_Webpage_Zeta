@@ -1,0 +1,31 @@
+.intro-holder {
+    @include border(rgb(53, 50, 59), 1px 0 0);
+    background: $pureBlack;
+
+    .intdiv{
+        margin: 70px 0 0;
+    }
+
+    .logo-prime {
+        top: 50px;
+        transition: all 0.5s linear 0.25s;
+        width: 250px;
+    }
+
+    .botrig {
+        top: 50%;
+    }
+
+    .title-wrap {
+        transition: all 1s linear 0.5s;
+        margin: 275px auto 0px;
+    }
+
+    .intro-p1 {
+        @include fontSettings($pureWhite, 22px, 400, 1.3, 15px 0 2px);
+    }
+
+    .intro-p2 {
+        @include fontSettings($primePurple, 22px, 400, 1.3, 3px 0 50px);
+    }
+}

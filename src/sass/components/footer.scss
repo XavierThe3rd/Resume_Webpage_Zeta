@@ -11,8 +11,7 @@ footer {
     }
 
     p{
-        @include fontSettings($pureWhite, 15px, 400);
-        margin:30px 30px 40px;
+        @include fontSettings($pureWhite, 15px, 400, 1.5, 30px 30px 40px);
 
         a{
             text-decoration: underline;

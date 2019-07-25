@@ -45,6 +45,40 @@
                 </div>
             </div>
             <div class="resume-holder over-x flex center hgrid11 grid10"> 
+                <div class="spec-holder flex grid9 auto column">
+                    <h3>Specializations</h3>
+                    <h4>What can I provide for your company?</h4>
+                    <div class="spec flex hgrid8 grid9 auto column">
+                        <object class="specobj abs"  data="./images/lightbulb.svg" type="image/svg+xml"></object>
+                        <h4>Creative Thinking</h4>
+                        <p>With aaccurate creative thinking skills, I can carry an idea for your company and make it into an acurate, eliquent reality with several realities to choose from.</p>
+                    </div>
+                    <div class="spec flex hgrid8 grid9 auto column">
+                        <object class="specobj abs"  data="./images/code.svg" type="image/svg+xml"></object>
+                        <h4>Coding Skill Set</h4>
+                        <p>Coding capabilities that are both adiquet and versitile with a knowledgable undestanding of html, scss, javascript, php, and databases.</p>
+                    </div>
+                    <div class="spec flex hgrid8 grid9 auto column">
+                        <object class="specobj abs"  data="./images/digpen.svg" type="image/svg+xml"></object>
+                        <h4>Digital Art Proficiency</h4>
+                        <p>With experience in digital art programs from adobe programs to sketch to figma, my expertiece provides an excellent understanding and execution in use to create stunning digital artwork. </p>
+                    </div>
+                    <div class="spec flex hgrid8 grid9 auto column" id="spec4">
+                        <object class="specobj abs"  data="./images/pencil.svg" type="image/svg+xml"></object>
+                        <h4>Fine Art Proficiency</h4>
+                        <p>Providing excelence in fine art skills from illustration to shading and even sculpting, my skillset can carry an idea on paper without the use of technology.</p>
+                    </div>
+                        <h3>Related Work History</h3>
+                    <div class="job-prime flex hgrid8 grid9 auto column" id="jobPrime1">
+                        <img src="./images/QintelLogo.png" class="work-logo rel transjob" id= "imageHolder">
+                        <h4 id ="jobTag" class=" transjob">Internship</h4>
+                        <button class=" button-job transjob no-border no-background flex column auto left right center abs z4 nopad" id ="jobButton" onclick ="openJob()">
+                            <div class="barz2"></div>
+                            <div class="barz2"></div>
+                            <div class="barz2"></div>
+                        </button>
+                    </div>
+                </div>
                 <h3 class= "prime-f t-center opacity-none abs"id= "resumePhaze">resume</h3>
                 <div class ="resume-wrap over-x grid10 flex rel column" id ="resumeWrap">
                     <div class= "file-wrap  rel flex center" id= "fileWrap">
@@ -73,157 +107,3 @@
             <footer class="flex grid10 hgrid2"></footer>
 
 
-
-
-
-            var resumeId = document.getElementById("resumeHolder");
-
-
-	function initHtag() {
-		var htag = document.createElement("h3");
-		htag.textContent = "Resume"; //--!--//
-		htag.classList.add("prime-f", "t-center", "opacity-none", "abs");
-        htag.setAttribute("id", "resumePhaze");
-
-        return htag;
-    }
-
-    function initRWtag() {
-        var rWrap = document.createElement("div");
-        rWrap.classList.add("resume-wrap", "over-x", "grid10", "flex", "rel", "column");
-        rWrap.setAttribute("id", "resumeWrap");
-		
-        function fileDiv() {
-			var fdiv = document.createElement("div");
-            fdiv.classList.add("file-wrap", "rel", "flex", "center");
-            fdiv.setAttribute("id", "fileWrap");
-            rWrap.appendChild(fdiv);
-
-            function baseObj(clazz, iD, data) {
-				var bObj = document.createElement("object");
-                bObj.classList.add(clazz, "z3", "abs", "file");
-                bObj.setAttribute("id", iD);
-                bObj.setAttribute("data", data);
-                bObj.setAttribute("type", "image/svg+xml");
-                
-				fdiv.appendChild(bObj);
-				return bObj;
-			}
-                       
-			function inDiv(dClazz, txt,  iDcon, iDobj1, iDobj2, click) {
-                var dCon = document.createElement("div");
-                var btn = document.createElement("button");
-                var inObjA = document.createElement("object");
-                var inObjB = document.createElement("object");
-
-                btn.textContent= txt;
-				
-                dCon.classList.add(dClazz, "flex", "center", "abs", "z3");
-                btn.classList.add("z2", "prime-f","t-center","point" );
-                inObjA.classList.add("file", "file-page", "abs");
-                inObjB.classList.add("file", "file-holder", "abs");
-
-                dCon.setAttribute("id", iDcon);
-                inObjA.setAttribute("id", iDobj1);
-                inObjB.setAttribute("id", iDobj2);
-
-                inObjA.setAttribute("data", "./images/file-page.svg");
-                inObjB.setAttribute("data", "./images/file-holder.svg");
-                inObjA.setAttribute("type", "image/svg+xml");
-                inObjB.setAttribute("type", "image/svg+xml");
-
-                btn.setAttribute("onclick", click);
-
-				fdiv.appendChild(dCon);
-                dCon.appendChild(inObjA);
-                dCon.appendChild(inObjB);
-				dCon.appendChild(btn);
-
-				return dCon;
-
-            }
-            
-            function primeBtn(){
-                var dBtn = document.createElement("button");
-                dBtn.classList.add("file-lock", "no-border", "abs", "z4");
-                dBtn.setAttribute("id", "fileLock");
-                dBtn.setAttribute("onclick", "fileOpen()");
-                fdiv.appendChild(dBtn);
-                return dBtn;
-            } 
-
-			baseObj("file-backplate", "filebackPlate", "./images/file-backplate.svg");
-
-			inDiv("inside-hold-1", "Official Resume", "insideH1", "filePageA", "fileHolderA" ,"openDocumentA()");
-            inDiv("inside-hold-2", "Degrees, Certs, Ex.", "insideH2", "filePageB", "fileHolderB" ,"openDocumentB()");
-            inDiv("inside-hold-3", "Other", "insideH3", "filePageC", "fileHolderC" ,"openDocumentC()");		
-
-			baseObj("file-front", "fileFleft", "./images/file-frontplate-left.svg");
-			baseObj("file-front", "fileFright", "./images/file-frontplate-right.svg" );
-            primeBtn();
-            return fdiv;
-        }
-        
-		fileDiv();
-		return rWrap;
-	}
-
-var hHld = initHtag();   
-var resHld = initRWtag();
-
-
-
-
-
-var jb1 = document.getElementById("jobPrime1");
-var logo = document.getElementById("imageHolder");
-var htag = document.getElementById("jobTag");
-var btn = document.getElementById("jobButton");
-
-var p = document.createElement("p");
-p.classList.add("opacity-none", "transjob");
-var span1 = document.createElement("span");
-span1.textContent= "from June 25, 2019  -  to August 29, 2019";
-var span2 = document.createElement("span");
-span2.textContent= "Qintel located in Pittsburgh PA. is one of the top cyber security companies in the nation which served as an excellent synthesis for my graphic design and coding background.";
-var span3 = document.createElement("span");
-span3.textContent= "Responsibilities included merchandise design, business paraphanalia design (brochures, product fliers, ex.), ux/ui for various company matenance materials, and invessigation participation.";
-
-
-
-
-function openJob(){
-
-    function addText(){
-        htag.style.display="none";
-        logo.style.display= "none";
-        p.style.opacity = "1.0";
-        htag.removeEventListener("transitionend", addText, false);
-    }
-
-    function openJobNext(){
-
-        function addHeads(){
-            htag.style.display="block";
-            logo.style.display= "block";
-            htag.style.opacity ="1";
-            logo.style.opacity ="1";
-            jb1.removeChild(p);
-        }
-    
-        p.style.opacity= "0";
-        p.addEventListener("transitionend", addHeads);
-        btn.removeEventListener("onclick", openJobNext);
-        btn.addEventListener("onclick", openJob);
-    }
-    
-    htag.style.opacity ="0";
-    logo.style.opacity ="0";
-    jb1.appendChild(p);
-    p.appendChild(span1);
-    p.appendChild(span2);
-    p.appendChild(span3);
-    htag.addEventListener("transitionend", addText);
-    //btn.removeEventListener("onclick", openJob);
-    btn.addEventListener("onclick", openJobNext);
-}
