@@ -8,38 +8,15 @@
     width: 70%;
 }
 
+.grid8 {
+    width: 80%;
+}
+
 .grid10 {
     width: 100%;
 }
 
-.hgrid2{
-    height: 25%;
-}
 
-.hgrid10 {
-    height: 100%;
-}
-
-
-.hgrid11 {
-    height: 110%;
-}
-
-.hgrid12 {
-    height: 120%;
-}
-
-.hgrid14 {
-    height: 140%;
-}
-
-.hgrid15 {
-    height: 150%;
-}
-
-.hgrid20{
-    height:200%;
-}
 
 //------gird system------//
 
@@ -77,6 +54,10 @@
     flex-direction: column;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 //------flex------//
 
 //------zindex------//
@@ -105,17 +86,15 @@
 
 //------font settings------//
 
-.prime-f {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-}
 
-.t-center {
-    text-align: center;
-}
+
+
 
 //------font settings------//
 
+.t-center{
+    text-align: center;
+}
 //------direction------//
 
 .top {

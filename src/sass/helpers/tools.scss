@@ -1,5 +1,5 @@
 @mixin border($color, $size){
-    color: $color;
+    border-color: $color;
     box-sizing: border-box;
     border-width: $size;
     border-style: solid;
@@ -12,10 +12,10 @@
     border-radius: $radius;
 }
 
-@mixin fontSettings($color, $size){
+@mixin fontSettings($color, $size, $weight){
     color: $color;
     font-size: $size;
-    font-weight: 100;
+    font-weight: $weight;
 }
 
 @mixin gearSettings($widheight, $rot, $margin){

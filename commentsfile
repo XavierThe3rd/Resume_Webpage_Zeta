@@ -170,3 +170,60 @@
 
 var hHld = initHtag();   
 var resHld = initRWtag();
+
+
+
+
+
+var jb1 = document.getElementById("jobPrime1");
+var logo = document.getElementById("imageHolder");
+var htag = document.getElementById("jobTag");
+var btn = document.getElementById("jobButton");
+
+var p = document.createElement("p");
+p.classList.add("opacity-none", "transjob");
+var span1 = document.createElement("span");
+span1.textContent= "from June 25, 2019  -  to August 29, 2019";
+var span2 = document.createElement("span");
+span2.textContent= "Qintel located in Pittsburgh PA. is one of the top cyber security companies in the nation which served as an excellent synthesis for my graphic design and coding background.";
+var span3 = document.createElement("span");
+span3.textContent= "Responsibilities included merchandise design, business paraphanalia design (brochures, product fliers, ex.), ux/ui for various company matenance materials, and invessigation participation.";
+
+
+
+
+function openJob(){
+
+    function addText(){
+        htag.style.display="none";
+        logo.style.display= "none";
+        p.style.opacity = "1.0";
+        htag.removeEventListener("transitionend", addText, false);
+    }
+
+    function openJobNext(){
+
+        function addHeads(){
+            htag.style.display="block";
+            logo.style.display= "block";
+            htag.style.opacity ="1";
+            logo.style.opacity ="1";
+            jb1.removeChild(p);
+        }
+    
+        p.style.opacity= "0";
+        p.addEventListener("transitionend", addHeads);
+        btn.removeEventListener("onclick", openJobNext);
+        btn.addEventListener("onclick", openJob);
+    }
+    
+    htag.style.opacity ="0";
+    logo.style.opacity ="0";
+    jb1.appendChild(p);
+    p.appendChild(span1);
+    p.appendChild(span2);
+    p.appendChild(span3);
+    htag.addEventListener("transitionend", addText);
+    //btn.removeEventListener("onclick", openJob);
+    btn.addEventListener("onclick", openJobNext);
+}

@@ -8,10 +8,10 @@
     }
 }
 
-#titleWrap, #aboutPhaze, #resumePhaze {
+#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
-    transition: all 0.25s linear 0s;
+    transition: all 0.25s linear; 
 }
 
 #slideHolder1 {
@@ -85,3 +85,16 @@
     transform: translateY(0px) scale(1);
     transition: all 0.25s linear; 
 }
+
+#pm1-Phaze.visible{
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    transition: all 0.25s linear; 
+    transition-delay: 0.1s;
+}
+
+#jobTag{
+    opacity: 1;
+    transform: scale(1);
+}
+

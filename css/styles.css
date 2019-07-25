@@ -10,10 +10,10 @@
   margin-top: 90%;
   animation-delay: 0.3s; }
 
-#titleWrap, #aboutPhaze, #resumePhaze {
+#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
   opacity: 0;
   transform: translateY(20px) scale(0.95);
-  transition: all 0.25s linear 0s; }
+  transition: all 0.25s linear; }
 
 #slideHolder1 {
   transform: translateX(0px);
@@ -67,35 +67,27 @@
   transform: translateY(0px) scale(1);
   transition: all 0.25s linear; }
 
+#pm1-Phaze.visible {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+  transition: all 0.25s linear;
+  transition-delay: 0.1s; }
+
+#jobTag {
+  opacity: 1;
+  transform: scale(1); }
+
 .grid3 {
   width: 30%; }
 
 .grid7 {
   width: 70%; }
 
+.grid8 {
+  width: 80%; }
+
 .grid10 {
   width: 100%; }
-
-.hgrid2 {
-  height: 25%; }
-
-.hgrid10 {
-  height: 100%; }
-
-.hgrid11 {
-  height: 110%; }
-
-.hgrid12 {
-  height: 120%; }
-
-.hgrid14 {
-  height: 140%; }
-
-.hgrid15 {
-  height: 150%; }
-
-.hgrid20 {
-  height: 200%; }
 
 .abs {
   position: absolute; }
@@ -118,6 +110,9 @@
 .column {
   flex-direction: column; }
 
+.wrap {
+  flex-wrap: wrap; }
+
 .z1m {
   z-index: -1; }
 
@@ -132,10 +127,6 @@
 
 .z6 {
   z-index: 6; }
-
-.prime-f {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100; }
 
 .t-center {
   text-align: center; }
@@ -167,10 +158,8 @@
 .over-x {
   overflow: hidden; }
 
-h1 {
-  color: white;
-  font-size: 20px;
-  margin: 10px 0px; }
+h1, h2, h3, h4, p {
+  font-family: Aproxima-nova, "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 p {
   line-height: 1.5; }
@@ -179,11 +168,16 @@ span {
   display: block; }
 
 header {
-  color: #35323b;
+  border-color: #35323b;
   box-sizing: border-box;
   border-width: 0px 0px 1px;
   border-style: solid;
   background: black; }
+  header h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0px; }
   header button {
     margin: 10px 5px; }
     header button div {
@@ -198,18 +192,20 @@ header {
     header nav button {
       color: #ffffff;
       font-size: 50px;
-      font-weight: 100; }
+      font-weight: 600; }
 
 .intro-holder {
-  color: #35323b;
+  border-color: #35323b;
   box-sizing: border-box;
   border-width: 1px 0 0;
   border-style: solid;
   background: black; }
+  .intro-holder .intdiv {
+    margin: 70px 0 0; }
   .intro-holder .logo-prime {
     top: 50px;
     transition: all 0.5s linear 0.25s;
-    width: 100%; }
+    width: 250px; }
   .intro-holder .botrig {
     top: 50%; }
   .intro-holder .title-wrap {
@@ -218,62 +214,88 @@ header {
   .intro-holder .intro-p1 {
     color: #ffffff;
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 400;
     margin: 10% 0px 1%; }
   .intro-holder .intro-p2 {
     color: #6100ff;
     font-size: 30px;
-    font-weight: 100;
-    margin: 1% 0px; }
+    font-weight: 400;
+    margin: 1% 0px 50px; }
 
 .about-holder {
   background: #6100ff; }
+  .about-holder .about-twrap {
+    width: 315px; }
   .about-holder h3 {
     color: #ffffff;
     font-size: 60px;
-    font-weight: 100;
-    margin: 50px 0px 10px; }
-  .about-holder h4 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 100;
-    margin: 30px 0px 6px; }
+    font-weight: 600;
+    margin: 40px 0px 10px; }
   .about-holder p {
     color: #ffffff;
-    font-size: 18px;
-    font-weight: 100;
-    margin: 30px 70px 100px;
-    word-wrap: break-word; }
+    font-size: 22px;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin: 0px 0px 10px; }
+  .about-holder .personal-wrap {
+    height: 500px; }
   .about-holder .personal-holder {
     background: black;
     width: 450px;
     height: 450px;
     border-radius: 225px;
     margin: 20px 0px 0px; }
+    .about-holder .personal-holder h4 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 500;
+      margin: 30px 0px 6px; }
+    .about-holder .personal-holder p {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 400;
+      margin: 30px 70px 100px;
+      word-wrap: break-word; }
   .about-holder .texthold {
-    background: #6100ff;
+    background: #4700b9;
     width: 450px;
     height: 450px;
     border-radius: 225px; }
   .about-holder .leftbutton, .about-holder .rightbutton {
-    color: #ffffff; }
+    color: #ffffff;
+    top: 225px; }
   .about-holder .book {
     width: 300px;
     margin: 60px auto 30px; }
+  .about-holder .resbutton {
+    border-color: #ffffff;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    background: #6100ff;
+    width: 300px;
+    height: 75px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 auto 50px;
+    white-space: normal; }
 
 .resume-holder {
-  color: #35323b;
+  border-color: #35323b;
   box-sizing: border-box;
-  border-width: 1px;
+  border-width: 1px 0;
   border-style: solid;
   background: black; }
   .resume-holder h3 {
     color: #ffffff;
-    font-size: 60px;
-    font-weight: 100;
-    margin: 60px 0px 10px; }
+    font-size: 40px;
+    font-weight: 500;
+    margin: 60px 0px 15px; }
   .resume-holder .file-wrap {
-    margin: 175px 0px 0px; }
+    margin: 175px 0px 0px;
+    height: 430px; }
   .resume-holder .file {
     background: none;
     width: 200px;
@@ -284,7 +306,7 @@ header {
   .resume-holder .file-front {
     width: 98px; }
   .resume-holder .file-lock {
-    background: #CC0066;
+    background: #df021f;
     width: 110px;
     height: 110px;
     border-radius: 55px;
@@ -292,7 +314,7 @@ header {
   .resume-holder button {
     color: #ffffff;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 400;
     margin: 75px 0px; }
   .resume-holder .inside-hold-1 {
     margin-top: 20px; }
@@ -312,6 +334,80 @@ header {
     animation-fill-mode: forwards;
     margin: 20px; }
 
+.spec-holder {
+  background: black;
+  width: 315px;
+  height: 80%;
+  border-radius: 0; }
+
+.spec {
+  border-color: #35323b;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  background: black;
+  width: 315px;
+  height: 200px;
+  border-radius: 0;
+  margin: 15px 0 0; }
+  .spec .specobj {
+    width: 50px;
+    margin: 10px 15px 15px; }
+  .spec h4 {
+    color: #6100ff;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 20px 0 0 80px; }
+  .spec p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20px 0 15px 20px; }
+
+h4 {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 55px; }
+
+.job-prime {
+  border-color: #35323b;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  background: black;
+  width: 315px;
+  height: 250px;
+  border-radius: 0; }
+  .job-prime img {
+    width: 200px;
+    margin: 15px auto; }
+  .job-prime h4 {
+    color: #6100ff;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 25px auto; }
+  .job-prime p {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 15px 15px; }
+  .job-prime span {
+    margin: 10px 0 0; }
+  .job-prime button {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+    width: 30px;
+    transform: translateY(200px); }
+    .job-prime button div {
+      background: #ffffff;
+      width: 30px;
+      height: 5px;
+      border-radius: 2.5px;
+      margin: 2px auto; }
+
 footer {
   box-sizing: border-box;
   background: #6100ff;
@@ -323,15 +419,10 @@ footer {
   footer p {
     color: #ffffff;
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 400;
     margin: 30px 30px 40px; }
     footer p a {
       text-decoration: underline; }
-  footer div {
-    background: black;
-    width: 100%;
-    height: 150px;
-    display: flex; }
 
 .gear-whole {
   width: 300px;

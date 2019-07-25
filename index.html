@@ -20,8 +20,43 @@
             </div>
         </header>
         <div class="intro-holder over-x flex center column hgrid14 grid10" id="introHolder"></div>
-        <div class="about-holder flex center hgrid20 grid10 z3" id = "aboutHolder"></div>
-        <div class="resume-holder over-x flex center hgrid11 grid10" id ="resumeHolder"></div>
+        <div class="about-holder flex center hgrid22 grid10 z3" id = "aboutHolder"></div>
+        <div class="resume-holder over-x flex center hgrid100 grid10 wrap" id ="resumeHolder">
+                <div class="spec-holder flex grid9 auto column">
+                    <h3>Specializations</h3>
+                    <h4>What can I provide for your company?</h4>
+                        <div class="spec flex hgrid8 grid9 auto column">
+                        <object class="specobj abs"  data="./images/lightbulb.svg" type="image/svg+xml"></object>
+                        <h4>Creative Thinking</h4>
+                        <p>With aaccurate creative thinking skills, I can carry an idea for your company and make it into an acurate, eliquent reality with several realities to choose from.</p>
+                        </div>
+                        <div class="spec flex hgrid8 grid9 auto column">
+                        <object class="specobj abs"  data="./images/code.svg" type="image/svg+xml"></object>
+                        <h4>Coding Skill Set</h4>
+                        <p>Coding capabilities that are both adiquet and versitile with a knowledgable undestanding of html, scss, javascript, php, and databases.</p>
+                        </div>
+                        <div class="spec flex hgrid8 grid9 auto column">
+                            <object class="specobj abs"  data="./images/digpen.svg" type="image/svg+xml"></object>
+                            <h4>Digital Art Proficiency</h4>
+                            <p>With experience in digital art programs from adobe programs to sketch to figma, my expertiece provides an excellent understanding and execution in use to create stunning digital artwork. </p>
+                        </div>
+                        <div class="spec flex hgrid8 grid9 auto column" id="spec4">
+                        <object class="specobj abs"  data="./images/pencil.svg" type="image/svg+xml"></object>
+                        <h4>Fine Art Proficiency</h4>
+                        <p>Providing excelence in fine art skills from illustration to shading and even sculpting, my skillset can carry an idea on paper without the use of technology.</p>
+                        </div>
+                        <h3>Related Work History</h3>
+                    <div class="job-prime flex hgrid8 grid9 auto column" id="jobPrime1">
+                        <img src="./images/QintelLogo.png" class="work-logo rel transjob" id= "imageHolder">
+                        <h4 id ="jobTag" class=" transjob">Internship</h4>
+                        <button class=" button-job transjob no-border no-background flex column center abs z4" id ="jobButton" onclick ="openJob()">
+                            <div class="barz"></div>
+                            <div class="barz"></div>
+                            <div class="barz"></div>
+                        </button>
+                    </div>
+                </div>
+        </div>
         <footer class="flex grid10 column">
                 <object class="footlogo" data= "./images/DragonLogoWhite.svg" type="image/svg+xml"></object>
                 <p class="prime-f t-center">
@@ -30,9 +65,6 @@
                         <a class="point">CLICK HERE</a>
                     </span> 
                 </p>
-                <div class="over-x flex center">
-                    <object class="footgearw abs" id= "gearFW" data= "./images/GearHalfWire.svg" type="image/svg+xml"></object>                  
-                </div>
         </footer>
         
         <script src="./js/scrollmagic/uncompressed/ScrollMagic.js"></script>
@@ -49,7 +81,9 @@
         <script src="./js/appends/bottombox.js"></script>
         <script src="./js/scrollmag.js"></script>
         <script src="./js/appends/appender.js"></script>
+
         <script src="./js/debugios.js"></script>
+        <script src="./js/jobholder.js"></script>
         <script src= "./js/slideshow.js"></script>
         <script src="./js/fileanimation.js"></script>
         <script src="./js/script.js"></script>

@@ -1,6 +1,12 @@
 header {
     @include border($borderPurple, 0px 0px 1px);
     background: $pureBlack;
+    
+
+    h1{
+        @include fontSettings($pureWhite, 20px, 700);
+        margin: 10px 0px;
+    }
 
     button{
         margin: 10px 5px;
@@ -16,7 +22,7 @@ header {
         padding: 0px;
         
         button{
-            @include fontSettings($pureWhite, 50px);
+            @include fontSettings($pureWhite, 50px, 600);
         }
     }
 }
