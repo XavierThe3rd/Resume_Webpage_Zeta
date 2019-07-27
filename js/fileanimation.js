@@ -11,6 +11,7 @@ var resPageA = document.getElementById("filePageA");
 var resPageB = document.getElementById("filePageB");
 var resPageC = document.getElementById("filePageC");
 var resWrap = document.getElementById("resumeWrap");
+var fileWrap = document.getElementById("fileWrap");
 
 var leftP = document.getElementById("fileFleft");
 var rightP = document.getElementById("fileFright");
@@ -86,6 +87,9 @@ function rePositionA(){
     opacityChange("0", "1", null, "1", "1", "1", null, null);
     transChange("0s", null, null, "0.5s", "0.5s", "0.5s");
     lateChange("0", null, null, "-90px, -50px", null, null, null, null, null);
+    if(window.innerWidth >760){
+        lateChange(null, null, null, "-110px, -60px", null, null, null, null, null);
+    }
     miscChange("relative", null, null, null, null);
 }
 
@@ -110,6 +114,9 @@ function fileOpen(){
         opacityChange("0", null, null, null, null, null, null, null);
         transChange(null, null, null, "0s", "0s", "0s");
         lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
+        if(window.innerWidth >760){
+            lateChange(null, null, null, "-110px, -60px", "110px, -79px", "0, 170px", "0.5", "-100px", "100px");
+        }
     }else{
         opacityChange("1", null, null, null, null, null, null, null);
         lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px");           
@@ -121,9 +128,9 @@ function fileOpen(){
 function openDocumentA(){
     transChange("0.5s", null , null, "0s", "0s", "0s");
     miscChange("fixed", "100%", "0", "6");
-    eventListen(resPageA, rePositionA, xbuttonOn),
+    eventListen(resPageA, rePositionA, xbuttonOn);
     opacityChange("0", "0", null, "0", "0", "0", null, null);
-    lateChange("100%", null, null, "0px, 0px", null, null, null, null,)
+    lateChange("100%", null, null, "0px, 0px", null, null, null, null);
     closebtn.setAttribute('onclick', 'xOutA()');
     resPageA.style.transform= "scale(5)";
 }
@@ -133,7 +140,7 @@ function openDocumentB(){
     miscChange("fixed", "100%", "0", "6");
     eventListen(resPageB, rePositionB, xbuttonOn),
     opacityChange("0", "0", "0", null, "0", null, "0", null);
-    lateChange(null, "100%", null, null, "0px, 0px", null, null, null,);
+    lateChange(null, "100%", null, null, "0px, 0px", null, null, null);
     closebtn.setAttribute('onclick', 'xOutB()');
     resPageB.style.transform= "scale(5)";
 }
@@ -143,7 +150,7 @@ function openDocumentC(){
     miscChange("fixed", "100%", "0", "6");
     eventListen(resPageC, rePositionC, xbuttonOn),
     opacityChange("0", "0", "0", "0", null, null, null, "0");
-    lateChange(null, null, "100%", null, null, "0px, 0px", null, null,);
+    lateChange(null, null, "100%", null, null, "0px, 0px", null, null);
     closebtn.setAttribute('onclick', 'xOutC()');
     resPageC.style.transform= "scale(5)";
 }

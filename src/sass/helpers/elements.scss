@@ -1,7 +1,12 @@
 h1 ,h2, h3, h4, p {
     font-family: Aproxima-nova, "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;;
+    z-index: 3;
 }
 
 span {
     display: block;
+}
+
+div{
+    z-index: 3;
 }

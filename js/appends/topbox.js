@@ -12,7 +12,7 @@ function introDiv(){
     }
 var logohld = createTopDivs("logoHolder", "mylogo-holder", "flex", "center", "grid7", "auto", "rel");
 var botrig = createTopDivs("bottomLogoTrig", "botrig", "abs", null, null, null, null);
-var ttlwrap = createTopDivs("titleWrap", "title-wrap", "flex", "grid7", "column", null, null);
+var ttlwrap = createTopDivs("titleWrap", "title-wrap", "flex", "grid8", "column", null, null);
 
 intDiv.appendChild(logohld);
 intDiv.appendChild(botrig);
@@ -40,8 +40,8 @@ function createP(){
         var span1 = document.createElement("span");
         var span2 = document.createElement("span");
         var span3 = document.createElement("span");
-        span1.textContent= "A portfolio and resume page of";
-        span2.textContent= "Thomas Xavier Grasso III.";
+        span1.textContent= "A resume page of";
+        span2.textContent= "Thomas X. Grasso";
         span3.textContent= "see how he can benifit your company below.";
         p1.appendChild(span1);
         p1.appendChild(span2);

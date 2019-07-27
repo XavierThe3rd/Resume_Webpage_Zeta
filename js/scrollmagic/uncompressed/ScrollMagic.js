@@ -2644,7 +2644,7 @@
 				args = Array.prototype.splice.call(arguments, 1),
 				func = Function.prototype.bind.call(console[method], console);
 			args.unshift(time);
-			func.apply(console, args);
+			//func.apply(console, args);
 		};
 
 		/**

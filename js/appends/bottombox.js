@@ -1,16 +1,32 @@
+
 function infoHolder(){
     var specHold = document.createElement("div");
-    specHold.classList.add("spec-holder", "flex", "grid9", "auto", "column");
+    specHold.classList.add("spec-holder", "flex", "rel", "grid9", "auto", "column");
 
     var primeH = document.createElement("h3");
     primeH.textContent= "Specializations"; //--!--//
 
     var secH = document.createElement("h4");
     secH.textContent= "What can I provide for your company?"; //--!--//
+    secH.setAttribute("id", "infoH4-trig");
 
     var jobH = document.createElement("h3");
     jobH.textContent= "Work History"; //--!--//
 
+    specHold.appendChild(gearWW)
+    specHold.appendChild(gearWX);
+    specHold.appendChild(gearWY);
+    specHold.appendChild(gearWZ);
+    specHold.appendChild(gearHV);
+    specHold.appendChild(gearHW);
+    specHold.appendChild(gearHX);
+    specHold.appendChild(gearHY);
+    specHold.appendChild(gearHZ);
+    specHold.appendChild(gearQV);
+    specHold.appendChild(gearQW);
+    specHold.appendChild(gearQX);
+    specHold.appendChild(gearQY);
+    specHold.appendChild(gearQZ);
     specHold.appendChild(primeH);
     specHold.appendChild(secH);
 
@@ -53,6 +69,20 @@ function infoHolder(){
         jobInH.textContent= title;
         jobInH.setAttribute("id", idC);
 
+        var p = document.createElement("p");
+        p.classList.add("abs");
+        p.setAttribute("id", "pId")
+        var span1 = document.createElement("span");
+        span1.textContent= "from June 25, 2019  -  to August 29, 2019";
+        var span2 = document.createElement("span");
+        span2.textContent= "Qintel located in Pittsburgh PA. is one of the top cyber security companies in the nation which served as an excellent synthesis for my graphic design and coding background.";
+        var span3 = document.createElement("span");
+        span3.textContent= "Responsibilities included merchandise design, business paraphanalia design (brochures, product fliers, ex.), ux/ui for various company matenance materials, and invessigation participation.";
+        p.appendChild(span1);
+        p.appendChild(span2);
+        p.appendChild(span3);
+
+
         var jobBtn = document.createElement("button");
         jobBtn.classList.add("button-job", "no-border", "no-background", "flex", "column", "auto", "left", "right", "center", "abs", "z4", "nopad");
         jobBtn.setAttribute("onclick", open);
@@ -67,6 +97,7 @@ function infoHolder(){
         specHold.appendChild(job);
         job.appendChild(img);
         job.appendChild(jobInH);
+        job.appendChild(p);
         job.appendChild(jobBtn);
         jobBtn.appendChild(btnBars1);
         jobBtn.appendChild(btnBars2);
@@ -100,7 +131,7 @@ var infoHld = infoHolder();
 
 function resHolder() {
     var mdiv = document.createElement("div");
-    mdiv.classList.add("grid10", "hgrid10", "center", "flex");
+    mdiv.classList.add("reshold", "grid10", "hgrid10", "center", "flex");
 
 	function initElms() {
 		var htag = document.createElement("h3");

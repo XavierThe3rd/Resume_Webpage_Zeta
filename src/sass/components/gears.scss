@@ -1,37 +1,74 @@
+
 .gear-whole {
     @include gearSettings(300px, 0deg, 0px auto);
+
+    @media(min-width: 768px){
+        @include gearSettings(500px, 0deg, 0px auto); 
+    }
 }
 
 .gear-quarter1 {
     @include gearSettings(75px, 35deg, -88px 0 0 165px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 35deg, -84px 0 0 132px);
+    }
 }
 
 .gear-quarter2 {
     @include gearSettings(75px, 35deg, 286px 0 0 59px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 35deg, 471px 0 0 100px);
+    }
 }
 
 .gear-quarter3 {
-    @include gearSettings(75px, 35deg, 494px 0 0 -165px);
+    @include gearSettings(75px, 35deg, 395px 0 0 -65px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 35deg, 684px 0 0 -187px);
+    }
 }
 
 .gear-half-right {
     @include gearSettings(150px, 0deg, 235px 0 0 165px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 388px 0 0 276px);
+    }
 }
 
 .gear-half-left {
     @include gearSettings(150px, 10deg, 217px 0 0 -165px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 378px 0 0 -262px);
+    }
 }
 
 .gear-half-bottom {
-    @include gearSettings(150px, 0deg, 555px 0 0 -125px);
+    @include gearSettings(150px, 0deg, 455px 0 0 -25px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 690px 0 0 -25px);
+    }
 }
 
 .gearmid-whole {
     @include gearSettings(300px, 0deg, -9px 0 0 0px);
+
+    @media(min-width: 768px){
+        @include gearSettings(500px, 0deg, -100px 0 0 0); 
+    }
 }
 
 .gear-half1{
     @include gearSettings(150px, -1deg, 231px 0 0 179px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, -1deg, 317px 0 0 281px);
+    }
 }
 
 .gear-half2{
@@ -44,10 +81,18 @@
 
 .gear-quarter1res{
     @include gearSettings(75px, 14deg, 270px 0 0 71px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 26deg, 370px 0 0 106px);
+    }
 }
 
 .gear-quarter2res{
     @include gearSettings(75px, 0deg, 162px 0 0 171px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 14deg, 200px 0 0 281px);
+    }
 }
 
 .gear-quarter3res{
@@ -56,5 +101,60 @@
 
 .footgearw {
     @include gearSettings(150px, 0deg, -80px auto 0);
+}
+
+.gear-whole-z{
+    @include gearSettings(300px, 0deg, 1269px 0 0 -209px);
+}
+
+.gear-whole-y{
+    @include gearSettings(300px, 3deg, 792px 0 0 120px);
+}
+
+.gear-whole-x{
+    @include gearSettings(300px, 6deg, 370px 0 0 58px);
+}
+
+.gear-whole-w{
+    @include gearSettings(300px, 6deg, 12px 0 0 -100px);
+}
+
+.gear-half-v{
+    @include gearSettings(150px, 0deg, -41px 240px 0);
+}
+
+.gear-half-w{
+    @include gearSettings(150px, 0deg, 234px 136px 0);
+}
+
+.gear-half-x{
+    @include gearSettings(150px, 0deg, 645px -70px 0);
+}
+
+.gear-half-y{
+    @include gearSettings(150px, 9deg, 1062px 0 0 101px);
+}
+
+.gear-half-z{
+    @include gearSettings(150px, 0deg, 1275px 0 0 235px);
+}
+
+.gear-quarter-v{
+    @include gearSettings(75px, 15deg, 611px 0 0 300px);
+}
+.gear-quarter-w{
+    @include gearSettings(75px, 35deg, 788px 0px 0 -47px);
+}
+
+.gear-quarter-x{
+    @include gearSettings(75px, 35deg, 1209px 0px 0 -44px);
+}
+
+.gear-quarter-y{
+    @include gearSettings(75px, 13deg, 1287px 0px 0 173px);
+}
+
+.gear-quarter-z{
+    @include gearSettings(75px, 48deg, 1418px 0px 0 279px);
 }
 

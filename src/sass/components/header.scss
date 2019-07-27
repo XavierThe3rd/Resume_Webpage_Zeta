@@ -4,7 +4,7 @@ header {
     
 
     h1{
-        @include fontSettings($pureWhite, 20px, 700, 1, 10px 0);
+        @include fontSettings($pureWhite, 20px, 700, 1, null);
     }
 
     button{
@@ -20,7 +20,7 @@ header {
         padding: 0px;
         
         button{
-            @include fontSettings($pureWhite, 50px, 600, 1, 0);
+            @include fontSettings($pureWhite, 50px, 400, 1, 0);
         }
     }
 }

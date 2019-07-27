@@ -8,11 +8,11 @@
     }
 }
 
-#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
+/*#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
     transition: all 0.25s linear; 
-}
+}*/
 
 #slideHolder1 {
     transform: translateX(0px);
@@ -51,10 +51,18 @@
 
 #fileFleft {
     margin: 70px 0px 0px -42px;
+
+    @media(min-width: 768px){
+        margin: 75px 0px 0px -53px;
+    }
 }
 
 #fileFright {
     margin: 70px 0px 0px 42px;
+
+    @media(min-width: 768px){
+        margin: 75px 0px 0px 53px;
+    }
 }
 
 
@@ -93,11 +101,10 @@
     transition-delay: 0.1s;
 }
 
-#jobTag{
-    opacity: 1;
-    transform: scale(1);
-}
-
 .barz1, .barz2{
     transition: all 0.5s ease-out;
+}
+
+#slideHolder2, #slideHolder3{
+    opacity: 0;
 }

@@ -1,13 +1,30 @@
 .spec-holder{
     @include dimensions($pureBlack, 315px, 80%, 0, 0);
 
+    @media(min-width: 768px){
+        width: 600px;
+    }
+
+    h3 {
+        @include fontSettings($pureWhite, 40px, 500, 1, 101px 0 55px);
+
+        @media(min-width: 768px){
+            font-size: 50px;
+            margin: 135px 0 55px;
+        }
+    }
+
     h4{
-        @include fontSettings($pureWhite, 25px, 500, 1, 0 0 55px);
+        @include fontSettings($pureWhite, 25px, 500, 1, -35px 0 55px);
     }
 
     .spec{
-        @include border($borderPurple, 1px);
-        @include dimensions($pureBlack, 315px, 200px, 0, 15px 0 0);
+        @include border($gearPurple, 1px);
+        @include dimensions($pureBlack, 315px, 225px, 0, 15px 0 0);
+
+        @media(min-width: 768px){
+            @include dimensions($pureBlack, 600px, 150px, 0, 15px 0 0);
+        }
     
         .specobj{
             width: 50px;
@@ -15,30 +32,53 @@
         }
     
         h4{
-            @include fontSettings($primePurple, 22px, 500, 1, 20px 0 0 80px); 
+            @include fontSettings($primePurple, 22px, 500, 1, auto 0 0 80px); 
         }
     
         p{
-            @include fontSettings($pureWhite, 16px, 300, 1.5, 20px 0 15px 20px);
+            @include fontSettings($pureWhite, 16px, 400, 1.5, auto 20px);
+
         }
     }
 
     .job-prime{
-        @include border(rgb(53, 50, 59), 1px);
+        @include border($gearPurple, 1px);
         @include dimensions($pureBlack, 315px, 250px, 0, 0);
+
+        @media(min-width: 768px){
+            @include dimensions($pureBlack, 600px, 300px, 0, 0);
+        }
     
         img{
             width: 200px;
             margin: 15px auto;
+            transition: all 0.5s linear;
+
+            @media(min-width: 768px){
+                width: 300px;
+            }
             
         }
     
         h4{
             @include fontSettings($primePurple, 25px, 600, 1, 25px auto);
+            transition: all 0.25s linear;
+
+            @media(min-width: 768px){
+                font-size: 35px;
+            }
         }
     
         p{
             @include fontSettings($pureWhite, 12px, 500, 1.5, 0 15px 15px);
+            opacity: 0;
+            transition: all 0.5s linear;
+            width: 285px;
+
+            @media(min-width: 768px){
+                font-size: 18px;
+                width: 550px;
+            }
         }
     
         span{
@@ -48,6 +88,10 @@
         button{
             width:30px;
             transform: translateY(200px);
+
+            @media(min-width: 768px){
+                transform: translateY(250px);
+            }
     
         
             div {
@@ -62,13 +106,26 @@
     @include border($borderPurple, 1px 0);
     background: $pureBlack;
 
-    h3 {
-        @include fontSettings($pureWhite, 40px, 500, 1, 60px 0 15px);
+    .reshold{
+        h3 {
+            @include fontSettings($pureWhite, 40px, 500, 1, 101px 0 55px);
+
+            @media(min-width: 768px){
+                font-size: 50px;
+                margin: 225px 0 55px;
+            }
+        }
     }
 
     .file-wrap {
         margin: 175px 0px 0px;
         height: 430px;
+        left: 0; 
+        right: 0;
+
+        @media(min-width: 768px){
+            margin: 325px 0 0;
+        }
 
         button{
             @include fontSettings($pureWhite, 18px, 400, 1, 75px 0);
@@ -76,11 +133,23 @@
 
         .file-lock {
             @include dimensions($hotPink, 110px, 110px, 55px, 120px 0 0);
+
+            @media(min-width: 768px){
+                margin: 160px 0 0;
+                width: 125px;
+                height: 125px;
+                border-radius: 67.5px;
+            }
         }
     }
 
     .file {
-        @include dimensions(none, 200px, 200px, 0px, 0); 
+        @include dimensions(none, 200px, 200px, 0px, 0);
+
+        @media(min-width: 768px){
+            width: 225px;
+            height: 260px;
+        }
     }
 
     .file-backplate {
@@ -89,6 +158,10 @@
 
     .file-front {
         width: 98px;
+
+        @media(min-width: 768px){
+            width:125px;
+        }
     }
 
 
@@ -101,14 +174,20 @@
     }
 
     .close-button {
-        @include dimensions($primePurple, 50px, 50px, 25px, 20px);
-        @include fontSettings($pureWhite, 12px, 100, 1, 0);
+        @include dimensions($primePurple, 50px, 50px, 25px, 65px 15px 0);
+        @include fontSettings($pureWhite, 12px, 100, 1, 65px 15px 0);
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
     }
 }
 
+.reshold{
+    height: 607px;
 
+    @media(min-width: 768px){
+        height: 900px;
+    }
+}
 
 
 

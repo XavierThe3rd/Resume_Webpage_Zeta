@@ -9,7 +9,9 @@ var slidebtnR = document.getElementById("buttonRight");
 function phazingRight(slidephaze1, slidephaze2, add){
     if(slidephaze1.style.transform = "translateX(0)"){
         slidephaze1.style.transform = "translateX(-100%)";
+        slidephaze1.style.opacity = "0";
         slidephaze2.style.transform = "translateX(0)";
+        slidephaze2.style.opacity = "1";
         slidebtnR.addEventListener("click", add);
         slidebtnL.removeEventListener("click", leftAgain1);
     }
@@ -18,7 +20,9 @@ function phazingRight(slidephaze1, slidephaze2, add){
 function phazingLeft(slidephaze1, slidephaze2, add){
     if(slidephaze1.style.transform = "translateX(0)"){
         slidephaze1.style.transform = "translateX(100%)";
+        slidephaze1.style.opacity = "0";
         slidephaze2.style.transform = "translateX(0)";
+        slidephaze2.style.opacity = "1";
         slidebtnL.addEventListener("click", add);
         slidebtnR.removeEventListener("click", rightAgain1);
     }
