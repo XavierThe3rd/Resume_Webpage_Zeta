@@ -1,0 +1,68 @@
+.spec:hover {
+    border-color: $hotPink;
+    transition: 0.25s linear;
+    transform: scale(1.1);
+
+    h4{
+        color: $hotPink;   
+    }   
+}
+
+@media (min-width: 1050px){ 
+        #fileLock:hover {
+        border-color: $hotPink;
+
+
+        div{
+            background: $hotPink;
+        }
+    }
+
+    #jobPrime1:hover {
+        border-color: $hotPink;
+        transform: scale(1.1);
+
+        .barz2{
+            background: $hotPink;
+        }
+
+        h4{
+            color: $hotPink;   
+        }   
+    }
+
+
+    #btnHead:hover div{
+        background: $hotPink;
+    }
+
+    #buttonRight:hover{
+        color: $hotPink; 
+    }
+    
+    #buttonLeft:hover{
+        color: $hotPink; 
+    }
+
+    #buttonRes:hover{
+        border-color: $hotPink;
+        color: $hotPink;
+    }
+}
+
+@media (max-width: 1050px){ 
+
+    #buttonRight:active{
+        color: $hotPink; 
+    }
+
+    #buttonLeft:active{
+        color: $hotPink; 
+    }
+
+    #buttonRes:active{
+        border-color: $hotPink;
+        color: $hotPink;
+    }
+}
+

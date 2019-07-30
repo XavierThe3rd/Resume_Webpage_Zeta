@@ -81,6 +81,7 @@ function createAbout(){
                     a.classList.add("texthold", "flex", "column", "abs", "grid10", "hgrid10", "over-x");
                     b.classList.add("prime-f", "t-center");
                     c.classList.add("prime-f", "t-center", "over-x");
+                    c.setAttribute("id", "p-aboutPhaze");
                     person.appendChild(a);
                     a.appendChild(b);
                     a.appendChild(c)

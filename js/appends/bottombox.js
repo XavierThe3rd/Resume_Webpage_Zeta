@@ -4,6 +4,7 @@ function infoHolder(){
     specHold.classList.add("spec-holder", "flex", "rel", "grid9", "auto", "column");
 
     var primeH = document.createElement("h3");
+    primeH.setAttribute("id", "resHPhaze");
     primeH.textContent= "Specializations"; //--!--//
 
     var secH = document.createElement("h4");
@@ -33,7 +34,7 @@ function infoHolder(){
 
     function infoBox(idz, svgName, head, text){
         var box = document.createElement("div");
-        box.classList.add("spec", "flex", "grid9", "auto", "column");
+        box.classList.add("spec", "flex", "grid9", "auto", "column", "z2");
         box.setAttribute("id", idz);
 
         var boxObj= document.createElement("object");
@@ -56,16 +57,18 @@ function infoHolder(){
     }
 
     function jobBox(logo, title, open, idA, idB, idC){
-        var job = document.createElement("div");
-        job.classList.add("job-prime", "flex", "grid9", "auto", "column");
+        var job = document.createElement("button");
+        job.classList.add("job-prime", "flex", "grid9", "auto", "column", "point");
+        job.setAttribute("onclick", open);
         job.setAttribute("id", idA);
 
         var img = document.createElement("img");
-        img.classList.add("work-logo", "rel");
+        img.classList.add("work-logo", "abs", "left", "right");
         img.setAttribute("src", logo);
         img.setAttribute("id", idB);
 
         var jobInH = document.createElement("h4");
+        jobInH.classList.add("left", "right", "abs");
         jobInH.textContent= title;
         jobInH.setAttribute("id", idC);
 
@@ -83,9 +86,9 @@ function infoHolder(){
         p.appendChild(span3);
 
 
-        var jobBtn = document.createElement("button");
-        jobBtn.classList.add("button-job", "no-border", "no-background", "flex", "column", "auto", "left", "right", "center", "abs", "z4", "nopad");
-        jobBtn.setAttribute("onclick", open);
+        var jobBtn = document.createElement("div");
+        jobBtn.classList.add("button-job", "flex", "column", "auto", "left", "right", "center", "abs", "z4", "nopad");
+        jobBtn.setAttribute("id", "btnJob")
 
         var btnBars1 = document.createElement("div");
         btnBars1.classList.add("barz2");
@@ -131,7 +134,7 @@ var infoHld = infoHolder();
 
 function resHolder() {
     var mdiv = document.createElement("div");
-    mdiv.classList.add("reshold", "grid10", "hgrid10", "center", "flex");
+    mdiv.classList.add("reshold", "grid10", "hgrid10", "center", "flex", "z1");
 
 	function initElms() {
 		var htag = document.createElement("h3");
@@ -206,10 +209,21 @@ function resHolder() {
             
             function primeBtn(){
                 var dBtn = document.createElement("button");
-                dBtn.classList.add("file-lock", "no-border", "abs", "z4");
+                dBtn.classList.add("file-lock", "no-border", "abs", "z4", "point");
                 dBtn.setAttribute("id", "fileLock");
                 dBtn.setAttribute("onclick", "fileOpen()");
+
+                var btnBars1 = document.createElement("div");
+                btnBars1.classList.add("barz3");
+                var btnBars2 = document.createElement("div");
+                btnBars2.classList.add("barz3");
+                var btnBars3 = document.createElement("div");
+                btnBars3.classList.add("barz3");
+
                 fdiv.appendChild(dBtn);
+                dBtn.appendChild(btnBars1);
+                dBtn.appendChild(btnBars2);
+                dBtn.appendChild(btnBars3);
                 return dBtn;
             } 
 

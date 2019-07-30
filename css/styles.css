@@ -1,15 +1,3 @@
-#btn1id {
-  margin-top: 30%;
-  animation-delay: 0.1s; }
-
-#btn2id {
-  margin-top: 60%;
-  animation-delay: 0.2s; }
-
-#btn3id {
-  margin-top: 90%;
-  animation-delay: 0.3s; }
-
 /*#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
@@ -79,7 +67,7 @@
   transition: all 0.25s linear;
   transition-delay: 0.1s; }
 
-.barz1, .barz2 {
+.barz1, .barz2, .barz3, .job-prime {
   transition: all 0.5s ease-out; }
 
 #slideHolder2, #slideHolder3 {
@@ -174,13 +162,14 @@
 
 h1, h2, h3, h4, p {
   font-family: Aproxima-nova, "Catamaran", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  z-index: 3; }
+  z-index: 2; }
 
 span {
   display: block; }
 
-div {
-  z-index: 3; }
+button {
+  z-index: 3;
+  outline: none; }
 
 header {
   border-color: #35323b;
@@ -210,6 +199,27 @@ header {
       font-weight: 400;
       line-height: 1;
       margin: 0; }
+      @media (min-width: 760px) {
+        header nav button {
+          font-size: 75px; } }
+    header nav #btn1id {
+      margin-top: 30%;
+      animation-delay: 0.1s; }
+      @media (min-width: 760px) {
+        header nav #btn1id {
+          margin-top: 25%; } }
+    header nav #btn2id {
+      margin-top: 60%;
+      animation-delay: 0.2s; }
+      @media (min-width: 760px) {
+        header nav #btn2id {
+          margin-top: 50%; } }
+    header nav #btn3id {
+      margin-top: 90%;
+      animation-delay: 0.3s; }
+      @media (min-width: 760px) {
+        header nav #btn3id {
+          margin-top: 75%; } }
 
 .intro-holder {
   border-color: #35323b;
@@ -339,7 +349,7 @@ header {
   .about-holder .resbutton {
     border-color: #ffffff;
     box-sizing: border-box;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     background: #6100ff;
     width: 300px;
@@ -376,7 +386,8 @@ header {
     font-size: 25px;
     font-weight: 500;
     line-height: 1;
-    margin: -35px 0 55px; }
+    margin: -35px 0 55px;
+    transition: 0.25s linear; }
   .spec-holder .spec {
     border-color: #6e28e1;
     box-sizing: border-box;
@@ -386,7 +397,8 @@ header {
     width: 315px;
     height: 225px;
     border-radius: 0;
-    margin: 15px 0 0; }
+    margin: 15px 0 0;
+    transition: 0.25s linear; }
     @media (min-width: 768px) {
       .spec-holder .spec {
         background: black;
@@ -438,33 +450,38 @@ header {
       font-size: 25px;
       font-weight: 600;
       line-height: 1;
-      margin: 25px auto;
+      margin: 140px auto 0;
       transition: all 0.25s linear; }
       @media (min-width: 768px) {
         .spec-holder .job-prime h4 {
-          font-size: 35px; } }
+          color: #6100ff;
+          font-size: 35px;
+          font-weight: inherit;
+          line-height: inherit;
+          margin: 185px auto 0; } }
     .spec-holder .job-prime p {
       color: #ffffff;
       font-size: 12px;
       font-weight: 500;
       line-height: 1.5;
-      margin: 0 15px 15px;
+      margin: 0;
       opacity: 0;
       transition: all 0.5s linear;
       width: 285px; }
       @media (min-width: 768px) {
         .spec-holder .job-prime p {
           font-size: 18px;
-          width: 550px; } }
+          width: 550px;
+          margin: 0 15px 15px; } }
     .spec-holder .job-prime span {
       margin: 10px 0 0; }
-    .spec-holder .job-prime button {
+    .spec-holder .job-prime .button-job {
       width: 30px;
       transform: translateY(200px); }
       @media (min-width: 768px) {
-        .spec-holder .job-prime button {
+        .spec-holder .job-prime .button-job {
           transform: translateY(250px); } }
-      .spec-holder .job-prime button div {
+      .spec-holder .job-prime .button-job div {
         background: #ffffff;
         width: 30px;
         height: 5px;
@@ -476,7 +493,8 @@ header {
   box-sizing: border-box;
   border-width: 1px 0;
   border-style: solid;
-  background: black; }
+  background: black;
+  z-index: 1; }
   .resume-holder .reshold h3 {
     color: #ffffff;
     font-size: 40px;
@@ -502,17 +520,28 @@ header {
       line-height: 1;
       margin: 75px 0; }
     .resume-holder .file-wrap .file-lock {
-      background: #df021f;
+      background: black;
       width: 110px;
       height: 110px;
       border-radius: 55px;
-      margin: 120px 0 0; }
+      margin: 120px 0 0;
+      border-color: #ff012b;
+      box-sizing: border-box;
+      border-width: 10px;
+      border-style: solid; }
       @media (min-width: 768px) {
         .resume-holder .file-wrap .file-lock {
-          margin: 160px 0 0;
+          background: black;
           width: 125px;
           height: 125px;
-          border-radius: 67.5px; } }
+          border-radius: 67.5px;
+          margin: 160px 0 0; } }
+      .resume-holder .file-wrap .file-lock div {
+        background: #ffffff;
+        width: 50px;
+        height: 10px;
+        border-radius: 5px;
+        margin: 6px auto; }
   .resume-holder .file {
     background: none;
     width: 200px;
@@ -679,19 +708,31 @@ footer {
       width: 250px;
       height: 250px;
       transform: rotate(-1deg);
-      margin: 317px 0 0 281px; } }
+      margin: 312px 0 0 288px; } }
 
 .gear-half2 {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
   margin: 276px 0 0 -164px; }
+  @media (min-width: 768px) {
+    .gear-half2 {
+      width: 250px;
+      height: 250px;
+      transform: rotate(0deg);
+      margin: 315px 0 0 -350px; } }
 
 .gear-half3 {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
   margin: -220px 0 0 -84px; }
+  @media (min-width: 768px) {
+    .gear-half3 {
+      width: 250px;
+      height: 250px;
+      transform: rotate(0deg);
+      margin: -436px 0 0 -165px; } }
 
 .gear-quarter1res {
   width: 75px;
@@ -703,7 +744,7 @@ footer {
       width: 125px;
       height: 125px;
       transform: rotate(26deg);
-      margin: 370px 0 0 106px; } }
+      margin: 368px 0 0 112px; } }
 
 .gear-quarter2res {
   width: 75px;
@@ -715,104 +756,213 @@ footer {
       width: 125px;
       height: 125px;
       transform: rotate(14deg);
-      margin: 200px 0 0 281px; } }
+      margin: 193px 0 0 281px; } }
 
 .gear-quarter3res {
-  width: 75px;
-  height: 75px;
+  width: 125px;
+  height: 125px;
   transform: rotate(35deg);
-  margin: 380px 0 0 -81px; }
-
-.footgearw {
-  width: 150px;
-  height: 150px;
-  transform: rotate(0deg);
-  margin: -80px auto 0; }
+  margin: 485px 0 0 -211px; }
 
 .gear-whole-z {
   width: 300px;
   height: 300px;
   transform: rotate(0deg);
-  margin: 1269px 0 0 -209px; }
+  margin: 1370px 0 0 -209px; }
+  @media (min-width: 768px) {
+    .gear-whole-z {
+      display: none; } }
 
 .gear-whole-y {
   width: 300px;
   height: 300px;
   transform: rotate(3deg);
-  margin: 792px 0 0 120px; }
+  margin: 855px 0 0 120px; }
+  @media (min-width: 768px) {
+    .gear-whole-y {
+      width: 500px;
+      height: 500px;
+      transform: rotate(3deg);
+      margin: 360px 0 0 226px; } }
 
 .gear-whole-x {
   width: 300px;
   height: 300px;
   transform: rotate(6deg);
   margin: 370px 0 0 58px; }
+  @media (min-width: 768px) {
+    .gear-whole-x {
+      display: none; } }
 
 .gear-whole-w {
   width: 300px;
   height: 300px;
   transform: rotate(6deg);
   margin: 12px 0 0 -100px; }
+  @media (min-width: 768px) {
+    .gear-whole-w {
+      display: none; } }
 
 .gear-half-v {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
   margin: -41px 240px 0; }
+  @media (min-width: 768px) {
+    .gear-half-v {
+      display: none; } }
 
 .gear-half-w {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
-  margin: 234px 136px 0; }
+  margin: -70px 520px 0; }
+  @media (min-width: 768px) {
+    .gear-half-w {
+      width: 250px;
+      height: 250px;
+      transform: rotate(0deg);
+      margin: 58px -84px 0; } }
 
 .gear-half-x {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
   margin: 645px -70px 0; }
+  @media (min-width: 768px) {
+    .gear-half-x {
+      width: 250px;
+      height: 250px;
+      transform: rotate(0deg);
+      margin: -70px 520px 0; } }
 
 .gear-half-y {
   width: 150px;
   height: 150px;
   transform: rotate(9deg);
-  margin: 1062px 0 0 101px; }
+  margin: 1125px 0 0 101px; }
+  @media (min-width: 768px) {
+    .gear-half-y {
+      width: 250px;
+      height: 250px;
+      transform: rotate(9deg);
+      margin: 820px 0 0 -133px; } }
 
 .gear-half-z {
   width: 150px;
   height: 150px;
   transform: rotate(0deg);
-  margin: 1275px 0 0 235px; }
+  margin: 1350px 0 0 235px; }
+  @media (min-width: 768px) {
+    .gear-half-z {
+      width: 250px;
+      height: 250px;
+      transform: rotate(0deg);
+      margin: 1060px 0 0 475px; } }
 
 .gear-quarter-v {
   width: 75px;
   height: 75px;
   transform: rotate(15deg);
   margin: 611px 0 0 300px; }
+  @media (min-width: 768px) {
+    .gear-quarter-v {
+      width: 125px;
+      height: 125px;
+      transform: rotate(15deg);
+      margin: 248px 101px 0; } }
 
 .gear-quarter-w {
   width: 75px;
   height: 75px;
   transform: rotate(35deg);
   margin: 788px 0px 0 -47px; }
+  @media (min-width: 768px) {
+    .gear-quarter-w {
+      width: 125px;
+      height: 125px;
+      transform: rotate(35deg);
+      margin: 708px 0px 0 -85px; } }
 
 .gear-quarter-x {
   width: 75px;
   height: 75px;
   transform: rotate(35deg);
-  margin: 1209px 0px 0 -44px; }
+  margin: 1309px 0px 0 -44px; }
+  @media (min-width: 768px) {
+    .gear-quarter-x {
+      width: 125px;
+      height: 125px;
+      transform: rotate(35deg);
+      margin: 1368px 0px 0 -85px; } }
 
 .gear-quarter-y {
   width: 75px;
   height: 75px;
   transform: rotate(13deg);
-  margin: 1287px 0px 0 173px; }
+  margin: 1360px 0px 0 173px; }
+  @media (min-width: 768px) {
+    .gear-quarter-y {
+      width: 125px;
+      height: 125px;
+      transform: rotate(13deg);
+      margin: 1118px 0px 0 361px; } }
 
 .gear-quarter-z {
   width: 75px;
   height: 75px;
   transform: rotate(48deg);
-  margin: 1418px 0px 0 279px; }
+  margin: 1493px 0px 0 279px; }
+  @media (min-width: 768px) {
+    .gear-quarter-z {
+      width: 125px;
+      height: 125px;
+      transform: rotate(48deg);
+      margin: 1298px 0px 0 545px; } }
 
+.spec:hover {
+  border-color: #ff012b;
+  transition: 0.25s linear;
+  transform: scale(1.1); }
+  .spec:hover h4 {
+    color: #ff012b; }
+
+@media (min-width: 1050px) {
+  #fileLock:hover {
+    border-color: #ff012b; }
+    #fileLock:hover div {
+      background: #ff012b; }
+
+  #jobPrime1:hover {
+    border-color: #ff012b;
+    transform: scale(1.1); }
+    #jobPrime1:hover .barz2 {
+      background: #ff012b; }
+    #jobPrime1:hover h4 {
+      color: #ff012b; }
+
+  #btnHead:hover div {
+    background: #ff012b; }
+
+  #buttonRight:hover {
+    color: #ff012b; }
+
+  #buttonLeft:hover {
+    color: #ff012b; }
+
+  #buttonRes:hover {
+    border-color: #ff012b;
+    color: #ff012b; } }
+@media (max-width: 1050px) {
+  #buttonRight:active {
+    color: #ff012b; }
+
+  #buttonLeft:active {
+    color: #ff012b; }
+
+  #buttonRes:active {
+    border-color: #ff012b;
+    color: #ff012b; } }
 html, body {
   height: 100%;
   background: black;

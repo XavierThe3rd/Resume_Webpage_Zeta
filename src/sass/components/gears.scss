@@ -12,6 +12,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(125px, 35deg, -84px 0 0 132px);
+        //display: none;
     }
 }
 
@@ -20,6 +21,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(125px, 35deg, 471px 0 0 100px);
+        //display: none;
     }
 }
 
@@ -28,6 +30,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(125px, 35deg, 684px 0 0 -187px);
+        //display: none;
     }
 }
 
@@ -36,6 +39,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(250px, 0deg, 388px 0 0 276px);
+        //display: none;
     }
 }
 
@@ -44,6 +48,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(250px, 0deg, 378px 0 0 -262px);
+        //display: none;
     }
 }
 
@@ -52,6 +57,7 @@
 
     @media(min-width: 768px){
         @include gearSettings(250px, 0deg, 690px 0 0 -25px);
+        //display: none;
     }
 }
 
@@ -67,23 +73,33 @@
     @include gearSettings(150px, -1deg, 231px 0 0 179px);
 
     @media(min-width: 768px){
-        @include gearSettings(250px, -1deg, 317px 0 0 281px);
+        @include gearSettings(250px, -1deg, 312px 0 0 288px);
+        //display: none;
     }
 }
 
 .gear-half2{
     @include gearSettings(150px, 0deg, 276px 0 0 -164px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 315px 0 0 -350px);
+    }
 }
 
 .gear-half3{
     @include gearSettings(150px, 0deg, -220px 0 0 -84px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, -436px 0 0 -165px);
+    }
 }
 
 .gear-quarter1res{
     @include gearSettings(75px, 14deg, 270px 0 0 71px);
 
     @media(min-width: 768px){
-        @include gearSettings(125px, 26deg, 370px 0 0 106px);
+        @include gearSettings(125px, 26deg, 368px 0 0 112px);
+        //display:none;
     }
 }
 
@@ -91,70 +107,128 @@
     @include gearSettings(75px, 0deg, 162px 0 0 171px);
 
     @media(min-width: 768px){
-        @include gearSettings(125px, 14deg, 200px 0 0 281px);
+        @include gearSettings(125px, 14deg, 193px 0 0 281px);
+       //display:none;
     }
 }
 
 .gear-quarter3res{
-    @include gearSettings(75px, 35deg, 380px 0 0 -81px);
-}
-
-.footgearw {
-    @include gearSettings(150px, 0deg, -80px auto 0);
+    @include gearSettings(125px, 35deg, 485px 0 0 -211px);
+    @media(min-width: 768px){
+        //display: none;
+    }
 }
 
 .gear-whole-z{
-    @include gearSettings(300px, 0deg, 1269px 0 0 -209px);
+    @include gearSettings(300px, 0deg, 1370px 0 0 -209px);
+
+    @media(min-width: 768px){
+        display: none
+    }
 }
 
 .gear-whole-y{
-    @include gearSettings(300px, 3deg, 792px 0 0 120px);
+    @include gearSettings(300px, 3deg, 855px 0 0 120px);
+
+    @media(min-width: 768px){
+        @include gearSettings(500px, 3deg, 360px 0 0 226px); 
+        //display: none;
+    }
 }
 
 .gear-whole-x{
     @include gearSettings(300px, 6deg, 370px 0 0 58px);
+
+    @media(min-width: 768px){
+        display: none;
+    }
 }
 
 .gear-whole-w{
     @include gearSettings(300px, 6deg, 12px 0 0 -100px);
+
+    @media(min-width: 768px){
+        display: none;
+    }
 }
 
 .gear-half-v{
     @include gearSettings(150px, 0deg, -41px 240px 0);
+
+    @media(min-width: 768px){
+        //@include gearSettings(250px, 0deg, -109px 465px 0);
+        display: none;
+    }
 }
 
 .gear-half-w{
-    @include gearSettings(150px, 0deg, 234px 136px 0);
+    @include gearSettings(150px, 0deg, -70px 520px 0);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 58px -84px 0);
+    }
 }
 
 .gear-half-x{
     @include gearSettings(150px, 0deg, 645px -70px 0);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, -70px 520px 0);
+    }
 }
 
 .gear-half-y{
-    @include gearSettings(150px, 9deg, 1062px 0 0 101px);
+    @include gearSettings(150px, 9deg, 1125px 0 0 101px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 9deg, 820px 0 0 -133px);
+    }
 }
 
 .gear-half-z{
-    @include gearSettings(150px, 0deg, 1275px 0 0 235px);
+    @include gearSettings(150px, 0deg, 1350px 0 0 235px);
+
+    @media(min-width: 768px){
+        @include gearSettings(250px, 0deg, 1060px 0 0 475px);
+    }
 }
 
 .gear-quarter-v{
     @include gearSettings(75px, 15deg, 611px 0 0 300px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 15deg, 248px 101px 0);
+    }
 }
 .gear-quarter-w{
     @include gearSettings(75px, 35deg, 788px 0px 0 -47px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 35deg, 708px 0px 0 -85px); 
+    }
 }
 
 .gear-quarter-x{
-    @include gearSettings(75px, 35deg, 1209px 0px 0 -44px);
+    @include gearSettings(75px, 35deg, 1309px 0px 0 -44px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 35deg, 1368px 0px 0 -85px);
+    }
 }
 
 .gear-quarter-y{
-    @include gearSettings(75px, 13deg, 1287px 0px 0 173px);
+    @include gearSettings(75px, 13deg, 1360px 0px 0 173px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 13deg, 1118px 0px 0 361px);
+    }
 }
 
 .gear-quarter-z{
-    @include gearSettings(75px, 48deg, 1418px 0px 0 279px);
+    @include gearSettings(75px, 48deg, 1493px 0px 0 279px);
+
+    @media(min-width: 768px){
+        @include gearSettings(125px, 48deg, 1298px 0px 0 545px); 
+    }
 }
 

@@ -1,19 +1,3 @@
-function toColor(clazz, color, trans1, trans2, opc){
-	var btnPrime = document.getElementsByClassName(clazz);
-	for(var indexName = 0; indexName < btnPrime.length; indexName++){
-		btnPrime[indexName].style.background= color;
-		if(indexName == 0){
-			btnPrime[indexName].style.transform= trans1;
-		}
-		if(indexName == 1){
-			btnPrime[indexName].style.transform= trans2;
-		}
-		if(indexName ==2){
-			btnPrime[indexName].style.opacity= opc;
-		}
-	}
-}
-
 
 function openNav(){
 	var header = document.getElementById("primeNav");	
@@ -60,7 +44,7 @@ function openNav(){
 	
 	if (header.style.height === "50px"){
         headerFunction("101%", "0.25s", "all 0.3s ease-in, background 0.5s ease-in");
-		toColor("barz1", "#ff0022", "translateY(10px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
+		toColor("barz1", "btnHead", "#ff0021", null, "translateY(10px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
 		header.appendChild(nav);
 		nav.appendChild(div);
         div.appendChild(button1);
@@ -70,7 +54,7 @@ function openNav(){
 	}else{
         headerFunction("50px", "0.2s", "all 0.5s ease-out, background 1s ease-out");
         fader();
-		toColor("barz1", "#ffffff", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
+		toColor("barz1", "btnHead", "#ffffff", null, "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
 		var removeNav =document.getElementById("navid");
         header.addEventListener("transitionend", rmvTime, false);
 	}

@@ -114,12 +114,17 @@ function fileOpen(){
         opacityChange("0", null, null, null, null, null, null, null);
         transChange(null, null, null, "0s", "0s", "0s");
         lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
+        toColor("barz3", "fileLock", "#ff0021", "#6100ff", "translateY(17px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
         if(window.innerWidth >760){
             lateChange(null, null, null, "-110px, -60px", "110px, -79px", "0, 170px", "0.5", "-100px", "100px");
         }
     }else{
         opacityChange("1", null, null, null, null, null, null, null);
-        lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px");           
+        lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
+        toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
+        //if (isDesktop == false){
+            //toColor("barz3", "fileLock", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
+        //}          
     }
 }
 //--------------------------------------------------------------------//  

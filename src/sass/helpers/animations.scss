@@ -1,12 +1,4 @@
-@for $i from 1 through 3 {
-    $marginT: 30% * $i;
-    $animD: 0.1s * $i;
 
-    #btn#{$i}id {
-        margin-top: $marginT;
-        animation-delay: $animD;
-    }
-}
 
 /*#titleWrap, #aboutPhaze, #resumePhaze, #pm1-Phaze {
     opacity: 0;
@@ -101,7 +93,7 @@
     transition-delay: 0.1s;
 }
 
-.barz1, .barz2{
+.barz1, .barz2, .barz3, .job-prime{
     transition: all 0.5s ease-out;
 }
 

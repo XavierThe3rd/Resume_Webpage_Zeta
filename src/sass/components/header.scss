@@ -21,7 +21,26 @@ header {
         
         button{
             @include fontSettings($pureWhite, 50px, 400, 1, 0);
+
+            @media(min-width: 760px){
+                font-size: 75px;
+            }
         }
+
+        @for $i from 1 through 3 {
+            $animD: 0.1s * $i;
+            $marginT: 30% * $i;
+            $marginU: 25% * $i;
+
+            #btn#{$i}id {
+                margin-top: $marginT;
+                animation-delay: $animD;  
+                
+                @media(min-width: 760px){
+                    margin-top: $marginU;
+                }
+            }
+        }   
     }
 }
 
