@@ -1,4 +1,5 @@
-function createElementGears(className, debug, id, data){
+
+export function createElementGears(className, debug, id, data){
     var a = document.createElement("object");
     a.classList.add(className, debug, "abs", "z1");
     a.setAttribute("id", id);
@@ -7,6 +8,8 @@ function createElementGears(className, debug, id, data){
     return a;
 }
 
+
+/*
 var gearQ1 = createElementGears("gear-quarter1", "debug-ipad", "gearQ1", "./images/GearQuarterWire.svg");
 var gearW = createElementGears("gear-whole", "debug-ipad", "gearWhole", "./images/GearWholeWire.svg");
 var gearQ2 = createElementGears("gear-quarter2", "debug-ipad", "gearQ2", "./images/GearQuarterWire.svg");
@@ -36,3 +39,4 @@ var gearQ2res = createElementGears("gear-quarter2res", "debug-ipad", "gearQ2res"
 var gearH2res = createElementGears("gear-half2", "debug-ipad", "gearHalf2", "./images/GearHalfWire.svg");
 var gearQ3res = createElementGears("gear-quarter3res", "debug-ipad", "gearQ3res", "./images/GearQuarterWire.svg");
 var gearH3res = createElementGears("gear-half3", "debug-ipad", "gearHalf3", "./images/GearHalfWire.svg");
+*/

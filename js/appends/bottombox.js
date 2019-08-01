@@ -1,5 +1,6 @@
+import {gearMW, gearWW, gearWX, gearWY, gearWZ, gearQV, gearQW, gearQX, gearQY, gearQZ, gearHV, gearHW, gearHX, gearHY, gearHZ, gearH1res, gearQ1res, gearQ2res, gearH2res, gearQ3res, gearH3res} from ('./js/appends/gearVar.js'); 
 
-function infoHolder(){
+export function infoHolder(){
     var specHold = document.createElement("div");
     specHold.classList.add("spec-holder", "flex", "rel", "grid9", "auto", "column");
 
@@ -56,7 +57,7 @@ function infoHolder(){
         return box;
     }
 
-    function jobBox(logo, title, open, idA, idB, idC){
+        function jobBox(logo, title, open, idA, idB, idC){
         var job = document.createElement("button");
         job.classList.add("job-prime", "flex", "grid9", "auto", "column", "point");
         job.setAttribute("onclick", open);
@@ -120,8 +121,6 @@ function infoHolder(){
 
 }
 
-var infoHld = infoHolder();
-
 
 
 
@@ -132,7 +131,7 @@ var infoHld = infoHolder();
 
 
 
-function resHolder() {
+export function resHolder() {
     var mdiv = document.createElement("div");
     mdiv.classList.add("reshold", "grid10", "hgrid10", "center", "flex", "z1");
 
@@ -246,6 +245,6 @@ function resHolder() {
 	return mdiv;
 }
 
-var resHld = resHolder();
+
 
 

@@ -21,10 +21,14 @@
   transition: all 0.5s ease-out; }
 
 #btn1id, #btn2id, #btn3id {
-  animation-duration: 0.25s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: fadein;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
   transform: translateY(-100px); }
 
 #fileFleft, #fileFright, #fileLock {
@@ -43,12 +47,28 @@
     #fileFright {
       margin: 75px 0px 0px 53px; } }
 
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 @keyframes fadein {
   0% {
     opacity: 0; }
   100% {
     opacity: 1;
     transform: translateY(0px); } }
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+    transform: translateY(0px); }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px); } }
+
 @keyframes fadeout {
   0% {
     opacity: 1;
@@ -56,6 +76,7 @@
   100% {
     opacity: 0;
     transform: translateY(-100px); } }
+
 #titleWrap.visible, #aboutPhaze.visible, #p-aboutPhaze-trig.visible, #resumePhaze.visible {
   opacity: 1;
   transform: translateY(0px) scale(1);
@@ -204,19 +225,22 @@ header {
           font-size: 75px; } }
     header nav #btn1id {
       margin-top: 30%;
-      animation-delay: 0.1s; }
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
       @media (min-width: 760px) {
         header nav #btn1id {
           margin-top: 25%; } }
     header nav #btn2id {
       margin-top: 60%;
-      animation-delay: 0.2s; }
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
       @media (min-width: 760px) {
         header nav #btn2id {
           margin-top: 50%; } }
     header nav #btn3id {
       margin-top: 90%;
-      animation-delay: 0.3s; }
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
       @media (min-width: 760px) {
         header nav #btn3id {
           margin-top: 75%; } }
@@ -576,8 +600,10 @@ header {
     font-weight: 100;
     line-height: 1;
     margin: 65px 15px 0;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards; }
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
 
 .reshold {
   height: 607px; }
@@ -932,7 +958,6 @@ footer {
     border-color: #ff012b; }
     #fileLock:hover div {
       background: #ff012b; }
-
   #jobPrime1:hover {
     border-color: #ff012b;
     transform: scale(1.1); }
@@ -940,32 +965,28 @@ footer {
       background: #ff012b; }
     #jobPrime1:hover h4 {
       color: #ff012b; }
-
   #btnHead:hover div {
     background: #ff012b; }
-
   #buttonRight:hover {
     color: #ff012b; }
-
   #buttonLeft:hover {
     color: #ff012b; }
-
   #buttonRes:hover {
     border-color: #ff012b;
     color: #ff012b; } }
+
 @media (max-width: 1050px) {
   #buttonRight:active {
     color: #ff012b; }
-
   #buttonLeft:active {
     color: #ff012b; }
-
   #buttonRes:active {
     border-color: #ff012b;
     color: #ff012b; } }
+
 html, body {
   height: 100%;
   background: black;
   margin: 25px 0px 0px; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=maps/styles.css.map */

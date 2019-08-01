@@ -1,4 +1,6 @@
-function introDiv(){
+import {gearQ1, gearW, gearQ2, gearHR, gearHL, gearHB, gearQ3, Logo} from ('./js/appends/gearVar.js');
+
+export function introDiv(){
     var intDiv= document.createElement("div");
     intDiv.classList.add("intdiv");
 
@@ -57,4 +59,3 @@ return intDiv;
 }
 //--creatTopPs--//
 
-var introDiv= introDiv();

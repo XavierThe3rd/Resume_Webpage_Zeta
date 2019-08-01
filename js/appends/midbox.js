@@ -1,16 +1,5 @@
-/*
-<div class ="title-wrap flex grid7 column" id="titleWrap">
-    <p class= " intro-p1 prime-f t-center" id= "p-onetoptrig">
-        <span>A portfolio and resume page of</span>
-        <span>Thomas Xavier Grasso III.</span>
-    </p>
-    <p class="intro-p2 prime-f t-center">
-        <span>Lets see how he can benifit your company below.</span>
-    </p>
-</div>
-*/
 
-function createAbout(){
+export function createAbout(){
     abt = document.createElement("div");
     abt.classList.add("about-wrap", "over-x", "flex", "column", "grid10");
 
