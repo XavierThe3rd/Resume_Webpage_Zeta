@@ -1,3 +1,4 @@
+import {toColor} from './buttonEffect';
 
 
 var symbolX = document.createTextNode("\u274c");
@@ -7,26 +8,21 @@ closebtn.setAttribute('id', 'closeid');
 closebtn.appendChild(symbolX);
 
 
-var resPageA = document.getElementById("filePageA");
-var resPageB = document.getElementById("filePageB");
-var resPageC = document.getElementById("filePageC");
-var resWrap = document.getElementById("resumeWrap");
-var fileWrap = document.getElementById("fileWrap");
 
-var leftP = document.getElementById("fileFleft");
-var rightP = document.getElementById("fileFright");
-var lockP = document.getElementById("fileLock");
-var backP = document.getElementById("filebackPlate");
-var insH1 = document.getElementById("insideH1");
-var insH2 = document.getElementById("insideH2");
-var insH3 = document.getElementById("insideH3");
-var fileHA = document.getElementById("fileHolderA");
-var fileHB = document.getElementById("fileHolderB");
-var fileHC = document.getElementById("fileHolderC");
+function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){
+    var fileHA = document.getElementById("fileHolderA");
+    var fileHB = document.getElementById("fileHolderB");
+    var fileHC = document.getElementById("fileHolderC");
+        
+    var insH1 = document.getElementById("insideH1");
+    var insH2 = document.getElementById("insideH2");
+    var insH3 = document.getElementById("insideH3");
 
-var partsArray= [leftP, rightP, backP, insH1, insH2, insH3, fileHA, fileHB, fileHC];
+    var leftP = document.getElementById("fileFleft");
+    var rightP = document.getElementById("fileFright");
+    var lockP = document.getElementById("fileLock");
+    var backP = document.getElementById("filebackPlate");
 
-function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){   
     leftP.style.opacity= opacA;
     rightP.style.opacity= opacA;
     backP.style.opacity= opacA;
@@ -40,6 +36,14 @@ function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opa
 }
 
 function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){
+    var fileHA = document.getElementById("fileHolderA");
+    var fileHB = document.getElementById("fileHolderB");
+    var fileHC = document.getElementById("fileHolderC");
+
+    var insH1 = document.getElementById("insideH1");
+    var insH2 = document.getElementById("insideH2");
+    var insH3 = document.getElementById("insideH3");
+
     fileHA.style.transitionDelay= HAtran;
     fileHB.style.transitionDelay= HBtran;
     fileHC.style.transitionDelay= HCtran;
@@ -49,6 +53,18 @@ function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){
 }
 
 function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){
+    var fileHA = document.getElementById("fileHolderA");
+    var fileHB = document.getElementById("fileHolderB");
+    var fileHC = document.getElementById("fileHolderC");
+        
+    var insH1 = document.getElementById("insideH1");
+    var insH2 = document.getElementById("insideH2");
+    var insH3 = document.getElementById("insideH3");
+
+    var leftP = document.getElementById("fileFleft");
+    var rightP = document.getElementById("fileFright");
+    var lockP = document.getElementById("fileLock");
+   
     fileHA.style.transform= "translateY(" +transHA+ ")";
     fileHB.style.transform= "translateY(" +transHB+ ")";
     fileHC.style.transform= "translateY(" +transHC+ ")";
@@ -61,6 +77,8 @@ function lateChange(transHA, transHB, transHC, translateH1, translateH2, transla
 }
 
 function miscChange(position, height, top, index){
+    var resWrap = document.getElementById("resumeWrap");
+
     resWrap.style.position= position;
     resWrap.style.height= height;
     resWrap.style.top= top;
@@ -75,6 +93,8 @@ function eventListen(vary, rmv, add){
 //--------------------------------------------------------------------//
 
 function xbuttonOn(){
+    var resWrap = document.getElementById("resumeWrap");
+
     transChange("0s", "0.5s", "0.5s", "0.5s");
     resWrap.appendChild(closebtn);
     closeid.style.animationName= "fadein";
@@ -109,7 +129,9 @@ function rePositionC(){
 
 //--------------------------------------------------------------------//
 
-function fileOpen(){
+export function fileOpen(){
+    var lockP = document.getElementById("fileLock");
+
     if(lockP.style.transform === "scale(1)"){
         opacityChange("0", null, null, null, null, null, null, null);
         transChange(null, null, null, "0s", "0s", "0s");
@@ -121,46 +143,52 @@ function fileOpen(){
     }else{
         opacityChange("1", null, null, null, null, null, null, null);
         lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
-        toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
-        //if (isDesktop == false){
-            //toColor("barz3", "fileLock", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");
-        //}          
+        toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");        
     }
 }
 //--------------------------------------------------------------------//  
 
 
-function openDocumentA(){
+export function openDocumentA(){
+    var resPageA = document.getElementById("filePageA");
+
     transChange("0.5s", null , null, "0s", "0s", "0s");
     miscChange("fixed", "100%", "0", "6");
     eventListen(resPageA, rePositionA, xbuttonOn);
     opacityChange("0", "0", null, "0", "0", "0", null, null);
     lateChange("100%", null, null, "0px, 0px", null, null, null, null);
-    closebtn.setAttribute('onclick', 'xOutA()');
+    closebtn.addEventListener('click', xOutA);
     resPageA.style.transform= "scale(5)";
 }
 
-function openDocumentB(){
+export function openDocumentB(){
+    var resPageB = document.getElementById("filePageB");
+
     transChange(null, "0.5s", null, "0s", "0s", "0s");
     miscChange("fixed", "100%", "0", "6");
     eventListen(resPageB, rePositionB, xbuttonOn),
     opacityChange("0", "0", "0", null, "0", null, "0", null);
     lateChange(null, "100%", null, null, "0px, 0px", null, null, null);
-    closebtn.setAttribute('onclick', 'xOutB()');
+    closebtn.addEventListener('click', xOutB);
     resPageB.style.transform= "scale(5)";
 }
 
-function openDocumentC(){
+export function openDocumentC(){
+    var resPageC = document.getElementById("filePageC");
+
     transChange(null, null, "0.5s", "0s", "0s", "0s");
     miscChange("fixed", "100%", "0", "6");
     eventListen(resPageC, rePositionC, xbuttonOn),
     opacityChange("0", "0", "0", "0", null, null, null, "0");
     lateChange(null, null, "100%", null, null, "0px, 0px", null, null);
-    closebtn.setAttribute('onclick', 'xOutC()');
+    closebtn.addEventListener('click', xOutC);
     resPageC.style.transform= "scale(5)";
 }
 
 function xOutA(){
+    var resPageA = document.getElementById("filePageA");
+    var resWrap = document.getElementById("resumeWrap");
+
     transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
     closeid.style.animationName= "fadeout";
     resPageA.style.transform= "scale(1)";
@@ -169,6 +197,9 @@ function xOutA(){
 }
 
 function xOutB(){
+    var resPageB = document.getElementById("filePageB");
+    var resWrap = document.getElementById("resumeWrap");
+
     transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
     closeid.style.animationName= "fadeout";
     resPageB.style.transform= "scale(1)";
@@ -177,6 +208,9 @@ function xOutB(){
 }
 
 function xOutC(){
+    var resPageC = document.getElementById("filePageC");
+    var resWrap = document.getElementById("resumeWrap");
+
     transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
     closeid.style.animationName= "fadeout";
     resPageC.style.transform= "scale(1)";

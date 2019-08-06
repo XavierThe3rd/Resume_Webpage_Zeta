@@ -1,5 +1,6 @@
- 
-function openJob(){
+import {toColor} from './buttonEffect.js';
+
+export function openJob(){
     var jb1 = document.getElementById("jobPrime1");
     var logo = document.getElementById("imageHolder");
     var htag = document.getElementById("jobTag");

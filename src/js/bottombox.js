@@ -1,4 +1,10 @@
 import {gearMW, gearWW, gearWX, gearWY, gearWZ, gearQV, gearQW, gearQX, gearQY, gearQZ, gearHV, gearHW, gearHX, gearHY, gearHZ, gearH1res, gearQ1res, gearQ2res, gearH2res, gearQ3res, gearH3res} from './gearVar.js'; 
+import {fileOpen} from './fileanimation.js';
+import {openDocumentA} from './fileanimation.js';
+import {openDocumentB} from './fileanimation.js';
+import {openDocumentC} from './fileanimation.js';
+
+
 
 export function infoHolder(){
     var specHold = document.createElement("div");
@@ -195,7 +201,7 @@ export function resHolder() {
                 inObjA.setAttribute("type", "image/svg+xml");
                 inObjB.setAttribute("type", "image/svg+xml");
 
-                btn.setAttribute("onclick", click);
+                btn.addEventListener("click", click);
 
 				fdiv.appendChild(dCon);
                 dCon.appendChild(inObjA);
@@ -210,7 +216,7 @@ export function resHolder() {
                 var dBtn = document.createElement("button");
                 dBtn.classList.add("file-lock", "no-border", "abs", "z4", "point");
                 dBtn.setAttribute("id", "fileLock");
-                dBtn.setAttribute("onclick", "fileOpen()");
+                dBtn.addEventListener("click", fileOpen);
 
                 var btnBars1 = document.createElement("div");
                 btnBars1.classList.add("barz3");
@@ -224,13 +230,14 @@ export function resHolder() {
                 dBtn.appendChild(btnBars2);
                 dBtn.appendChild(btnBars3);
                 return dBtn;
+                
             } 
 
 			baseObj("file-backplate", "filebackPlate", "./images/file-backplate.svg");
 
-			inDiv("inside-hold-1", "Official Resume", "insideH1", "filePageA", "fileHolderA" ,"openDocumentA()");
-            inDiv("inside-hold-2", "Degrees, Certs, Ex.", "insideH2", "filePageB", "fileHolderB" ,"openDocumentB()");
-            inDiv("inside-hold-3", "Other", "insideH3", "filePageC", "fileHolderC" ,"openDocumentC()");		
+			inDiv("inside-hold-1", "Official Resume", "insideH1", "filePageA", "fileHolderA" ,openDocumentA);
+            inDiv("inside-hold-2", "Degrees, Certs, Ex.", "insideH2", "filePageB", "fileHolderB" , openDocumentB);
+            inDiv("inside-hold-3", "Other", "insideH3", "filePageC", "fileHolderC" , openDocumentC);		
 
 			baseObj("file-front", "fileFleft", "./images/file-frontplate-left.svg");
 			baseObj("file-front", "fileFright", "./images/file-frontplate-right.svg" );
@@ -242,8 +249,10 @@ export function resHolder() {
 		return rWrap;
 	}
 	initElms();
-	return mdiv;
+    return mdiv;    
 }
+
+
 
 
 

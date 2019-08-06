@@ -1,49 +1,48 @@
-import {introDiv} from './appends/topbox.js';
-import {createAbout} from './appends/midbox.js';
-import {infoHolder} from './appends/bottombox.js';
-import {resHolder} from './appends/bottombox.js';
-import {gearPhoneAbout} from './appends/scrollmagicOut.js';
-import {gearPadAbout} from './appends/scrollmagicOut.js';
+window.addEventListener("load",function() {
+	setTimeout(function(){
+		window.scrollTo(0, 1);
+	}, 0);
+});
 
-var crtAbt = createAbout();
-var intrDiv= introDiv();
-var infoHld = infoHolder();
-var resHld = resHolder();
+var lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
 
-var aboutId = document.getElementById("aboutHolder");
-var introId = document.getElementById("introHolder");
-var resumeId = document.getElementById("resumeHolder");
+//var isTouchDevice = function() {  
+   // return 'ontouchstart' in window || 'onmsgesturechange' in window; 
+//};
+ 
+//var isDesktop = window.screenX != 0 && !isTouchDevice() ? true : false;
 
-//export {crtAbt, intrDiv, infoHld, resHld, aboutId, introId, resumeId};
+/*
+window.is_tablet = ((function(a){if(/ipad|android.+\d safari|tablet/i.test(a))
+    var iPad = document.getElementsByClassName("debug-ipad");
+    for (index = 0; index < iPad.length; index++){
+        iPad[index].style.display= "none";
+    }
+})(navigator.userAgent||navigator.vendor||window.opera))?'true':'false';
+*/
 
-function aboutPage() {
-    introId.appendChild(intrDiv);
-    aboutId.appendChild(crtAbt); 
-    resumeId.appendChild(infoHld);
-    resumeId.appendChild(resHld); 
+import {crtAbt, intrDiv, infoHld, resHld, aboutId, introId, resumeId} from './js/appender.js';
+import {gearPhoneAbout} from './js/scrollmagicOut.js';
+import {gearPadAbout} from './js/scrollmagicOut.js';
+import {openNav} from './js/navigation.js';
+import {openJob} from './js/jobholder.js';
 
-   
-}
-
-function codePage() {
-    introId.removeChild(intrDiv); 
-    aboutId.removeChild(crtAbt);
-    resumeId.removeChild(infoHld); 
-    resumeId.removeChild(resHld);
-
-}
-
-function portfolioPage() {
-    introId.removeChild(intrDiv); 
-    aboutId.removeChild(crtAbt);
-    resumeId.removeChild(infoHld); 
-    resumeId.removeChild(resHld);
-}
+window.openNav = openNav;
+window.openJob = openJob;
 
 introId.appendChild(intrDiv); 
 aboutId.appendChild(crtAbt);
 resumeId.appendChild(infoHld);
 resumeId.appendChild(resHld);
+
+
 
 if(window.innerWidth < 760){
     gearPhoneAbout();
@@ -53,24 +52,6 @@ if(window.innerWidth > 760){
     gearPadAbout();
 }
 
-/*
-crtAbt, intrDiv, infoHld, resHld, aboutId, introId, resumeId
-onload();
-aboutPage();
-codePage();
-portfolioPage();
-*/
-//alert("Hnello World!");
-
-//import{ createElementGears } from './gears.js';
-
-//require('/js/appends/gears.js');
-
-//createElementGears(null, null, null, null);
-
-//const arr = [1, 2, 3];
-//const iAmJavascriptES6 = () => console.log(...arr);
-//window.iAmJavascriptES6 = iAmJavascriptES6;
 
 
 

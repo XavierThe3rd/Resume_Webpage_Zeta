@@ -1,11 +1,13 @@
 header {
     @include border($borderPurple, 0px 0px 1px);
+    height: 55px;
     background: $pureBlack;
     
 
     h1{
         @include fontSettings($pureWhite, 20px, 700, 1, null);
     }
+    
 
     button{
         margin: 10px 5px;

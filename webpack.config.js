@@ -1,5 +1,6 @@
-/*
+
 module.exports = {
+  
     module: {
       rules: [
         {
@@ -11,4 +12,7 @@ module.exports = {
         }
       ]
     }
-  };*/
+  };
+
+  
+  

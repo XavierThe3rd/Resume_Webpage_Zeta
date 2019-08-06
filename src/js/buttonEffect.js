@@ -1,5 +1,5 @@
 
-function toColor(clazz, id, color, border, trans1, trans2, opc){
+export function toColor(clazz, id, color, border, trans1, trans2, opc){
 	var buttonz = document.getElementById(id);
 	var btnPrime = document.getElementsByClassName(clazz);
 
@@ -16,21 +16,21 @@ function toColor(clazz, id, color, border, trans1, trans2, opc){
             btnPrime[indexName].style.opacity= opc;
         }
     }
-    buttonOn = function(){
+    function buttonOn(){
         for(var indexO = 0; indexO < btnPrime.length; indexO++){
             buttonz.style.borderColor = "#ff0021";
             btnPrime[indexO].style.background= "#ff0021";
         }
     }	
-    buttonOff = function(){
+    function buttonOff(){
         for(var indexC = 0; indexC < btnPrime.length; indexC++){
             buttonz.style.borderColor = border;
             btnPrime[indexC].style.background= color;   
         }   
     }
     buttonz.style.borderColor = border;
-
-    if (isDesktop == true){	
+    
+    if (window.innerWidth > 1000){	
         buttonz.addEventListener("mouseover", buttonOn);
         buttonz.addEventListener("mouseout", buttonOff);
     }

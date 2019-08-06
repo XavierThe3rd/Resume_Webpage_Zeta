@@ -197,6 +197,7 @@ header {
   box-sizing: border-box;
   border-width: 0px 0px 1px;
   border-style: solid;
+  height: 55px;
   background: black; }
   header h1 {
     color: #ffffff;
