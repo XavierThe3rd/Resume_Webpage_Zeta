@@ -24,7 +24,10 @@ gulp.task('default', ['buildStyles'], function () {
   browserSync.init({
     server: {
       baseDir: "./"
-    }
+    },
+    online: true,
+    tunnel: true,
+    logLevel: "debug"
   });
  
   gulp.watch('./src/sass/*.scss', ['buildStyles']).on('change', browserSync.reload);

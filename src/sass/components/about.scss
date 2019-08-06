@@ -2,45 +2,73 @@
 .about-holder {
     background: $primePurple;
 
-    .about-twrap{
+    .about-twrap, .aboutinfo-wrap{
         width: 315px;
 
         @media(min-width: 768px){
-            width:500px;
+            width:600px;
+
+            @media(min-width: 1024px){
+                width:750px;
+            }
         }
         
     }
 
     h3 {
-        @include fontSettings($pureWhite, 60px, 600, 1, 40px 0 10px);
+        @include fontSettings($pureWhite, 60px, 600, 1, 40px 0 15px);
+
+        @media(min-width: 1024px){
+            font-size: 70px;
+        }      
     }
 
     p {
         @include fontSettings($pureWhite, 28px, 500, 1.3, 0 0 10px);
         word-wrap: break-word;
+
+        @media(min-width: 1024px){
+            font-size: 35px;
+        }      
     }
 
     .personal-wrap{
         height:315px;
+
+        @media(min-width: 768px){
+            height: 275px;
+
+            @media(min-width: 1024px){
+                height: 250px;
+            }      
+        }
     }
 
     .personal-holder {
         @include dimensions(none, 450px, 450px, 0, 0);
 
         @media(min-width: 768px){
-            @include dimensions(none, 750px, 450px, 0, 25px 0 0);
+            @include dimensions(none, 750px, 450px, 0, 0);
         }
 
         h4 {
-            @include fontSettings($pureWhite, 40px, 500, 1, 10px 0px 0px);
+            @include fontSettings($pureWhite, 40px, 400, 1, 10px 0px 0px);
+
+            @media(min-width: 1024px){
+                font-size: 45px;
+            }
         }
 
         p {
-            @include fontSettings($pureWhite, 18px, 400, 1.5, 10px 70px 10px);
+            @include fontSettings($pureWhite, 18px, 300, 1.5, 10px 70px 10px);
             word-wrap: break-word;
 
             @media(min-width: 768px){
                 font-size: 22px;
+
+                @media(min-width: 1024px){
+                    @include fontSettings($pureWhite, 26px, 300, 1.5, 10px 10px 10px);
+                }
             }
         }
     }
@@ -61,13 +89,21 @@
     }
 
     .book{
-        width: 300px;
-        margin: 60px auto 30px;
+        @include dimensions(none, 300px, 300px, 0px, 60px auto 15px);
+
+        @media(min-width: 768px){
+            @include dimensions(none, 375px, 375px, 0px, 60px auto 0);
+        }
     }
 
     .resbutton{
         @include border($pureWhite, 2px);
-        @include dimensions($primePurple, 300px, 75px, 10px, 0 auto 50px);
-        @include fontSettings($pureWhite, 22px, 500, 1, 0 auto 50px); 
+        @include dimensions($primePurple, 300px, 75px, 10px, 0 auto 75px);
+        @include fontSettings($pureWhite, 22px, 500, 1, 0 auto 75px);
+        
+        @media(min-width: 1024px){
+            margin: 55px auto 125px;
+        }      
     }
 }
+

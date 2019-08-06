@@ -108,7 +108,11 @@ function rePositionA(){
     transChange("0s", null, null, "0.5s", "0.5s", "0.5s");
     lateChange("0", null, null, "-90px, -50px", null, null, null, null, null);
     if(window.innerWidth >760){
-        lateChange(null, null, null, "-110px, -60px", null, null, null, null, null);
+        lateChange(null, null, null, "-125px, -75px", null, null, null, null, null);
+    
+        if(window.innerWidth >1020){
+            lateChange(null, null, null, "-160px, -100px", null, null, null, null, null);
+        }
     }
     miscChange("relative", null, null, null, null);
 }
@@ -117,6 +121,13 @@ function rePositionB(){
     opacityChange("0", "1", null, "1", "1", "1", null, null);
     transChange(null, "0s", null, "0.5s", "0.5s", "0.5s");
     lateChange(null, "0", null, null, "90px, -68px", null, null, null, null);
+    if(window.innerWidth >760){
+        lateChange(null, null, null, null, "125px, -97px", null, null, null, null);
+       
+        if(window.innerWidth >1020){
+            lateChange(null, null, null, null, "160px, -119px", null, null, null, null);
+        }
+    }
     miscChange("relative", null, null, null, null);
 }
 
@@ -124,6 +135,13 @@ function rePositionC(){
     opacityChange("0", "1", null, "1", "1", "1", null, null);
     transChange(null, null, "0s", "0.5s", "0.5s", "0.5s");
     lateChange(null, null, "0", null, null, "0px, 125px", null, null, null);
+    if(window.innerWidth >760){
+        lateChange(null, null, null, null, null, "0, 190px", null, null, null);
+    
+        if(window.innerWidth >1020){
+            lateChange(null, null, null, null, null, "0, 250px", null, null, null);
+        }
+    }
     miscChange("relative", null, null, null, null);
 }
 
@@ -138,7 +156,11 @@ export function fileOpen(){
         lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
         toColor("barz3", "fileLock", "#ff0021", "#6100ff", "translateY(17px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
         if(window.innerWidth >760){
-            lateChange(null, null, null, "-110px, -60px", "110px, -79px", "0, 170px", "0.5", "-100px", "100px");
+            lateChange(null, null, null, "-125px, -75px", "125px, -97px", "0, 190px", "0.5", "-135px", "135px");
+
+            if(window.innerWidth > 1020){
+                lateChange(null, null, null, "-160px, -100px", "160px, -119px", "0, 250px", "0.5", "-170px", "170px");
+            }
         }
     }else{
         opacityChange("1", null, null, null, null, null, null, null);
@@ -158,6 +180,8 @@ export function openDocumentA(){
     opacityChange("0", "0", null, "0", "0", "0", null, null);
     lateChange("100%", null, null, "0px, 0px", null, null, null, null);
     closebtn.addEventListener('click', xOutA);
+    closebtn.removeEventListener('click', xOutB);
+    closebtn.removeEventListener('click', xOutC);
     resPageA.style.transform= "scale(5)";
 }
 
@@ -170,6 +194,8 @@ export function openDocumentB(){
     opacityChange("0", "0", "0", null, "0", null, "0", null);
     lateChange(null, "100%", null, null, "0px, 0px", null, null, null);
     closebtn.addEventListener('click', xOutB);
+    closebtn.removeEventListener('click', xOutA);
+    closebtn.removeEventListener('click', xOutC);
     resPageB.style.transform= "scale(5)";
 }
 
@@ -182,6 +208,8 @@ export function openDocumentC(){
     opacityChange("0", "0", "0", "0", null, null, null, "0");
     lateChange(null, null, "100%", null, null, "0px, 0px", null, null);
     closebtn.addEventListener('click', xOutC);
+    closebtn.removeEventListener('click', xOutB);
+    closebtn.removeEventListener('click', xOutA);
     resPageC.style.transform= "scale(5)";
 }
 

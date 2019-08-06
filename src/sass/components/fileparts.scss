@@ -1,0 +1,143 @@
+.resume-holder {
+    @include border($borderPurple, 1px 0);
+    background: $pureBlack;
+    z-index: 1;
+
+    .reshold{
+        h3 {
+            @include fontSettings($pureWhite, 40px, 500, 1, 101px 0 55px);
+
+            @media(min-width: 768px){
+                font-size: 50px;
+                margin: 225px 0 55px;
+            }
+        }
+    }
+
+    .file-wrap {
+        margin: 175px 0px 0px;
+        height: 430px;
+        left: 0; 
+        right: 0;
+
+        @media(min-width: 768px){
+            margin: 325px 0 0;
+
+            @media(min-width: 768px){
+                margin: 375px 0 0;
+            }
+        }
+
+        button{
+            @include fontSettings($pureWhite, 22px, 400, 1, 75px 0);
+
+            @media(min-width: 768px){
+                @include fontSettings($pureWhite, 30px, 500, 1, 125px 0);
+            }
+        }
+
+        .file-lock {
+            @include dimensions($pureBlack, 110px, 110px, 55px, 120px 0 0);
+            @include border($hotPink, 10px);
+
+            @media(min-width: 768px){
+                @include dimensions($pureBlack, 150px, 150px, 75px, 160px 0 0);
+
+                @media(min-width: 1024px){
+                    @include dimensions($pureBlack, 200px, 200px, 100px, 180px 0 0);
+                }
+            }
+
+            div {
+                @include dimensions($pureWhite, 50px, 10px, 5px, 6px auto);
+            }
+        }
+    }
+
+    .file {
+        @include dimensions(none, 200px, 200px, 0px, 0);
+
+        @media(min-width: 768px){
+            width: 225px;
+            height: 260px;
+
+            @media(min-width: 768px){
+                width:270px;
+                height: 300px;
+    
+                @media(min-width: 1024px){
+                    width:345px;
+                    height: 365px;
+                }
+            }
+        }
+    }
+
+    .file-backplate {
+        margin: 57px 0px 0px;
+    }
+
+    .file-front {
+        width: 98px;
+
+        @media(min-width: 768px){
+            width:140px;
+
+            @media(min-width: 1024px){
+                width:180px;
+            }
+        }
+    }
+
+
+    @for $i from 1 through 3 {
+        $marginT: 20px * $i;
+    
+        .inside-hold-#{$i}{
+            margin-top: $marginT;
+        }
+    }
+
+    .close-button {
+        @include dimensions($primePurple, 50px, 50px, 25px, 65px 15px 0);
+        @include fontSettings($pureWhite, 12px, 100, 1, 65px 15px 0);
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.reshold{
+    height: 607px;
+
+    @media(min-width: 768px){
+        height: 1000px;
+    }
+
+    @media(min-width: 1024px){
+        height: 1200px;
+    }
+}
+
+#fileFleft {
+    margin: 70px 0px 0px -42px;
+
+    @media(min-width: 768px){
+        margin: 75px 0px 0px -65px;
+
+        @media(min-width: 1024px){
+            margin: 75px 0px 0px -80px;
+        }
+    }
+}
+
+#fileFright {
+    margin: 70px 0px 0px 42px;
+
+    @media(min-width: 768px){
+        margin: 75px 0px 0px 65px;
+
+        @media(min-width: 1024px){
+            margin: 75px 0px 0px 80px;
+        }
+    }
+}

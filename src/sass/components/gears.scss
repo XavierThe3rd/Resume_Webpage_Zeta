@@ -113,9 +113,9 @@
 }
 
 .gear-quarter3res{
-    @include gearSettings(125px, 35deg, 485px 0 0 -211px);
+    @include gearSettings(75px, 35deg, 399px 0 0 -101px);
     @media(min-width: 768px){
-        //display: none;
+        @include gearSettings(125px, 35deg, 485px 0 0 -211px);
     }
 }
 
@@ -162,7 +162,7 @@
 }
 
 .gear-half-w{
-    @include gearSettings(150px, 0deg, -70px 520px 0);
+    @include gearSettings(150px, 0deg, 235px 0 0 135px);
 
     @media(min-width: 768px){
         @include gearSettings(250px, 0deg, 58px -84px 0);

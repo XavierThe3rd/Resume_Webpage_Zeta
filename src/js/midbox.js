@@ -11,6 +11,8 @@ export function createAbout(){
         abt.appendChild(wrapit);
         
         function creatHnPw(){
+            var infoabt = document.createElement("div");
+            infoabt.classList.add("aboutinfo-wrap" ,"over-x", "flex", "column");
             var h = document.createElement("h3"); 
             h.classList.add("prime-f"); 
             h.textContent= "About"; h.setAttribute("id", "aboutPhaze");
@@ -26,9 +28,10 @@ export function createAbout(){
             p.setAttribute("id", "pm1-Phaze");
             p.textContent= "Who's Thomas Xavier Grasso the III?";
             wrapit.appendChild(obj);
-            wrapit.appendChild(h);
-            wrapit.appendChild(p);
-            wrapit.appendChild(div);
+            wrapit.appendChild(infoabt);
+            infoabt.appendChild(h);
+            infoabt.appendChild(p);
+            infoabt.appendChild(div);
             
             function createPersonal(){
                 var person = document.createElement("div");

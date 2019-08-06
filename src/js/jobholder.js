@@ -10,6 +10,10 @@ export function openJob(){
         jb1.style.transform= "scale(1.1)";
         jb1.style.borderColor= "#CC0066";
         toColor("barz2", "jobPrime1", "#ff0021", "#ff0021", "translateY(10px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
+        if(window.innerWidth >= 1024){
+            toColor("barz2", "jobPrime1", "#ff0021", "#ff0021", "translateY(10px) rotate(45deg)", "translateY(-5px) rotate(-45deg)", "0");
+        }
+        
         logo.style.opacity = "0";
         htag.style.opacity = "0";
         ptag.style.opacity = "1"; 
