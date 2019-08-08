@@ -1,23 +1,33 @@
-import {toColor} from './buttonEffect';
 
+import {toColor} from './buttonEffect';
 
 var symbolX = document.createTextNode("\u274c");
 var closebtn = document.createElement("button");
-closebtn.classList.add("close-button", "abs", "top", "no-border", "z4");
+closebtn.classList.add("close-button", "fix", "top", "no-border", "z4", "left");
 closebtn.setAttribute('id', 'closeid');
 closebtn.appendChild(symbolX);
+
+var scrnHolder = document.createElement('div');
+scrnHolder.classList.add( "scrnhold", "fix", "auto", "opacity-none");
+
+var objA1 = document.createElement("object");
+objA1.classList.add("resumepageA");
+objA1.setAttribute("data", "./images/DummyTextBox.svg");
+objA1.setAttribute("type", "image/svg+xml");
+var objA2 = document.createElement("object");
+objA2.classList.add("resumepageA");
+objA2.setAttribute("data", "./images/DummyTextBox.svg");
+objA2.setAttribute("type", "image/svg+xml");
 
 
 
 function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){
     var fileHA = document.getElementById("fileHolderA");
     var fileHB = document.getElementById("fileHolderB");
-    var fileHC = document.getElementById("fileHolderC");
-        
+    var fileHC = document.getElementById("fileHolderC");     
     var insH1 = document.getElementById("insideH1");
     var insH2 = document.getElementById("insideH2");
     var insH3 = document.getElementById("insideH3");
-
     var leftP = document.getElementById("fileFleft");
     var rightP = document.getElementById("fileFright");
     var lockP = document.getElementById("fileLock");
@@ -33,215 +43,204 @@ function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opa
     fileHA.style.opacity= opacHA;
     fileHB.style.opacity= opacHB;
     fileHC.style.opacity= opacHC;   
+
+    function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){       
+        fileHA.style.transform= "translateY(" +transHA+ ")";
+        fileHB.style.transform= "translateY(" +transHB+ ")";
+        fileHC.style.transform= "translateY(" +transHC+ ")";
+        insH1.style.transform= "translate(" +translateH1+ ")";
+        insH2.style.transform= "translate(" +translateH2+ ")";
+        insH3.style.transform= "translate(" +translateH3+ ")";
+        lockP.style.transform = "scale(" +scale+ ")";
+        leftP.style.transform= "translateX(" +translatexL+ ")";
+        rightP.style.transform= "translateX(" +translatexR+ ")";
+    }
+    function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){   
+        fileHA.style.transitionDelay= HAtran;
+        fileHB.style.transitionDelay= HBtran;
+        fileHC.style.transitionDelay= HCtran;
+        insH1.style.transitionDelay= H1tran;
+        insH2.style.transitionDelay= H2tran;
+        insH3.style.transitionDelay= H3tran;
+    }
+    return {
+        lateChange: lateChange,
+        transChange: transChange
+    };
 }
 
-function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){
-    var fileHA = document.getElementById("fileHolderA");
-    var fileHB = document.getElementById("fileHolderB");
-    var fileHC = document.getElementById("fileHolderC");
+function miscChange(position, marg, zI){
+    var dhf = document.getElementById("holderOfFiles");
 
-    var insH1 = document.getElementById("insideH1");
-    var insH2 = document.getElementById("insideH2");
-    var insH3 = document.getElementById("insideH3");
-
-    fileHA.style.transitionDelay= HAtran;
-    fileHB.style.transitionDelay= HBtran;
-    fileHC.style.transitionDelay= HCtran;
-    insH1.style.transitionDelay= H1tran;
-    insH2.style.transitionDelay= H2tran;
-    insH3.style.transitionDelay= H3tran;
+    dhf.style.position= position;
+    dhf.style.margin= marg
+    dhf.style.zIndex = zI;
 }
 
-function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){
-    var fileHA = document.getElementById("fileHolderA");
-    var fileHB = document.getElementById("fileHolderB");
-    var fileHC = document.getElementById("fileHolderC");
-        
-    var insH1 = document.getElementById("insideH1");
-    var insH2 = document.getElementById("insideH2");
-    var insH3 = document.getElementById("insideH3");
+function eventListen(vary1, rmv1, add1, vary2, rmv2, vary3, add2, add3, rmvA3, rmvB3){
+    vary1.removeEventListener("transitionend", rmv1);
+    vary1.addEventListener("transitionend", add1);
 
-    var leftP = document.getElementById("fileFleft");
-    var rightP = document.getElementById("fileFright");
-    var lockP = document.getElementById("fileLock");
-   
-    fileHA.style.transform= "translateY(" +transHA+ ")";
-    fileHB.style.transform= "translateY(" +transHB+ ")";
-    fileHC.style.transform= "translateY(" +transHC+ ")";
-    insH1.style.transform= "translate(" +translateH1+ ")";
-    insH2.style.transform= "translate(" +translateH2+ ")";
-    insH3.style.transform= "translate(" +translateH3+ ")";
-    lockP.style.transform = "scale(" +scale+ ")";
-    leftP.style.transform= "translateX(" +translatexL+ ")";
-    rightP.style.transform= "translateX(" +translatexR+ ")";
-}
+    vary2.removeEventListener("transitionend", rmv2);
+    vary3.addEventListener("transitionend", add2);
 
-function miscChange(position, height, top, index){
-    var resWrap = document.getElementById("resumeWrap");
-
-    resWrap.style.position= position;
-    resWrap.style.height= height;
-    resWrap.style.top= top;
-    resWrap.style.zIndex= index;
-}
-
-function eventListen(vary, rmv, add){
-    vary.removeEventListener("transitionend", rmv);
-    vary.addEventListener("transitionend", add);
+    closebtn.addEventListener('click', add3);
+    closebtn.removeEventListener('click', rmvA3);
+    closebtn.removeEventListener('click', rmvB3);
 }
 
 //--------------------------------------------------------------------//
 
 function xbuttonOn(){
-    var resWrap = document.getElementById("resumeWrap");
+    var dhf = document.getElementById("holderOfFiles");
+    var opcXbtn = opacityChange();
 
-    transChange("0s", "0.5s", "0.5s", "0.5s");
-    resWrap.appendChild(closebtn);
+    opcXbtn.transChange("0s", "0.5s", "0.5s", "0.5s");
+    dhf.appendChild(closebtn);
     closeid.style.animationName= "fadein";
 }
 
-
-//--------------------------------------------------------------------//
-
-function rePositionA(){
-    opacityChange("0", "1", null, "1", "1", "1", null, null);
-    transChange("0s", null, null, "0.5s", "0.5s", "0.5s");
-    lateChange("0", null, null, "-90px, -50px", null, null, null, null, null);
-    if(window.innerWidth >760){
-        lateChange(null, null, null, "-125px, -75px", null, null, null, null, null);
-    
-        if(window.innerWidth >1020){
-            lateChange(null, null, null, "-160px, -100px", null, null, null, null, null);
-        }
-    }
-    miscChange("relative", null, null, null, null);
+function toA(){
+    scrnHolder.style.opacity="1";
 }
 
-function rePositionB(){
-    opacityChange("0", "1", null, "1", "1", "1", null, null);
-    transChange(null, "0s", null, "0.5s", "0.5s", "0.5s");
-    lateChange(null, "0", null, null, "90px, -68px", null, null, null, null);
-    if(window.innerWidth >760){
-        lateChange(null, null, null, null, "125px, -97px", null, null, null, null);
-       
-        if(window.innerWidth >1020){
-            lateChange(null, null, null, null, "160px, -119px", null, null, null, null);
-        }
-    }
-    miscChange("relative", null, null, null, null);
-}
-
-function rePositionC(){
-    opacityChange("0", "1", null, "1", "1", "1", null, null);
-    transChange(null, null, "0s", "0.5s", "0.5s", "0.5s");
-    lateChange(null, null, "0", null, null, "0px, 125px", null, null, null);
-    if(window.innerWidth >760){
-        lateChange(null, null, null, null, null, "0, 190px", null, null, null);
-    
-        if(window.innerWidth >1020){
-            lateChange(null, null, null, null, null, "0, 250px", null, null, null);
-        }
-    }
-    miscChange("relative", null, null, null, null);
+function outA(){
+    var dhf = document.getElementById("holderOfFiles");
+    dhf.removeChild(scrnHolder);
 }
 
 //--------------------------------------------------------------------//
 
 export function fileOpen(){
     var lockP = document.getElementById("fileLock");
+    var htag = document.getElementById("resumePhaze");
 
     if(lockP.style.transform === "scale(1)"){
-        opacityChange("0", null, null, null, null, null, null, null);
-        transChange(null, null, null, "0s", "0s", "0s");
-        lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
+        window.clearTimeout(closeFolder);
+        htag.style.opacity = "0";
+        var opcFO = opacityChange("0", null, null, null, null, null, null, null);
+        opcFO.transChange(null, null, null, "0s", "0s", "0s");
+        opcFO.lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
         toColor("barz3", "fileLock", "#ff0021", "#6100ff", "translateY(17px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
         if(window.innerWidth >760){
-            lateChange(null, null, null, "-125px, -75px", "125px, -97px", "0, 190px", "0.5", "-135px", "135px");
-
-            if(window.innerWidth > 1020){
-                lateChange(null, null, null, "-160px, -100px", "160px, -119px", "0, 250px", "0.5", "-170px", "170px");
-            }
+            opcFO.lateChange(null, null, null, "-125px, -75px", "125px, -97px", "0, 190px", "0.5", "-135px", "135px");
         }
     }else{
-        opacityChange("1", null, null, null, null, null, null, null);
-        lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
+        htag.style.opacity = "1";
+        var opcFC = opacityChange("1", null, null, null, null, null, null, null);
+        opcFC.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
         toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");        
     }
 }
 //--------------------------------------------------------------------//  
 
 
-export function openDocumentA(){
-    var resPageA = document.getElementById("filePageA");
+function openDocumentPrime(id, opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8, trans1, trans2, trans3, trans4, trans5 ,trans6, late1, late2, late3, late4, late5, late6, late7, late8, rePQQ, xAQQ, xBQQ, xCQQ){
+    var resPage = document.getElementById(id);
+    var dhf = document.getElementById("holderOfFiles");
 
-    transChange("0.5s", null , null, "0s", "0s", "0s");
-    miscChange("fixed", "100%", "0", "6");
-    eventListen(resPageA, rePositionA, xbuttonOn);
-    opacityChange("0", "0", null, "0", "0", "0", null, null);
-    lateChange("100%", null, null, "0px, 0px", null, null, null, null);
-    closebtn.addEventListener('click', xOutA);
-    closebtn.removeEventListener('click', xOutB);
-    closebtn.removeEventListener('click', xOutC);
-    resPageA.style.transform= "scale(5)";
+    miscChange("fixed", "auto", "5");  
+
+    var opcOD = opacityChange(opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8);
+    opcOD.transChange(trans1, trans2, trans3, trans4, trans5 ,trans6);
+    opcOD.lateChange(late1, late2, late3, late4, late5, late6, late7, late8);
+
+    document.querySelector("footer").style.display= "none";
+
+    dhf.appendChild(scrnHolder);
+    scrnHolder.appendChild(objA1);
+    scrnHolder.appendChild(objA2);
+    window.scrollTo(0,document.body.scrollHeight);
+    
+    resPage.style.transform= "scale(5)";
+    
+    eventListen(resPage, rePQQ, xbuttonOn, scrnHolder, outA, resPage, toA, xAQQ, xBQQ, xCQQ);
+
+}
+
+export function openDocumentA(){
+    openDocumentPrime("filePageA", "0", "0", null, "0", "0", "0", null, null, "0s", null , null, "0s", "0s", "0s", "100%", null, null, "0px, 0px", null, null, null, null, rePositionA, xOutA, xOutB, xOutC);
 }
 
 export function openDocumentB(){
-    var resPageB = document.getElementById("filePageB");
-
-    transChange(null, "0.5s", null, "0s", "0s", "0s");
-    miscChange("fixed", "100%", "0", "6");
-    eventListen(resPageB, rePositionB, xbuttonOn),
-    opacityChange("0", "0", "0", null, "0", null, "0", null);
-    lateChange(null, "100%", null, null, "0px, 0px", null, null, null);
-    closebtn.addEventListener('click', xOutB);
-    closebtn.removeEventListener('click', xOutA);
-    closebtn.removeEventListener('click', xOutC);
-    resPageB.style.transform= "scale(5)";
+    openDocumentPrime("filePageB", "0", "0", "0", null, "0", null, "0", null, null, "0s", null, "0s", "0s", "0s", null, "100%", null, null, "0px, 0px", null, null, null, rePositionB, xOutB, xOutA, xOutC);
 }
 
 export function openDocumentC(){
-    var resPageC = document.getElementById("filePageC");
+    openDocumentPrime("filePageC", "0", "0", "0", "0", null, null, null, "0", null, null, "0s", "0s", "0s", "0s", null, null, "100%", null, null, "0px, 0px", null, null, rePositionC, xOutC, xOutA, xOutB);
+}
 
-    transChange(null, null, "0.5s", "0s", "0s", "0s");
-    miscChange("fixed", "100%", "0", "6");
-    eventListen(resPageC, rePositionC, xbuttonOn),
-    opacityChange("0", "0", "0", "0", null, null, null, "0");
-    lateChange(null, null, "100%", null, null, "0px, 0px", null, null);
-    closebtn.addEventListener('click', xOutC);
-    closebtn.removeEventListener('click', xOutB);
-    closebtn.removeEventListener('click', xOutA);
-    resPageC.style.transform= "scale(5)";
+
+function closeFolder(){
+    var opcFC = opacityChange("1", null, null, null, null, null, null, null);
+    var htag = document.getElementById("resumePhaze");
+    htag.style.opacity = "1";
+    opcFC.transChange(null, null, null, "0s", "0s", "0s");
+    opcFC.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
+    toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1"); 
+}
+
+
+function rePositionPrime(transA, transB, transC, lateA, lateB, lateC, lateD, lateE, lateF, lateG, lateH, lateI, lateJ, lateK, lateL){
+    miscChange("relative", "0", "1");
+    document.querySelector("footer").style.display= "flex";
+
+    var opcRPA = opacityChange("0", "1", null, "1", "1", "1", null, null);
+    opcRPA.transChange(transA, transB, transC, "0.5s", "0.5s", "0.5s");
+    opcRPA.lateChange(lateA, lateB, lateC, lateD, lateE, lateF, null, null, null);
+
+    window.setTimeout(closeFolder, 1000);
+
+    if(window.innerWidth >760){
+        opcRPA.lateChange(lateG, lateH, lateI, lateJ, lateK, lateL, null, null, null);
+    }
+}
+
+function rePositionA(){ 
+    rePositionPrime("0s", null, null, "0", null, null, "-90px, -50px", null, null, null, null, null, "-125px, -75px", null, null,);
+}
+
+function rePositionB(){
+    rePositionPrime(null, "0s", null, null, "0", null, null, "90px, -68px", null, null, null, null, null, "125px, -97px", null);
+}
+
+function rePositionC(){
+    rePositionPrime(null, null, "0s", null, null, "0", null, null, "0px, 125px", null, null, null, null, null, "0, 190px");
+}
+
+function xOutPrime(id, rePQQ){
+    var resPage = document.getElementById(id);
+    var dhf = document.getElementById("holderOfFiles");
+
+    var opcXO = opacityChange();
+    opcXO.transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
+
+    closeid.style.animationName= "fadeout";
+    resPage.style.transform= "scale(1)";
+    scrnHolder.style.opacity = "0";
+
+    dhf.removeChild(closebtn);
+    window.scrollTo(0,document.body.scrollHeight);
+    eventListen(resPage, xbuttonOn, rePQQ, resPage, toA, scrnHolder, outA, null, null, null);
+
 }
 
 function xOutA(){
-    var resPageA = document.getElementById("filePageA");
-    var resWrap = document.getElementById("resumeWrap");
-
-    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
-    closeid.style.animationName= "fadeout";
-    resPageA.style.transform= "scale(1)";
-    resWrap.removeChild(closebtn);
-    eventListen(resPageA, xbuttonOn, rePositionA);
+    xOutPrime("filePageA", rePositionA);
 }
 
 function xOutB(){
-    var resPageB = document.getElementById("filePageB");
-    var resWrap = document.getElementById("resumeWrap");
-
-    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
-    closeid.style.animationName= "fadeout";
-    resPageB.style.transform= "scale(1)";
-    resWrap.removeChild(closebtn);
-    eventListen(resPageB, xbuttonOn, rePositionB);
+    xOutPrime("filePageB", rePositionB);
 }
 
 function xOutC(){
-    var resPageC = document.getElementById("filePageC");
-    var resWrap = document.getElementById("resumeWrap");
-
-    transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
-    closeid.style.animationName= "fadeout";
-    resPageC.style.transform= "scale(1)";
-    resWrap.removeChild(closebtn);
-    eventListen(resPageC, xbuttonOn, rePositionC);
+    xOutPrime("filePageC", rePositionC);
 }
+
+
+
+
+
+
+
+

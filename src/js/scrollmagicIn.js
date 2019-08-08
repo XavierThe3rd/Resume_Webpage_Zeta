@@ -1,15 +1,4 @@
 
-export function introPhaze(phazer, trig, dur){
-    var controller = new ScrollMagic.Controller();
-    new ScrollMagic.Scene({
-        triggerElement: trig,
-        triggerHook: 0,
-        duration: dur
-    })
-    .setClassToggle(phazer, "visible") // add class to reveal
-    .addTo(controller)
-    //.addIndicators();
-}
 
 export function gearRotation(gear, rot, trig){
    

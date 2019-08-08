@@ -82,7 +82,7 @@
     @include gearSettings(150px, 0deg, 276px 0 0 -164px);
 
     @media(min-width: 768px){
-        @include gearSettings(250px, 0deg, 315px 0 0 -350px);
+        @include gearSettings(250px, 0deg, 444px 0 0 -350px);
     }
 }
 
@@ -98,10 +98,12 @@
     @include gearSettings(75px, 14deg, 270px 0 0 71px);
 
     @media(min-width: 768px){
-        @include gearSettings(125px, 26deg, 368px 0 0 112px);
+        @include gearSettings(125px, 26deg, 369px 0 0 112px);
         //display:none;
     }
 }
+
+//369px 0 0 112px;
 
 .gear-quarter2res{
     @include gearSettings(75px, 0deg, 162px 0 0 171px);
@@ -115,7 +117,7 @@
 .gear-quarter3res{
     @include gearSettings(75px, 35deg, 399px 0 0 -101px);
     @media(min-width: 768px){
-        @include gearSettings(125px, 35deg, 485px 0 0 -211px);
+        @include gearSettings(125px, 35deg, 618px 0 0 -211px);
     }
 }
 

@@ -2,7 +2,7 @@
 .about-holder {
     background: $primePurple;
 
-    .about-twrap, .aboutinfo-wrap{
+    .about-twrap{
         width: 315px;
 
         @media(min-width: 768px){
@@ -16,7 +16,7 @@
     }
 
     h3 {
-        @include fontSettings($pureWhite, 60px, 600, 1, 40px 0 15px);
+        @include fontSettings($pureWhite, 60px, 500, 1, 0px 0 15px);
 
         @media(min-width: 1024px){
             font-size: 70px;
@@ -24,7 +24,7 @@
     }
 
     p {
-        @include fontSettings($pureWhite, 28px, 500, 1.3, 0 0 10px);
+        @include fontSettings($pureWhite, 28px, 400, 1.3, 0 0 10px);
         word-wrap: break-word;
 
         @media(min-width: 1024px){
@@ -33,13 +33,19 @@
     }
 
     .personal-wrap{
-        height:315px;
+        background: $offPurple;
+        height:300px;
+        width: 300px;
+        border-radius: 150px;
+        margin: -5px auto 0;
 
         @media(min-width: 768px){
             height: 275px;
+            width: 275px;
 
             @media(min-width: 1024px){
                 height: 250px;
+                width: 250px;
             }      
         }
     }
@@ -92,14 +98,14 @@
         @include dimensions(none, 300px, 300px, 0px, 60px auto 15px);
 
         @media(min-width: 768px){
-            @include dimensions(none, 375px, 375px, 0px, 60px auto 0);
+            @include dimensions(none, 350px, 350px, 0px, 60px auto 0);
         }
     }
 
     .resbutton{
         @include border($pureWhite, 2px);
-        @include dimensions($primePurple, 300px, 75px, 10px, 0 auto 75px);
-        @include fontSettings($pureWhite, 22px, 500, 1, 0 auto 75px);
+        @include dimensions($primePurple, 300px, 75px, 10px, 10px auto 75px);
+        @include fontSettings($pureWhite, 22px, 500, 1, 10px auto 75px);
         
         @media(min-width: 1024px){
             margin: 55px auto 125px;

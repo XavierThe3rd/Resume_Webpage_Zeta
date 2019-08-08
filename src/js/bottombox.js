@@ -130,9 +130,7 @@ export function infoHolder(){
 
 
 
-
 //--------------------------------------------------------------------------------------------------------------//
-
 
 
 
@@ -144,8 +142,8 @@ export function resHolder() {
 	function initElms() {
 		var htag = document.createElement("h3");
 		var rWrap = document.createElement("div");
-		htag.textContent = "Resume"; //--!--//
-		htag.classList.add("prime-f", "t-center", "opacity-none", "abs", "z3");
+		htag.textContent = "Documents"; //--!--//
+		htag.classList.add("prime-f", "t-center", "abs", "z3");
         rWrap.classList.add("resume-wrap", "over-x", "grid10", "flex", "rel", "column");
         htag.setAttribute("id", "resumePhaze");
         rWrap.setAttribute("id", "resumeWrap");
@@ -157,6 +155,9 @@ export function resHolder() {
 			var fdiv = document.createElement("div");
             fdiv.classList.add("file-wrap", "rel", "flex", "center");
             fdiv.setAttribute("id", "fileWrap");
+            var holdDiv = document.createElement("div");
+            holdDiv.classList.add("fixed-holder", "flex", "center");
+            holdDiv.setAttribute("id", "holderOfFiles");
             rWrap.appendChild(fdiv);
             //--gears--//
             fdiv.appendChild(gearMW);
@@ -166,7 +167,7 @@ export function resHolder() {
             fdiv.appendChild(gearQ1res);
             fdiv.appendChild(gearQ2res);
             fdiv.appendChild(gearQ3res);
-
+            fdiv.appendChild(holdDiv);
 
             function baseObj(clazz, iD, data) {
 				var bObj = document.createElement("object");
@@ -175,7 +176,7 @@ export function resHolder() {
                 bObj.setAttribute("data", data);
                 bObj.setAttribute("type", "image/svg+xml");
                 
-				fdiv.appendChild(bObj);
+				holdDiv.appendChild(bObj);
 				return bObj;
 			}
                        
@@ -203,7 +204,7 @@ export function resHolder() {
 
                 btn.addEventListener("click", click);
 
-				fdiv.appendChild(dCon);
+				holdDiv.appendChild(dCon);
                 dCon.appendChild(inObjA);
                 dCon.appendChild(inObjB);
 				dCon.appendChild(btn);
@@ -225,7 +226,7 @@ export function resHolder() {
                 var btnBars3 = document.createElement("div");
                 btnBars3.classList.add("barz3");
 
-                fdiv.appendChild(dBtn);
+                holdDiv.appendChild(dBtn);
                 dBtn.appendChild(btnBars1);
                 dBtn.appendChild(btnBars2);
                 dBtn.appendChild(btnBars3);

@@ -4,12 +4,18 @@
     z-index: 1;
 
     .reshold{
-        h3 {
-            @include fontSettings($pureWhite, 40px, 500, 1, 101px 0 55px);
+        height: 625px;
 
+        @media(min-width: 768px){
+            height: 1000px; 
+        }
+
+        h3 {
+            @include fontSettings($pureWhite, 40px, 500, 1, 120px 0 55px);
+            transition: all 0.5s ease-out;
+            
             @media(min-width: 768px){
-                font-size: 50px;
-                margin: 225px 0 55px;
+                @include fontSettings($pureWhite, 50px, 500, 1, 225px 0 55px);
             }
         }
     }
@@ -23,13 +29,20 @@
         @media(min-width: 768px){
             margin: 325px 0 0;
 
-            @media(min-width: 768px){
-                margin: 375px 0 0;
-            }
         }
 
+        .close-button {
+            @include dimensions(none, 50px, 50px, 25px, 10px 0px 0);
+            @include fontSettings($hotPink, 20px, 100, 1, 10px 0px 0);
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            z-index: 5;
+            align-content: center;    
+        }
+    
+
         button{
-            @include fontSettings($pureWhite, 22px, 400, 1, 75px 0);
+            @include fontSettings($pureWhite, 20px, 400, 1, 75px 0);
 
             @media(min-width: 768px){
                 @include fontSettings($pureWhite, 30px, 500, 1, 125px 0);
@@ -43,9 +56,6 @@
             @media(min-width: 768px){
                 @include dimensions($pureBlack, 150px, 150px, 75px, 160px 0 0);
 
-                @media(min-width: 1024px){
-                    @include dimensions($pureBlack, 200px, 200px, 100px, 180px 0 0);
-                }
             }
 
             div {
@@ -57,20 +67,12 @@
     .file {
         @include dimensions(none, 200px, 200px, 0px, 0);
 
-        @media(min-width: 768px){
-            width: 225px;
-            height: 260px;
 
             @media(min-width: 768px){
                 width:270px;
                 height: 300px;
-    
-                @media(min-width: 1024px){
-                    width:345px;
-                    height: 365px;
-                }
+
             }
-        }
     }
 
     .file-backplate {
@@ -83,9 +85,6 @@
         @media(min-width: 768px){
             width:140px;
 
-            @media(min-width: 1024px){
-                width:180px;
-            }
         }
     }
 
@@ -97,26 +96,10 @@
             margin-top: $marginT;
         }
     }
-
-    .close-button {
-        @include dimensions($primePurple, 50px, 50px, 25px, 65px 15px 0);
-        @include fontSettings($pureWhite, 12px, 100, 1, 65px 15px 0);
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-    }
 }
 
-.reshold{
-    height: 607px;
 
-    @media(min-width: 768px){
-        height: 1000px;
-    }
 
-    @media(min-width: 1024px){
-        height: 1200px;
-    }
-}
 
 #fileFleft {
     margin: 70px 0px 0px -42px;
@@ -124,9 +107,6 @@
     @media(min-width: 768px){
         margin: 75px 0px 0px -65px;
 
-        @media(min-width: 1024px){
-            margin: 75px 0px 0px -80px;
-        }
     }
 }
 
@@ -136,8 +116,29 @@
     @media(min-width: 768px){
         margin: 75px 0px 0px 65px;
 
-        @media(min-width: 1024px){
-            margin: 75px 0px 0px 80px;
-        }
     }
+}
+
+.scrnhold{
+    height: 100%;
+    width: 100%;
+    background: red;
+    z-index: 5;
+    left:0;
+    right:0;
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+    transition: all 0.5s linear;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fixed-holder{
+    width: 300px;
+    height: 360px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }

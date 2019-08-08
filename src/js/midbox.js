@@ -12,7 +12,7 @@ export function createAbout(){
         
         function creatHnPw(){
             var infoabt = document.createElement("div");
-            infoabt.classList.add("aboutinfo-wrap" ,"over-x", "flex", "column");
+            infoabt.classList.add("aboutinfo-wrap", "grid10", "flex", "column");
             var h = document.createElement("h3"); 
             h.classList.add("prime-f"); 
             h.textContent= "About"; h.setAttribute("id", "aboutPhaze");
@@ -35,7 +35,7 @@ export function createAbout(){
             
             function createPersonal(){
                 var person = document.createElement("div");
-                person.classList.add("personal-holder", "over-x", "abs", "btw", "flex", "z3");
+                person.classList.add("personal-holder", "abs", "btw", "flex", "z3");
                 person.setAttribute("id", "p-aboutPhaze");
                 div.appendChild(person);
                 function createElementSlide(id, text1, text2){

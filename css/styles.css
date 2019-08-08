@@ -5,20 +5,20 @@
 }*/
 #slideHolder1 {
   transform: translateX(0px);
-  transition: all 1s ease-out 0s; }
+  transition: all 1s ease-in-out 0s; }
 
 #slideHolder2, #slideHolder3, #slideHolder4, #slideHolder5 {
   transform: translateX(100%);
-  transition: all 1s ease-out 0s; }
+  transition: all 1s ease-in-out 0s; }
 
 #insideH1, #insideH2, #insideH3 {
-  transition: all 0.5s ease-out; }
+  transition: all 0.5s ease-in-out; }
 
 #filePageA, #filePageB, #filePageC {
-  transition: all 1s ease-out 1s; }
+  transition: all 0.5s ease-in-out 0.5s; }
 
 #fileHolderA, #fileHolderB, #fileHolderC {
-  transition: all 0.5s ease-out; }
+  transition: all 0.5s ease-in-out; }
 
 #btn1id, #btn2id, #btn3id {
   animation-duration: 0.25s;
@@ -29,7 +29,7 @@
 
 #fileFleft, #fileFright, #fileLock {
   transform: scale(1);
-  transition: all 0.5s ease-out 0s; }
+  transition: all 0.5s ease-in-out 0s; }
 
 @keyframes fadein {
   0% {
@@ -108,6 +108,9 @@
 
 .z4 {
   z-index: 4; }
+
+.z5 {
+  z-index: 5; }
 
 .z6 {
   z-index: 6; }
@@ -276,28 +279,28 @@ header {
 
 .about-holder {
   background: #6100ff; }
-  .about-holder .about-twrap, .about-holder .aboutinfo-wrap {
+  .about-holder .about-twrap {
     width: 315px; }
     @media (min-width: 768px) {
-      .about-holder .about-twrap, .about-holder .aboutinfo-wrap {
+      .about-holder .about-twrap {
         width: 600px; } }
   @media (min-width: 768px) and (min-width: 1024px) {
-    .about-holder .about-twrap, .about-holder .aboutinfo-wrap {
+    .about-holder .about-twrap {
       width: 750px; } }
 
   .about-holder h3 {
     color: #ffffff;
     font-size: 60px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
-    margin: 40px 0 15px; }
+    margin: 0px 0 15px; }
     @media (min-width: 1024px) {
       .about-holder h3 {
         font-size: 70px; } }
   .about-holder p {
     color: #ffffff;
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.3;
     margin: 0 0 10px;
     word-wrap: break-word; }
@@ -305,13 +308,19 @@ header {
       .about-holder p {
         font-size: 35px; } }
   .about-holder .personal-wrap {
-    height: 315px; }
+    background: #5a00e9;
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    margin: -5px auto 0; }
     @media (min-width: 768px) {
       .about-holder .personal-wrap {
-        height: 275px; } }
+        height: 275px;
+        width: 275px; } }
   @media (min-width: 768px) and (min-width: 1024px) {
     .about-holder .personal-wrap {
-      height: 250px; } }
+      height: 250px;
+      width: 250px; } }
 
   .about-holder .personal-holder {
     background: none;
@@ -380,8 +389,8 @@ header {
     @media (min-width: 768px) {
       .about-holder .book {
         background: none;
-        width: 375px;
-        height: 375px;
+        width: 350px;
+        height: 350px;
         border-radius: 0px;
         margin: 60px auto 0; } }
   .about-holder .resbutton {
@@ -393,12 +402,12 @@ header {
     width: 300px;
     height: 75px;
     border-radius: 10px;
-    margin: 0 auto 75px;
+    margin: 10px auto 75px;
     color: #ffffff;
     font-size: 22px;
     font-weight: 500;
     line-height: 1;
-    margin: 0 auto 75px; }
+    margin: 10px auto 75px; }
     @media (min-width: 1024px) {
       .about-holder .resbutton {
         margin: 55px auto 125px; } }
@@ -602,16 +611,25 @@ header {
   border-style: solid;
   background: black;
   z-index: 1; }
-  .resume-holder .reshold h3 {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1;
-    margin: 101px 0 55px; }
+  .resume-holder .reshold {
+    height: 625px; }
     @media (min-width: 768px) {
-      .resume-holder .reshold h3 {
-        font-size: 50px;
-        margin: 225px 0 55px; } }
+      .resume-holder .reshold {
+        height: 1000px; } }
+    .resume-holder .reshold h3 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      margin: 120px 0 55px;
+      transition: all 0.5s ease-out; }
+      @media (min-width: 768px) {
+        .resume-holder .reshold h3 {
+          color: #ffffff;
+          font-size: 50px;
+          font-weight: 500;
+          line-height: 1;
+          margin: 225px 0 55px; } }
   .resume-holder .file-wrap {
     margin: 175px 0px 0px;
     height: 430px;
@@ -620,13 +638,24 @@ header {
     @media (min-width: 768px) {
       .resume-holder .file-wrap {
         margin: 325px 0 0; } }
-  @media (min-width: 768px) and (min-width: 768px) {
-    .resume-holder .file-wrap {
-      margin: 375px 0 0; } }
-
+    .resume-holder .file-wrap .close-button {
+      background: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      margin: 10px 0px 0;
+      color: #ff012b;
+      font-size: 20px;
+      font-weight: 100;
+      line-height: 1;
+      margin: 10px 0px 0;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      z-index: 5;
+      align-content: center; }
     .resume-holder .file-wrap button {
       color: #ffffff;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 400;
       line-height: 1;
       margin: 75px 0; }
@@ -654,14 +683,6 @@ header {
           height: 150px;
           border-radius: 75px;
           margin: 160px 0 0; } }
-  @media (min-width: 768px) and (min-width: 1024px) {
-    .resume-holder .file-wrap .file-lock {
-      background: black;
-      width: 200px;
-      height: 200px;
-      border-radius: 100px;
-      margin: 180px 0 0; } }
-
       .resume-holder .file-wrap .file-lock div {
         background: #ffffff;
         width: 50px;
@@ -676,18 +697,8 @@ header {
     margin: 0; }
     @media (min-width: 768px) {
       .resume-holder .file {
-        width: 225px;
-        height: 260px; } }
-  @media (min-width: 768px) and (min-width: 768px) {
-    .resume-holder .file {
-      width: 270px;
-      height: 300px; } }
-
-  @media (min-width: 768px) and (min-width: 768px) and (min-width: 1024px) {
-    .resume-holder .file {
-      width: 345px;
-      height: 365px; } }
-
+        width: 270px;
+        height: 300px; } }
   .resume-holder .file-backplate {
     margin: 57px 0px 0px; }
   .resume-holder .file-front {
@@ -695,56 +706,46 @@ header {
     @media (min-width: 768px) {
       .resume-holder .file-front {
         width: 140px; } }
-  @media (min-width: 768px) and (min-width: 1024px) {
-    .resume-holder .file-front {
-      width: 180px; } }
-
   .resume-holder .inside-hold-1 {
     margin-top: 20px; }
   .resume-holder .inside-hold-2 {
     margin-top: 40px; }
   .resume-holder .inside-hold-3 {
     margin-top: 60px; }
-  .resume-holder .close-button {
-    background: #6100ff;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    margin: 65px 15px 0;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 100;
-    line-height: 1;
-    margin: 65px 15px 0;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards; }
-
-.reshold {
-  height: 607px; }
-  @media (min-width: 768px) {
-    .reshold {
-      height: 1000px; } }
-  @media (min-width: 1024px) {
-    .reshold {
-      height: 1200px; } }
 
 #fileFleft {
   margin: 70px 0px 0px -42px; }
   @media (min-width: 768px) {
     #fileFleft {
       margin: 75px 0px 0px -65px; } }
-  @media (min-width: 768px) and (min-width: 1024px) {
-    #fileFleft {
-      margin: 75px 0px 0px -80px; } }
 
 #fileFright {
   margin: 70px 0px 0px 42px; }
   @media (min-width: 768px) {
     #fileFright {
       margin: 75px 0px 0px 65px; } }
-  @media (min-width: 768px) and (min-width: 1024px) {
-    #fileFright {
-      margin: 75px 0px 0px 80px; } }
+
+.scrnhold {
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.5s linear;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+.fixed-holder {
+  width: 300px;
+  height: 360px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
 
 footer {
   box-sizing: border-box;
@@ -881,7 +882,7 @@ footer {
       width: 250px;
       height: 250px;
       transform: rotate(0deg);
-      margin: 315px 0 0 -350px; } }
+      margin: 444px 0 0 -350px; } }
 
 .gear-half3 {
   width: 150px;
@@ -905,7 +906,7 @@ footer {
       width: 125px;
       height: 125px;
       transform: rotate(26deg);
-      margin: 368px 0 0 112px; } }
+      margin: 369px 0 0 112px; } }
 
 .gear-quarter2res {
   width: 75px;
@@ -929,7 +930,7 @@ footer {
       width: 125px;
       height: 125px;
       transform: rotate(35deg);
-      margin: 485px 0 0 -211px; } }
+      margin: 618px 0 0 -211px; } }
 
 .gear-whole-z {
   width: 300px;

@@ -1,8 +1,7 @@
-import {introPhaze} from './scrollmagicIn.js';
+
 import {gearRotation} from './scrollmagicIn.js';
 
 export function gearPhoneAbout(){
-    introPhaze("#resumePhaze", "#spec4", "200%"), 
     gearRotation("#gearWhole", "90", "#introHolder"), 
     gearRotation("#gearQ1", "-320", "#introHolder"), 
     gearRotation("#gearQ2", "-320", "#introHolder"), 
@@ -34,8 +33,7 @@ export function gearPhoneAbout(){
     gearRotation("#gearFW", "90", "#spec4")
 }
 
-export function gearPadAbout(){
-    introPhaze("#resumePhaze", "#spec4", "200%"), 
+export function gearPadAbout(){ 
     gearRotation("#gearWhole", "90", "#introHolder"), 
     gearRotation("#gearQ1", "-320", "#introHolder"), 
     gearRotation("#gearQ2", "-320", "#introHolder"), 
