@@ -20,8 +20,7 @@ objA2.setAttribute("data", "./images/DummyTextBox.svg");
 objA2.setAttribute("type", "image/svg+xml");
 
 
-
-function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){
+function closeChange(){
     var fileHA = document.getElementById("fileHolderA");
     var fileHB = document.getElementById("fileHolderB");
     var fileHC = document.getElementById("fileHolderC");     
@@ -33,17 +32,18 @@ function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opa
     var lockP = document.getElementById("fileLock");
     var backP = document.getElementById("filebackPlate");
 
-    leftP.style.opacity= opacA;
-    rightP.style.opacity= opacA;
-    backP.style.opacity= opacA;
-    insH1.style.opacity= opacIA;
-    insH2.style.opacity= opacIB;
-    insH3.style.opacity= opacIC;
-    lockP.style.opacity= opacL;
-    fileHA.style.opacity= opacHA;
-    fileHB.style.opacity= opacHB;
-    fileHC.style.opacity= opacHC;   
-
+    function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){
+        leftP.style.opacity= opacA;
+        rightP.style.opacity= opacA;
+        backP.style.opacity= opacA;
+        insH1.style.opacity= opacIA;
+        insH2.style.opacity= opacIB;
+        insH3.style.opacity= opacIC;
+        lockP.style.opacity= opacL;
+        fileHA.style.opacity= opacHA;
+        fileHB.style.opacity= opacHB;
+        fileHC.style.opacity= opacHC;   
+    }
     function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){       
         fileHA.style.transform= "translateY(" +transHA+ ")";
         fileHB.style.transform= "translateY(" +transHB+ ")";
@@ -64,6 +64,7 @@ function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opa
         insH3.style.transitionDelay= H3tran;
     }
     return {
+        opacityChange: opacityChange,
         lateChange: lateChange,
         transChange: transChange
     };
@@ -93,9 +94,9 @@ function eventListen(vary1, rmv1, add1, vary2, rmv2, vary3, add2, add3, rmvA3, r
 
 function xbuttonOn(){
     var dhf = document.getElementById("holderOfFiles");
-    var opcXbtn = opacityChange();
+    var cCxbtn = closeChange();
 
-    opcXbtn.transChange("0s", "0.5s", "0.5s", "0.5s");
+    cCxbtn.transChange("0s", "0.5s", "0.5s", "0.5s");
     dhf.appendChild(closebtn);
     closeid.style.animationName= "fadein";
 }
@@ -118,17 +119,19 @@ export function fileOpen(){
     if(lockP.style.transform === "scale(1)"){
         window.clearTimeout(closeFolder);
         htag.style.opacity = "0";
-        var opcFO = opacityChange("0", null, null, null, null, null, null, null);
-        opcFO.transChange(null, null, null, "0s", "0s", "0s");
-        opcFO.lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
+        var cCfo = closeChange();
+        cCfo.opacityChange("0", null, null, null, null, null, null, null);
+        cCfo.transChange(null, null, null, "0s", "0s", "0s");
+        cCfo.lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
         toColor("barz3", "fileLock", "#ff0021", "#6100ff", "translateY(17px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
         if(window.innerWidth >760){
-            opcFO.lateChange(null, null, null, "-125px, -75px", "125px, -97px", "0, 190px", "0.5", "-135px", "135px");
+            cCfo.lateChange(null, null, null, "-125px, -75px", "125px, -97px", "0, 190px", "0.5", "-135px", "135px");
         }
     }else{
         htag.style.opacity = "1";
-        var opcFC = opacityChange("1", null, null, null, null, null, null, null);
-        opcFC.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
+        var cCfc = closeChange();
+        cCfc.opacityChange("1", null, null, null, null, null, null, null);
+        cCfc.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
         toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");        
     }
 }
@@ -141,9 +144,10 @@ function openDocumentPrime(id, opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8, t
 
     miscChange("fixed", "auto", "5");  
 
-    var opcOD = opacityChange(opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8);
-    opcOD.transChange(trans1, trans2, trans3, trans4, trans5 ,trans6);
-    opcOD.lateChange(late1, late2, late3, late4, late5, late6, late7, late8);
+    var cCod = closeChange();
+    cCod.opacityChange(opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8);
+    cCod.transChange(trans1, trans2, trans3, trans4, trans5 ,trans6);
+    cCod.lateChange(late1, late2, late3, late4, late5, late6, late7, late8);
 
     document.querySelector("footer").style.display= "none";
 
@@ -172,11 +176,12 @@ export function openDocumentC(){
 
 
 function closeFolder(){
-    var opcFC = opacityChange("1", null, null, null, null, null, null, null);
+    var cCfc = closeChange(); 
+    cCfc.opacityChange("1", null, null, null, null, null, null, null);
     var htag = document.getElementById("resumePhaze");
     htag.style.opacity = "1";
-    opcFC.transChange(null, null, null, "0s", "0s", "0s");
-    opcFC.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
+    cCfc.transChange(null, null, null, "0s", "0s", "0s");
+    cCfc.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
     toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1"); 
 }
 
@@ -185,14 +190,15 @@ function rePositionPrime(transA, transB, transC, lateA, lateB, lateC, lateD, lat
     miscChange("relative", "0", "1");
     document.querySelector("footer").style.display= "flex";
 
-    var opcRPA = opacityChange("0", "1", null, "1", "1", "1", null, null);
-    opcRPA.transChange(transA, transB, transC, "0.5s", "0.5s", "0.5s");
-    opcRPA.lateChange(lateA, lateB, lateC, lateD, lateE, lateF, null, null, null);
+    var cCrpa = closeChange();
+    cCrpa.opacityChange("0", "1", null, "1", "1", "1", null, null);
+    cCrpa.transChange(transA, transB, transC, "0.5s", "0.5s", "0.5s");
+    cCrpa.lateChange(lateA, lateB, lateC, lateD, lateE, lateF, null, null, null);
 
     window.setTimeout(closeFolder, 1000);
 
     if(window.innerWidth >760){
-        opcRPA.lateChange(lateG, lateH, lateI, lateJ, lateK, lateL, null, null, null);
+        cCrpa.lateChange(lateG, lateH, lateI, lateJ, lateK, lateL, null, null, null);
     }
 }
 
@@ -212,8 +218,8 @@ function xOutPrime(id, rePQQ){
     var resPage = document.getElementById(id);
     var dhf = document.getElementById("holderOfFiles");
 
-    var opcXO = opacityChange();
-    opcXO.transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
+    var cCxo = closeChange();
+    cCxo.transChange("0s", null, null, null, "0.5s", "0.5s", "0.5s");
 
     closeid.style.animationName= "fadeout";
     resPage.style.transform= "scale(1)";
