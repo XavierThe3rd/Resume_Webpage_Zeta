@@ -5,17 +5,17 @@
 }*/
 #slideHolder1 {
   transform: translateX(0px);
-  transition: all 1s ease-out 0s; }
+  transition: all 0.5s ease-in-out 0s; }
 
 #slideHolder2, #slideHolder3, #slideHolder4, #slideHolder5 {
-  transform: translateX(100%);
-  transition: all 1s ease-out 0s; }
+  transform: translateX(100%) scale(0.75);
+  transition: all 0.5s ease-in-out 0s; }
 
 #insideH1, #insideH2, #insideH3 {
   transition: all 0.5s ease-out; }
 
 #filePageA, #filePageB, #filePageC {
-  transition: all 1s ease-out 1s; }
+  transition: all 1s ease-out 0.5s; }
 
 #fileHolderA, #fileHolderB, #fileHolderC {
   transition: all 0.5s ease-out; }
@@ -69,9 +69,6 @@
 
 .barz1, .barz2, .barz3, .job-prime {
   transition: all 0.5s ease-out; }
-
-#slideHolder2, #slideHolder3 {
-  opacity: 0; }
 
 .grid3 {
   width: 30%; }
@@ -391,7 +388,9 @@ header {
     color: #ffffff;
     top: 18px;
     width: 45%;
-    font-size: 20px; }
+    font-size: 20px;
+    z-index: 4;
+    margin: 0 -42px; }
   .about-holder .book {
     background: none;
     width: 300px;
@@ -423,6 +422,13 @@ header {
     @media (min-width: 1024px) {
       .about-holder .resbutton {
         margin: 55px auto 125px; } }
+
+.shield {
+  width: 350px;
+  height: 350px;
+  top: -26px;
+  z-index: 3;
+  opacity: 0; }
 
 .spec-holder {
   background: black;

@@ -8,12 +8,12 @@
 
 #slideHolder1 {
     transform: translateX(0px);
-    transition: all 1s ease-out 0s;
+    transition: all 0.5s ease-in-out 0s;
 }
 
 #slideHolder2, #slideHolder3, #slideHolder4, #slideHolder5 {
-    transform: translateX(100%);
-    transition: all 1s ease-out 0s;
+    transform: translateX(100%) scale(0.75);
+    transition: all 0.5s ease-in-out 0s;
 }
 
 #insideH1, #insideH2, #insideH3 {
@@ -21,7 +21,8 @@
 }
 
 #filePageA, #filePageB, #filePageC {
-    transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 0.5s;
+
 }
 
 #fileHolderA, #fileHolderB, #fileHolderC {
@@ -97,6 +98,3 @@
     transition: all 0.5s ease-out;
 }
 
-#slideHolder2, #slideHolder3{
-    opacity: 0;
-}

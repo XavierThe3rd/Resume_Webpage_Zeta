@@ -92,6 +92,8 @@
         top: 18px;
         width: 45%;
         font-size: 20px;
+        z-index: 4;
+        margin: 0 -42px;
     }
 
     .book{
@@ -113,3 +115,10 @@
     }
 }
 
+.shield{
+    width: 350px; 
+    height: 350px;
+    top: -26px;
+    z-index: 3;
+    opacity: 0;
+}

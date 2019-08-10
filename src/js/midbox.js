@@ -18,7 +18,7 @@ export function createAbout(){
             h.textContent= "About"; h.setAttribute("id", "aboutPhaze");
             var div = document.createElement("div"); 
             div.classList.add("personal-wrap", "flex", "rel", "center", "grid10");
-            div.setAttribute("id", "p2-toptrig");
+            div.setAttribute("id", "personWrap");
             var obj = document.createElement("object");
             obj.classList.add("book");
             obj.setAttribute("data", "./images/book.svg");
@@ -37,7 +37,15 @@ export function createAbout(){
                 var person = document.createElement("div");
                 person.classList.add("personal-holder", "abs", "btw", "flex", "z3");
                 person.setAttribute("id", "p-aboutPhaze");
+                var shield = document.createElement("object");
+                shield.classList.add("shield", "abs", "auto");
+                shield.setAttribute("data", "./images/SlideShield.svg");
+                shield.setAttribute("type", "image/svg+xml");
+                shield.setAttribute("id", "shieldSlide")
+
                 div.appendChild(person);
+                div.appendChild(shield);
+
                 function createElementSlide(id, text1, text2){
                     var a = document.createElement("div");
                     var b = document.createElement("h4");
@@ -58,36 +66,37 @@ export function createAbout(){
                     return a && b && c;
                 }
 
-                function createpButton(){
-                    var buttonL = document.createElement("button");
-                    buttonL.setAttribute("id", "buttonLeft");
-                    buttonL.addEventListener("click", slideLeft);
-                    buttonL.classList.add("leftbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "left", "z4");
-                    var buttonR = document.createElement("button");  
-                    buttonR.setAttribute("id", "buttonRight");
-                    buttonR.addEventListener("click", slideRight);
-                    buttonR.classList.add("rightbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "right", "z4");
-                    person.appendChild(buttonL);
-                    person.appendChild(buttonR);
-
-                    var ArwL = document.createTextNode("\u25c4");
-                    buttonL.appendChild(ArwL);
-
-                    var ArwR = document.createTextNode("\u25ba");
-                    buttonR.appendChild(ArwR);
-
-
-                    return buttonL && buttonR
-                } 
 
                 createElementSlide("slideHolder1", "Somthing1", "From the suburbs of Cranberry Pa, I went to highschool at Seneca Valley where I was a member of the varcity lacross team and the quad player for the SV marching band drum-line. As an ameture artist, I combined my passion for metal work and sculpting to create metal sculptures of all kinds.");
                 createElementSlide("slideHolder2", "Somthing2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
                 createElementSlide("slideHolder3", "Somthing3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
                 
-                createpButton();
                 return person
             }
+
+            function createpButton(){
+                var buttonL = document.createElement("button");
+                buttonL.setAttribute("id", "buttonLeft");
+                buttonL.addEventListener("click", slideLeft);
+                buttonL.classList.add("leftbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "left", "z4");
+                var buttonR = document.createElement("button");  
+                buttonR.setAttribute("id", "buttonRight");
+                buttonR.addEventListener("click", slideRight);
+                buttonR.classList.add("rightbutton", "no-background", "no-border", "hgrid10", "grid3", "abs", "center", "flex", "right", "z4");
+                div.appendChild(buttonL);
+                div.appendChild(buttonR);
+
+                var ArwL = document.createTextNode("\u25c4");
+                buttonL.appendChild(ArwL);
+
+                var ArwR = document.createTextNode("\u25ba");
+                buttonR.appendChild(ArwR);
+
+
+                return buttonL && buttonR
+            } 
             
+            createpButton();
             createPersonal();           
             return  div && h
         }
@@ -110,5 +119,3 @@ export function createAbout(){
     resButton();
     return abt;
 }
-
-

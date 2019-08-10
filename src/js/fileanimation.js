@@ -1,5 +1,6 @@
 
 import {toColor} from './buttonEffect';
+import {closeChange} from './reusables/reuse';
 
 var symbolX = document.createTextNode("\u274c");
 var closebtn = document.createElement("button");
@@ -18,57 +19,6 @@ var objA2 = document.createElement("object");
 objA2.classList.add("resumepageA");
 objA2.setAttribute("data", "./images/DummyTextBox.svg");
 objA2.setAttribute("type", "image/svg+xml");
-
-
-function closeChange(){
-    var fileHA = document.getElementById("fileHolderA");
-    var fileHB = document.getElementById("fileHolderB");
-    var fileHC = document.getElementById("fileHolderC");     
-    var insH1 = document.getElementById("insideH1");
-    var insH2 = document.getElementById("insideH2");
-    var insH3 = document.getElementById("insideH3");
-    var leftP = document.getElementById("fileFleft");
-    var rightP = document.getElementById("fileFright");
-    var lockP = document.getElementById("fileLock");
-    var backP = document.getElementById("filebackPlate");
-
-    function opacityChange(opacA, opacL, opacIA, opacIB, opacIC, opacHA, opacHB, opacHC){
-        leftP.style.opacity= opacA;
-        rightP.style.opacity= opacA;
-        backP.style.opacity= opacA;
-        insH1.style.opacity= opacIA;
-        insH2.style.opacity= opacIB;
-        insH3.style.opacity= opacIC;
-        lockP.style.opacity= opacL;
-        fileHA.style.opacity= opacHA;
-        fileHB.style.opacity= opacHB;
-        fileHC.style.opacity= opacHC;   
-    }
-    function lateChange(transHA, transHB, transHC, translateH1, translateH2, translateH3, scale, translatexL, translatexR){       
-        fileHA.style.transform= "translateY(" +transHA+ ")";
-        fileHB.style.transform= "translateY(" +transHB+ ")";
-        fileHC.style.transform= "translateY(" +transHC+ ")";
-        insH1.style.transform= "translate(" +translateH1+ ")";
-        insH2.style.transform= "translate(" +translateH2+ ")";
-        insH3.style.transform= "translate(" +translateH3+ ")";
-        lockP.style.transform = "scale(" +scale+ ")";
-        leftP.style.transform= "translateX(" +translatexL+ ")";
-        rightP.style.transform= "translateX(" +translatexR+ ")";
-    }
-    function transChange( HAtran, HBtran, HCtran, H1tran, H2tran, H3tran){   
-        fileHA.style.transitionDelay= HAtran;
-        fileHB.style.transitionDelay= HBtran;
-        fileHC.style.transitionDelay= HCtran;
-        insH1.style.transitionDelay= H1tran;
-        insH2.style.transitionDelay= H2tran;
-        insH3.style.transitionDelay= H3tran;
-    }
-    return {
-        opacityChange: opacityChange,
-        lateChange: lateChange,
-        transChange: transChange
-    };
-}
 
 function miscChange(position, marg, zI){
     var dhf = document.getElementById("holderOfFiles");
@@ -94,9 +44,7 @@ function eventListen(vary1, rmv1, add1, vary2, rmv2, vary3, add2, add3, rmvA3, r
 
 function xbuttonOn(){
     var dhf = document.getElementById("holderOfFiles");
-    var cCxbtn = closeChange();
 
-    cCxbtn.transChange("0s", "0.5s", "0.5s", "0.5s");
     dhf.appendChild(closebtn);
     closeid.style.animationName= "fadein";
 }
@@ -120,7 +68,7 @@ export function fileOpen(){
         window.clearTimeout(closeFolder);
         htag.style.opacity = "0";
         var cCfo = closeChange();
-        cCfo.opacityChange("0", null, null, null, null, null, null, null);
+        cCfo.opacityChange("0");
         cCfo.transChange(null, null, null, "0s", "0s", "0s");
         cCfo.lateChange(null, null, null, "-90px, -50px", "90px, -68px", "0, 125px", "0.5", "-100px", "100px");
         toColor("barz3", "fileLock", "#ff0021", "#6100ff", "translateY(17px) rotate(45deg)", "translateY(1px) rotate(-45deg)", "0");
@@ -130,7 +78,7 @@ export function fileOpen(){
     }else{
         htag.style.opacity = "1";
         var cCfc = closeChange();
-        cCfc.opacityChange("1", null, null, null, null, null, null, null);
+        cCfc.opacityChange("1");
         cCfc.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
         toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1");        
     }
@@ -163,11 +111,11 @@ function openDocumentPrime(id, opc1, opc2, opc3, opc4, opc5, opc6, opc7, opc8, t
 }
 
 export function openDocumentA(){
-    openDocumentPrime("filePageA", "0", "0", null, "0", "0", "0", null, null, "0s", null , null, "0s", "0s", "0s", "100%", null, null, "0px, 0px", null, null, null, null, rePositionA, xOutA, xOutB, xOutC);
+    openDocumentPrime("filePageA", "0", "0", null, "0", "0", "0", null, null, "0s", null , null, "0s", "0s", "0s", "100%", null, null, "0px, 50px", null, null, null, null, rePositionA, xOutA, xOutB, xOutC);
 }
 
 export function openDocumentB(){
-    openDocumentPrime("filePageB", "0", "0", "0", null, "0", null, "0", null, null, "0s", null, "0s", "0s", "0s", null, "100%", null, null, "0px, 0px", null, null, null, rePositionB, xOutB, xOutA, xOutC);
+    openDocumentPrime("filePageB", "0", "0", "0", null, "0", null, "0", null, null, "0s", null, "0s", "0s", "0s", null, "100%", null, null, "0px, 40px", null, null, null, rePositionB, xOutB, xOutA, xOutC);
 }
 
 export function openDocumentC(){
@@ -177,9 +125,9 @@ export function openDocumentC(){
 
 function closeFolder(){
     var cCfc = closeChange(); 
-    cCfc.opacityChange("1", null, null, null, null, null, null, null);
     var htag = document.getElementById("resumePhaze");
     htag.style.opacity = "1";
+    cCfc.opacityChange("1");
     cCfc.transChange(null, null, null, "0s", "0s", "0s");
     cCfc.lateChange(null, null, null, "0px", "0px", "0px", "1", "0px", "0px"); 
     toColor("barz3", "fileLock", "#ffffff", "#ff0021", "translateY(0) rotate(0)", "translateY(0) rotate(0)", "1"); 
@@ -203,11 +151,11 @@ function rePositionPrime(transA, transB, transC, lateA, lateB, lateC, lateD, lat
 }
 
 function rePositionA(){ 
-    rePositionPrime("0s", null, null, "0", null, null, "-90px, -50px", null, null, null, null, null, "-125px, -75px", null, null,);
+    rePositionPrime("0s", null, null, "0", null, null, "-90px, -50px", null, null, null, null, null, "-125px, -75px");
 }
 
 function rePositionB(){
-    rePositionPrime(null, "0s", null, null, "0", null, null, "90px, -68px", null, null, null, null, null, "125px, -97px", null);
+    rePositionPrime(null, "0s", null, null, "0", null, null, "90px, -68px", null, null, null, null, null, "125px, -97px");
 }
 
 function rePositionC(){
